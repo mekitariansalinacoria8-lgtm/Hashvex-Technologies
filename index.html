@@ -1302,7 +1302,7 @@
             }
             
             async init() {
-                document.getElementById('current-year').textContent = new Date().getFullYear();
+           document.getElementById('current-year')?.textContent = new Date().getFullYear();
                 
                 // Initialize event listeners
                 this.initEventListeners();
