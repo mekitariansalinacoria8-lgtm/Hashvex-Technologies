@@ -5,24 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hashvex Technologies | Enterprise Bitcoin Mining Platform</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://www.dropbox.com/scl/fi/1dq16nex1borvvknpcwox/circular_dark_background.png?rlkey=sq2ujl2oxxk9vyvg1j7oz0cdb&raw=1">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <style>
-        /* ====== ENTERPRISE THEME - Crypto.com Inspired ====== */
         :root {
-            /* Primary Colors */
             --primary-black: #000000;
             --primary-dark: #0A0E17;
             --primary-navy: #0F1420;
@@ -35,7 +29,6 @@
             --accent-purple: #8A2BE2;
             --gold: #FFD700;
             
-            /* Status Colors */
             --gain-color: #00D795;
             --lose-color: #FF3B5C;
             --in-stock: #00D795;
@@ -44,7 +37,6 @@
             --rental-badge: #8A2BE2;
             --new-badge: #00A3FF;
             
-            /* Theme Variables */
             --bg-primary: var(--primary-black);
             --bg-secondary: var(--primary-dark);
             --bg-tertiary: #121826;
@@ -57,26 +49,22 @@
             --border-active: var(--accent-blue);
             --shadow-color: rgba(0, 0, 0, 0.3);
             
-            /* Gradients */
             --gradient-primary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
             --gradient-success: linear-gradient(135deg, var(--success-green) 0%, #00E6A9 100%);
             --gradient-error: linear-gradient(135deg, var(--error-red) 0%, #FF6B8B 100%);
             --gradient-card: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-tertiary) 100%);
             --gradient-header: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(15, 20, 32, 0.9) 100%);
             
-            /* Shadows */
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
             --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
             --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
             
-            /* Animation Speeds */
             --transition-fast: 150ms ease;
             --transition-normal: 300ms ease;
             --transition-slow: 500ms ease;
         }
         
-        /* ====== RESET & BASE STYLES ====== */
         * {
             margin: 0;
             padding: 0;
@@ -85,14 +73,14 @@
         
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
+            font-size: 14px;
         }
         
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.5;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -102,42 +90,35 @@
             width: 100%;
             max-width: 1440px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
         
-        /* ====== TYPOGRAPHY ====== */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
         }
         
         h1 { 
-            font-size: 3.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 2.5rem;
         }
         
         h2 { 
-            font-size: 2.75rem;
-            color: var(--text-primary);
+            font-size: 2rem;
         }
         
         h3 { 
-            font-size: 2rem;
-            color: var(--text-primary);
+            font-size: 1.5rem;
         }
         
         p {
             color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
         }
         
-        /* ====== HEADER & NAVIGATION ====== */
         header {
             position: fixed;
             top: 0;
@@ -147,7 +128,7 @@
             background: var(--gradient-header);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            height: 80px;
+            height: 60px;
         }
         
         .header-container {
@@ -155,46 +136,65 @@
             align-items: center;
             justify-content: space-between;
             height: 100%;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
             text-decoration: none;
         }
         
         .logo-img {
-            height: 48px;
-            width: 48px;
-            border-radius: 12px;
-            border: 2px solid var(--accent-blue);
+            height: 32px;
+            width: 32px;
+            border-radius: 6px;
         }
         
         .logo-text {
             font-family: 'Poppins', sans-serif;
             font-weight: 900;
-            font-size: 1.75rem;
-            background: var(--gradient-primary);
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            position: relative;
+            animation: titleGlow 2s ease-in-out infinite alternate;
         }
         
-        /* Navigation */
+        @keyframes titleGlow {
+            from { filter: drop-shadow(0 0 5px rgba(0, 163, 255, 0.5)); }
+            to { filter: drop-shadow(0 0 15px rgba(0, 209, 255, 0.8)); }
+        }
+        
+        .santa-hat {
+            position: absolute;
+            top: -20px;
+            left: -5px;
+            font-size: 1.8rem;
+            transform: rotate(-15deg);
+            animation: hatBob 3s ease-in-out infinite;
+        }
+        
+        @keyframes hatBob {
+            0%, 100% { transform: rotate(-15deg) translateY(0); }
+            50% { transform: rotate(-15deg) translateY(-5px); }
+        }
+        
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
         }
         
         .nav-link {
             color: var(--text-secondary);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.85rem;
             text-decoration: none;
-            padding: 0.5rem 0;
+            padding: 0.25rem 0;
             position: relative;
             transition: color var(--transition-normal);
         }
@@ -206,7 +206,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
             transition: width var(--transition-normal);
         }
         
@@ -220,40 +220,41 @@
             color: var(--text-primary);
         }
         
-        /* Mobile Menu Toggle */
         .mobile-menu-toggle {
             display: none;
             background: transparent;
             border: none;
             color: var(--text-primary);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             cursor: pointer;
-            padding: 0.5rem;
+            padding: 0.25rem;
         }
         
-        /* ====== USER CONTROLS ====== */
         .user-controls {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
+            position: absolute;
+            right: 1rem;
+            top: 1.25rem;
         }
         
         .auth-buttons {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
         
         .user-menu {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
         
         .user-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: var(--gradient-primary);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -270,13 +271,13 @@
         .user-dropdown {
             display: none;
             position: absolute;
-            top: calc(100% + 10px);
+            top: calc(100% + 8px);
             right: 0;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem;
-            min-width: 220px;
+            border-radius: 8px;
+            padding: 0.75rem;
+            min-width: 180px;
             box-shadow: var(--shadow-xl);
             z-index: 1000;
         }
@@ -290,9 +291,9 @@
             position: relative;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            width: 44px;
-            height: 44px;
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -306,10 +307,10 @@
             right: -6px;
             background: var(--error-red);
             color: white;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -321,10 +322,9 @@
             background: rgba(0, 163, 255, 0.1);
         }
         
-        /* ====== BALANCE DISPLAY ====== */
         .balance-display {
-            margin-top: 80px;
-            padding: 1.5rem 0;
+            margin-top: 60px;
+            padding: 1rem 0;
             background: rgba(15, 20, 32, 0.8);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -333,16 +333,16 @@
         .balance-container {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
         }
         
         .balance-card {
             background: rgba(0, 215, 149, 0.1);
             border: 1px solid rgba(0, 215, 149, 0.2);
-            border-radius: 16px;
-            padding: 1.5rem 2.5rem;
+            border-radius: 12px;
+            padding: 1rem 2rem;
             text-align: center;
-            min-width: 250px;
+            min-width: 200px;
             transition: all var(--transition-normal);
         }
         
@@ -357,15 +357,15 @@
         }
         
         .balance-label {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
         .balance-amount {
-            font-size: 2.25rem;
+            font-size: 1.75rem;
             font-weight: 800;
             color: var(--success-green);
         }
@@ -374,12 +374,11 @@
             color: var(--accent-cyan);
         }
         
-        /* ====== BUTTONS ====== */
         .btn {
-            padding: 0.875rem 2rem;
-            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.85rem;
             cursor: pointer;
             border: none;
             transition: all var(--transition-normal);
@@ -390,7 +389,7 @@
         }
         
         .btn-primary {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
             color: white;
         }
         
@@ -411,23 +410,22 @@
         }
         
         .btn-success {
-            background: var(--gradient-success);
+            background: linear-gradient(135deg, var(--success-green) 0%, #00E6A9 100%);
             color: white;
         }
         
         .btn-error {
-            background: var(--gradient-error);
+            background: linear-gradient(135deg, var(--error-red) 0%, #FF6B8B 100%);
             color: white;
         }
         
         .btn-small {
-            padding: 0.5rem 1.25rem;
-            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
         }
         
-        /* ====== HERO SECTION ====== */
         .hero {
-            padding: 8rem 0 5rem;
+            padding: 6rem 0 3rem;
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-black) 100%);
             position: relative;
             overflow: hidden;
@@ -446,43 +444,52 @@
         .hero-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 2rem;
             align-items: center;
             position: relative;
             z-index: 1;
         }
         
         .hero-content h1 {
-            font-size: 3.75rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .hero-content p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--text-secondary);
         }
         
-        /* Bitcoin Price Card */
         .bitcoin-price-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg-card) 0%, #222937 50%, rgba(255, 215, 0, 0.1) 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-lg);
+            animation: gradientShift 5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
         
         .bitcoin-price-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .bitcoin-price {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             color: var(--text-primary);
         }
         
@@ -490,9 +497,10 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
             font-weight: 700;
+            font-size: 0.9rem;
         }
         
         .price-change.positive {
@@ -505,34 +513,34 @@
             color: var(--error-red);
         }
         
-        /* ====== MINERS SECTION ====== */
         .miners-section {
-            padding: 5rem 0;
+            padding: 3rem 0;
         }
         
         .section-title {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         .view-toggle {
             display: flex;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
+            border-radius: 8px;
             padding: 0.25rem;
             border: 1px solid var(--border-color);
         }
         
         .view-toggle button {
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             border: none;
             background: transparent;
             color: var(--text-secondary);
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.85rem;
         }
         
         .view-toggle button.active {
@@ -540,24 +548,22 @@
             color: var(--text-primary);
         }
         
-        /* Miners Grid/List */
         .miners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .miners-list {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
         }
         
-        /* Miner Card */
         .miner-card {
             background: var(--bg-card);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
@@ -579,13 +585,13 @@
         
         .miner-image {
             position: relative;
-            height: 220px;
+            height: 180px;
             background: var(--bg-tertiary);
             overflow: hidden;
         }
         
         .miner-card-list .miner-image {
-            width: 300px;
+            width: 250px;
             flex-shrink: 0;
         }
         
@@ -600,20 +606,19 @@
             transform: scale(1.05);
         }
         
-        /* Badges */
         .miner-badges {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: 0.75rem;
+            left: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.25rem;
         }
         
         .badge {
-            padding: 0.375rem 0.875rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -650,56 +655,55 @@
             border-color: rgba(0, 163, 255, 0.3);
         }
         
-        /* Miner Content */
         .miner-content {
-            padding: 1.5rem;
+            padding: 1rem;
         }
         
         .miner-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             color: var(--text-primary);
         }
         
         .miner-price {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--accent-cyan);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .miner-price .original {
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: var(--text-tertiary);
             text-decoration: line-through;
-            margin-right: 0.5rem;
+            margin-right: 0.25rem;
         }
         
         .miner-specs {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
         }
         
         .spec-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
         }
         
         .spec-item i {
             color: var(--accent-cyan);
-            width: 16px;
+            width: 14px;
         }
         
         .profitability-display {
             display: flex;
-            gap: 2rem;
-            margin: 1.5rem 0;
+            gap: 1.5rem;
+            margin: 1rem 0;
         }
         
         .profit-item {
@@ -707,13 +711,13 @@
         }
         
         .profit-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-tertiary);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.125rem;
         }
         
         .profit-value {
-            font-size: 1.25rem;
+            font-size: 1rem;
             font-weight: 700;
         }
         
@@ -729,29 +733,29 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
             border-top: 1px solid var(--border-color);
         }
         
-        /* ====== PAGINATION ====== */
         .pagination {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 0.5rem;
-            margin-top: 3rem;
+            gap: 0.25rem;
+            margin-top: 2rem;
         }
         
         .pagination button {
-            min-width: 44px;
-            height: 44px;
-            border-radius: 12px;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-primary);
             cursor: pointer;
             font-weight: 600;
+            font-size: 0.85rem;
             transition: all var(--transition-normal);
         }
         
@@ -761,7 +765,7 @@
         }
         
         .pagination button.active {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
             border: none;
         }
         
@@ -770,17 +774,16 @@
             cursor: not-allowed;
         }
         
-        /* ====== FEATURES SECTION ====== */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
         }
         
         .feature-card {
             background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 1.5rem;
+            border-radius: 16px;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
         }
@@ -792,28 +795,27 @@
         }
         
         .feature-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--gradient-primary);
-            border-radius: 16px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
             color: white;
         }
         
-        /* ====== NEWS SECTION ====== */
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
         
         .news-card {
             background: var(--bg-card);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
@@ -825,7 +827,7 @@
         }
         
         .news-image {
-            height: 200px;
+            height: 160px;
             background: var(--bg-tertiary);
             overflow: hidden;
         }
@@ -837,71 +839,70 @@
         }
         
         .news-content {
-            padding: 1.5rem;
+            padding: 1rem;
         }
         
-        /* ====== CTA SECTION ====== */
         .cta-section {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
             text-align: center;
         }
         
         .cta-section h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
         }
         
-        /* ====== FOOTER ====== */
         footer {
             background: var(--primary-dark);
-            padding: 4rem 0 2rem;
+            padding: 3rem 0 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
         
         .footer-logo-img {
-            height: 40px;
-            width: 40px;
-            border-radius: 10px;
+            height: 32px;
+            width: 32px;
+            border-radius: 6px;
         }
         
         .footer-logo-text {
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--text-primary);
         }
         
         .footer-social {
             display: flex;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
         
         .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-primary);
             transition: all var(--transition-normal);
+            text-decoration: none;
         }
         
         .social-icon:hover {
@@ -909,10 +910,15 @@
             transform: translateY(-2px);
         }
         
+        .fa-twitter { color: #1DA1F2 !important; }
+        .fa-linkedin-in { color: #0077B5 !important; }
+        .fa-facebook-f { color: #1877F2 !important; }
+        .fa-instagram { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D) !important; -webkit-background-clip: text; background-clip: text; color: transparent !important; }
+        
         .footer-links h3,
         .footer-contact h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
             color: var(--text-primary);
         }
         
@@ -921,12 +927,14 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
         
         .footer-links a {
             color: var(--text-secondary);
             transition: color var(--transition-normal);
+            text-decoration: none;
+            font-size: 0.85rem;
         }
         
         .footer-links a:hover {
@@ -935,13 +943,12 @@
         
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-tertiary);
-            font-size: 0.875rem;
+            font-size: 0.8rem;
         }
         
-        /* ====== MODALS ====== */
         .modal {
             display: none;
             position: fixed;
@@ -953,14 +960,14 @@
             backdrop-filter: blur(10px);
             z-index: 2000;
             overflow-y: auto;
-            padding: 2rem;
+            padding: 1rem;
         }
         
         .modal-content {
             background: var(--bg-card);
-            max-width: 1000px;
-            margin: 2rem auto;
-            border-radius: 24px;
+            max-width: 900px;
+            margin: 1rem auto;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-xl);
             animation: modalSlideIn 0.3s ease;
@@ -978,7 +985,7 @@
         }
         
         .modal-header {
-            padding: 2rem;
+            padding: 1.5rem;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -992,12 +999,12 @@
             font-size: 1.5rem;
             color: var(--text-primary);
             cursor: pointer;
-            width: 44px;
-            height: 44px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 12px;
+            border-radius: 8px;
             transition: all var(--transition-normal);
         }
         
@@ -1006,51 +1013,49 @@
         }
         
         .modal-body {
-            padding: 2rem;
+            padding: 1.5rem;
             max-height: 70vh;
             overflow-y: auto;
         }
         
-        /* Miner Detail Modal */
         .miner-detail {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
         }
         
         .miner-detail-image {
-            height: 400px;
-            border-radius: 20px;
+            height: 320px;
+            border-radius: 16px;
             overflow: hidden;
             background: var(--bg-tertiary);
         }
         
         .detail-badges {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: 0.75rem;
+            left: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.25rem;
         }
         
-        /* Cart Modal */
         .cart-items {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .cart-item {
             display: flex;
             align-items: center;
-            padding: 1.5rem;
+            padding: 1rem;
             border-bottom: 1px solid var(--border-color);
-            gap: 1.5rem;
+            gap: 1rem;
         }
         
         .cart-item-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
             overflow: hidden;
             background: var(--bg-tertiary);
             flex-shrink: 0;
@@ -1064,18 +1069,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem;
+            padding: 1rem;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 16px;
-            margin-bottom: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
         }
         
         .cart-empty {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 3rem 1rem;
         }
         
-        /* ====== LOADING SCREEN ====== */
         .loading-screen {
             position: fixed;
             top: 0;
@@ -1090,36 +1094,33 @@
             z-index: 9999;
         }
         
-        .loading-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            border-top: 4px solid var(--accent-cyan);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 1.5rem;
+        .logo-loading {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            animation: logoPulse 1.5s ease-in-out infinite;
+            margin-bottom: 1rem;
         }
         
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
         }
         
-        /* ====== NOTIFICATIONS ====== */
         .notification {
             position: fixed;
-            top: 2rem;
-            right: 2rem;
-            padding: 1.25rem 1.5rem;
-            border-radius: 12px;
+            top: 1rem;
+            right: 1rem;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
             color: white;
             z-index: 4000;
             box-shadow: var(--shadow-xl);
             animation: slideInRight 0.3s ease;
-            max-width: 400px;
+            max-width: 350px;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
             backdrop-filter: blur(20px);
             border: 1px solid;
         }
@@ -1155,7 +1156,6 @@
             border-color: rgba(0, 209, 255, 0.3);
         }
         
-        /* ====== UTILITY CLASSES ====== */
         .hidden {
             display: none !important;
         }
@@ -1169,56 +1169,48 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 4rem;
+            padding: 2rem;
         }
         
         .no-data {
             text-align: center;
-            padding: 3rem;
+            padding: 2rem;
             color: var(--text-tertiary);
         }
         
-        .mb-0 { margin-bottom: 0 !important; }
-        .mb-1 { margin-bottom: 0.5rem !important; }
-        .mb-2 { margin-bottom: 1rem !important; }
-        .mb-3 { margin-bottom: 1.5rem !important; }
-        .mb-4 { margin-bottom: 2rem !important; }
-        .mb-5 { margin-bottom: 2.5rem !important; }
-        
-        /* ====== RESPONSIVE DESIGN ====== */
         @media (max-width: 1200px) {
             .container {
-                padding: 0 1.5rem;
+                padding: 0 1rem;
             }
             
             .hero-container {
-                gap: 3rem;
+                gap: 2rem;
             }
             
             .miners-grid {
-                grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
         
         @media (max-width: 992px) {
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 2rem;
             }
             
             .hero-content h1 {
-                font-size: 3rem;
+                font-size: 2.25rem;
             }
             
             .bitcoin-price-card {
-                max-width: 600px;
+                max-width: 500px;
                 margin: 0 auto;
             }
             
             .balance-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 1rem;
+                gap: 0.75rem;
             }
             
             .miner-detail {
@@ -1233,12 +1225,12 @@
             
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 60px;
                 left: 0;
                 right: 0;
                 background: var(--primary-dark);
                 flex-direction: column;
-                padding: 2rem;
+                padding: 1rem;
                 gap: 0;
                 transform: translateY(-100%);
                 opacity: 0;
@@ -1255,32 +1247,22 @@
             
             .nav-link {
                 width: 100%;
-                padding: 1rem 0;
+                padding: 0.75rem 0;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
             
-            .user-controls {
-                position: absolute;
-                top: 1.25rem;
-                right: 4rem;
-            }
-            
-            .user-menu {
-                display: none;
-            }
-            
             .hero {
-                padding: 6rem 0 4rem;
+                padding: 5rem 0 2rem;
             }
             
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .section-title {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 1rem;
+                gap: 0.75rem;
             }
             
             .view-toggle {
@@ -1294,7 +1276,7 @@
             
             .miner-card-list .miner-image {
                 width: 100%;
-                height: 220px;
+                height: 180px;
             }
             
             .features-grid,
@@ -1304,31 +1286,31 @@
             }
             
             .cta-section h2 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
         }
         
         @media (max-width: 576px) {
             .container {
-                padding: 0 1rem;
+                padding: 0 0.75rem;
             }
             
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
             
             .bitcoin-price {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .balance-card {
-                padding: 1rem 1.5rem;
+                padding: 0.75rem 1rem;
                 min-width: auto;
                 width: 100%;
             }
             
             .balance-amount {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
             
             .modal-body {
@@ -1336,112 +1318,107 @@
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             h2 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
     <div id="loadingScreen" class="loading-screen">
         <img src="https://www.dropbox.com/scl/fi/1dq16nex1borvvknpcwox/circular_dark_background.png?rlkey=sq2ujl2oxxk9vyvg1j7oz0cdb&raw=1" 
              alt="Hashvex Logo" 
-             style="height: 80px; width: 80px; border-radius: 16px; margin-bottom: 2rem;">
-        <div class="loading-spinner"></div>
-        <p style="color: var(--text-secondary); font-weight: 600;">Loading Hashvex Technologies...</p>
+             class="logo-loading">
+        <p style="color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;">Establishing secure connection...</p>
     </div>
 
-    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-container">
-                <a href="index.html" class="logo">
-                    <img src="https://www.dropbox.com/scl/fi/1dq16nex1borvvknpcwox/circular_dark_background.png?rlkey=sq2ujl2oxxk9vyvg1j7oz0cdb&raw=1" 
-                         alt="Hashvex Technologies" 
-                         class="logo-img">
-                    <span class="logo-text">Hashvex</span>
-                </a>
-                
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <i class="fas fa-bars"></i>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="https://www.dropbox.com/scl/fi/1dq16nex1borvvknpcwox/circular_dark_background.png?rlkey=sq2ujl2oxxk9vyvg1j7oz0cdb&raw=1" 
+                     alt="Hashvex Technologies" 
+                     class="logo-img">
+                <span class="logo-text">
+                    <span class="santa-hat">🎅</span>Hashvex
+                </span>
+            </a>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#miners-for-sale" class="nav-link">Buy Miners</a>
+                <a href="#miners-for-rent" class="nav-link">Rent Miners</a>
+                <a href="#why-us" class="nav-link">Why Hashvex</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+            </nav>
+        </div>
+        
+        <div class="user-controls">
+            <div class="auth-buttons" id="authButtons">
+                <button onclick="window.location.href='login.html'" class="btn btn-secondary btn-small">
+                    <i class="fas fa-sign-in-alt"></i> Login
                 </button>
+                <button onclick="window.location.href='signup.html'" class="btn btn-primary btn-small">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </button>
+            </div>
+            
+            <div class="user-menu hidden" id="userMenu">
+                <div class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
                 
-                <nav class="nav-links" id="navLinks">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#miners-for-sale" class="nav-link">Buy Miners</a>
-                    <a href="#miners-for-rent" class="nav-link">Rent Miners</a>
-                    <a href="#why-us" class="nav-link">Why Hashvex</a>
-                    <a href="#how-it-works" class="nav-link">How It Works</a>
-                </nav>
+                <div class="user-avatar" id="userAvatar">
+                    U
+                </div>
                 
-                <div class="user-controls">
-                    <div class="auth-buttons" id="authButtons">
-                        <button onclick="window.location.href='login.html'" class="btn btn-secondary btn-small">
-                            <i class="fas fa-sign-in-alt"></i> Login
-                        </button>
-                        <button onclick="window.location.href='signup.html'" class="btn btn-primary btn-small">
-                            <i class="fas fa-user-plus"></i> Sign Up
-                        </button>
-                    </div>
-                    
-                    <div class="user-menu hidden" id="userMenu">
-                        <div class="cart-btn" id="cartBtn">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count" id="cartCount">0</span>
-                        </div>
-                        
-                        <div class="user-avatar" id="userAvatar">
-                            U
-                        </div>
-                        
-                        <div class="user-dropdown">
-                            <a href="dashboard.html" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal);">
-                                <i class="fas fa-chart-line"></i> Dashboard
-                            </a>
-                            <a href="accountsetting.html" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal);">
-                                <i class="fas fa-user-cog"></i> Account Settings
-                            </a>
-                            <a href="balances.html" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal);">
-                                <i class="fas fa-wallet"></i> Balances
-                            </a>
-                            <a href="#" id="logoutBtn" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal);">
-                                <i class="fas fa-sign-out-alt"></i> Logout
-                            </a>
-                        </div>
-                    </div>
+                <div class="user-dropdown">
+                    <a href="dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; color: var(--text-secondary); text-decoration: none; border-radius: 6px; transition: background var(--transition-normal); font-size: 0.85rem;">
+                        <i class="fas fa-chart-line"></i> Dashboard
+                    </a>
+                    <a href="accountsetting.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; color: var(--text-secondary); text-decoration: none; border-radius: 6px; transition: background var(--transition-normal); font-size: 0.85rem;">
+                        <i class="fas fa-user-cog"></i> Account Settings
+                    </a>
+                    <a href="balances.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; color: var(--text-secondary); text-decoration: none; border-radius: 6px; transition: background var(--transition-normal); font-size: 0.85rem;">
+                        <i class="fas fa-wallet"></i> Balances
+                    </a>
+                    <a href="#" id="logoutBtn" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; color: var(--text-secondary); text-decoration: none; border-radius: 6px; transition: background var(--transition-normal); font-size: 0.85rem;">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Balance Display -->
     <div class="balance-display hidden" id="balanceDisplay">
         <div class="container">
             <div class="balance-container">
                 <div class="balance-card">
                     <div class="balance-label">Main Balance</div>
-                    <div class="balance-amount" id="mainBalance">€0.00</div>
+                    <div class="balance-amount" id="mainBalance">$0.00</div>
                 </div>
                 <div class="balance-card income">
                     <div class="balance-label">Income Balance</div>
-                    <div class="balance-amount" id="incomeBalance">€0.00</div>
+                    <div class="balance-amount" id="incomeBalance">$0.00</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-container">
                 <div class="hero-content">
                     <h1>Enterprise Bitcoin Mining Solutions</h1>
                     <p>Hashvex Technologies provides cutting-edge Bitcoin mining hardware for purchase and rental. Join thousands of investors earning passive income with our reliable, high-performance mining solutions.</p>
-                    <div class="hero-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                         <button onclick="window.location.href='signup.html'" class="btn btn-primary">
                             <i class="fas fa-rocket"></i> Get Started
                         </button>
@@ -1453,7 +1430,7 @@
                 
                 <div class="bitcoin-price-card">
                     <div class="bitcoin-price-header">
-                        <h3 style="display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem;">
+                        <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <i class="fab fa-bitcoin" style="color: #F7931A;"></i> Bitcoin Price
                         </h3>
                         <div class="price-change positive" id="btcChange">
@@ -1461,15 +1438,19 @@
                             <span id="btcChangePercent">+2.34%</span>
                         </div>
                     </div>
-                    <div class="bitcoin-price" id="btcPrice">€85,224.00</div>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem;">
+                    <div class="bitcoin-price" id="btcPrice">$92,415.00</div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1rem;">
                         <div>
-                            <div style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 0.25rem;">24h High</div>
-                            <div style="font-weight: 700;" id="btcHigh">€89,220.00</div>
+                            <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.125rem;">24h High</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;" id="btcHigh">$96,842.00</div>
                         </div>
                         <div>
-                            <div style="font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 0.25rem;">24h Low</div>
-                            <div style="font-weight: 700;" id="btcLow">€84,581.00</div>
+                            <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.125rem;">24h Low</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;" id="btcLow">$91,580.00</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.125rem;">24h Volume</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;" id="btcVolume">$74.82B</div>
                         </div>
                     </div>
                 </div>
@@ -1477,7 +1458,6 @@
         </div>
     </section>
 
-    <!-- Miners for Rent -->
     <section id="miners-for-rent" class="miners-section">
         <div class="container">
             <div class="section-title">
@@ -1496,13 +1476,13 @@
                 <div id="rentGridContainer" class="miners-grid"></div>
                 <div id="rentListContainer" class="miners-list hidden"></div>
                 <div id="rentLoading" class="loading">
-                    <div class="loading-spinner"></div>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">Loading rental miners...</p>
+                    <div class="logo-loading"></div>
+                    <p style="color: var(--text-secondary); margin-top: 0.75rem; font-size: 0.85rem;">Loading rental miners...</p>
                 </div>
                 <div id="rentEmpty" class="no-data hidden">
-                    <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">No rental miners available</h3>
-                    <p style="color: var(--text-secondary);">Check back soon for new rental opportunities</p>
+                    <i class="fas fa-search" style="font-size: 2.5rem; margin-bottom: 0.75rem;"></i>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.25rem; font-size: 1.25rem;">No rental miners available</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem;">Check back soon for new rental opportunities</p>
                 </div>
             </div>
             
@@ -1510,7 +1490,6 @@
         </div>
     </section>
 
-    <!-- Miners for Sale -->
     <section id="miners-for-sale" class="miners-section" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="section-title">
@@ -1529,13 +1508,13 @@
                 <div id="saleGridContainer" class="miners-grid"></div>
                 <div id="saleListContainer" class="miners-list hidden"></div>
                 <div id="saleLoading" class="loading">
-                    <div class="loading-spinner"></div>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">Loading miners for sale...</p>
+                    <div class="logo-loading"></div>
+                    <p style="color: var(--text-secondary); margin-top: 0.75rem; font-size: 0.85rem;">Loading miners for sale...</p>
                 </div>
                 <div id="saleEmpty" class="no-data hidden">
-                    <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">No miners available for sale</h3>
-                    <p style="color: var(--text-secondary);">Check back soon for new inventory</p>
+                    <i class="fas fa-search" style="font-size: 2.5rem; margin-bottom: 0.75rem;"></i>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.25rem; font-size: 1.25rem;">No miners available for sale</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem;">Check back soon for new inventory</p>
                 </div>
             </div>
             
@@ -1543,7 +1522,6 @@
         </div>
     </section>
 
-    <!-- Why Choose Hashvex -->
     <section id="why-us" class="miners-section">
         <div class="container">
             <div class="section-title">
@@ -1555,7 +1533,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Secure & Reliable</h3>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Secure & Reliable</h3>
                     <p>Military-grade security with 99.9% uptime guarantee across all mining facilities.</p>
                 </div>
                 
@@ -1563,7 +1541,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Maximum Profitability</h3>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Maximum Profitability</h3>
                     <p>Optimized mining configurations and strategic location selection for maximum ROI.</p>
                 </div>
                 
@@ -1571,7 +1549,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">24/7 Support</h3>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">24/7 Support</h3>
                     <p>Round-the-clock technical support and real-time monitoring of your mining operations.</p>
                 </div>
                 
@@ -1579,57 +1557,55 @@
                     <div class="feature-icon">
                         <i class="fas fa-globe"></i>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Global Infrastructure</h3>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Global Infrastructure</h3>
                     <p>Strategically located facilities worldwide with access to renewable energy sources.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
     <section id="how-it-works" class="miners-section" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="section-title">
                 <h2>How Hashvex Works</h2>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
                 <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">1</div>
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; color: white; margin: 0 auto 1rem;">1</div>
                     <div>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Select Your Miner</h3>
-                        <p style="color: var(--text-secondary);">Choose from verified inventory of high-performance Bitcoin miners.</p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Select Your Miner</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Choose from verified inventory of high-performance Bitcoin miners.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">2</div>
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; color: white; margin: 0 auto 1rem;">2</div>
                     <div>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Complete Setup</h3>
-                        <p style="color: var(--text-secondary);">Create account, complete verification, and set up wallet for payouts.</p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Complete Setup</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Create account, complete verification, and set up wallet for payouts.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">3</div>
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; color: white; margin: 0 auto 1rem;">3</div>
                     <div>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Deployment</h3>
-                        <p style="color: var(--text-secondary);">Our engineers deploy miners at optimal facilities with low electricity costs.</p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Deployment</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Our engineers deploy miners at optimal facilities with low electricity costs.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">4</div>
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; color: white; margin: 0 auto 1rem;">4</div>
                     <div>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Start Earning</h3>
-                        <p style="color: var(--text-secondary);">Begin receiving daily Bitcoin payouts directly to your wallet.</p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Start Earning</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Begin receiving daily Bitcoin payouts directly to your wallet.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bitcoin News -->
     <section id="bitcoin-news" class="miners-section">
         <div class="container">
             <div class="section-title">
@@ -1638,24 +1614,22 @@
             
             <div class="news-grid" id="newsContainer"></div>
             <div id="newsLoading" class="loading">
-                <div class="loading-spinner"></div>
-                <p style="color: var(--text-secondary); margin-top: 1rem;">Loading news...</p>
+                <div class="logo-loading"></div>
+                <p style="color: var(--text-secondary); margin-top: 0.75rem; font-size: 0.85rem;">Loading news...</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2>Start Your Bitcoin Mining Journey Today</h2>
-            <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem;">Join thousands of investors earning passive income with Hashvex Technologies enterprise mining solutions.</p>
-            <button onclick="window.location.href='signup.html'" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.125rem;">
+            <p style="font-size: 1rem; max-width: 600px; margin: 0 auto 1.5rem; color: var(--text-secondary);">Join thousands of investors earning passive income with Hashvex Technologies enterprise mining solutions.</p>
+            <button onclick="window.location.href='signup.html'" class="btn btn-primary" style="padding: 0.875rem 2.5rem; font-size: 1rem;">
                 <i class="fas fa-rocket"></i> Get Started Now
             </button>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-container">
@@ -1666,54 +1640,54 @@
                              class="footer-logo-img">
                         <span class="footer-logo-text">Hashvex</span>
                     </div>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem; font-size: 0.85rem;">Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
                     <div class="footer-social">
-                        <a href="https://twitter.com" class="social-icon" style="text-decoration: none; color: inherit;">
+                        <a href="https://twitter.com" class="social-icon">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://linkedin.com" class="social-icon" style="text-decoration: none; color: inherit;">
+                        <a href="https://linkedin.com" class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://facebook.com" class="social-icon" style="text-decoration: none; color: inherit;">
+                        <a href="https://facebook.com" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com" class="social-icon" style="text-decoration: none; color: inherit;">
+                        <a href="https://instagram.com" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text-primary);">Platform</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.75rem;"><a href="dashboard.html" style="color: var(--text-secondary); text-decoration: none;">Dashboard</a></li>
-                        <li style="margin-bottom: 0.75rem;"><a href="#miners-for-sale" style="color: var(--text-secondary); text-decoration: none;">Buy Miners</a></li>
-                        <li style="margin-bottom: 0.75rem;"><a href="#miners-for-rent" style="color: var(--text-secondary); text-decoration: none;">Rent Miners</a></li>
-                        <li style="margin-bottom: 0.75rem;"><a href="accountsetting.html" style="color: var(--text-secondary); text-decoration: none;">My Account</a></li>
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="#miners-for-sale">Buy Miners</a></li>
+                        <li><a href="#miners-for-rent">Rent Miners</a></li>
+                        <li><a href="accountsetting.html">My Account</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text-primary);">Company</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.75rem;"><a href="about.html" style="color: var(--text-secondary); text-decoration: none;">About Us</a></li>
-                        <li style="margin-bottom: 0.75rem;"><a href="careers.html" style="color: var(--text-secondary); text-decoration: none;">Careers</a></li>
-                        <li style="margin-bottom: 0.75rem;"><a href="blog.html" style="color: var(--text-secondary); text-decoration: none;">Blog</a></li>
-                        <li style="margin-bottom: 0.75rem;"><a href="partners.html" style="color: var(--text-secondary); text-decoration: none;">Partners</a></li>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="partners.html">Partners</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text-primary);">Contact</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <h3>Contact</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
                         <i class="fas fa-envelope" style="color: var(--accent-cyan);"></i>
                         support@hashvex.com
                     </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
                         <i class="fas fa-phone" style="color: var(--accent-cyan);"></i>
                         +1 606-363-2032
                     </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
                         <i class="fas fa-map-marker-alt" style="color: var(--accent-cyan);"></i>
                         Delaware, USA
                     </p>
@@ -1726,22 +1700,20 @@
         </div>
     </footer>
 
-    <!-- Miner Detail Modal -->
     <div id="minerModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 style="font-size: 2rem; color: var(--text-primary);">Miner Details</h2>
+                <h2 style="font-size: 1.75rem; color: var(--text-primary);">Miner Details</h2>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
-    <!-- Cart Modal -->
     <div id="cartModal" class="modal">
-        <div class="modal-content" style="max-width: 600px;">
+        <div class="modal-content" style="max-width: 500px;">
             <div class="modal-header">
-                <h2 style="font-size: 2rem; color: var(--text-primary);">Your Cart</h2>
+                <h2 style="font-size: 1.75rem; color: var(--text-primary);">Your Cart</h2>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body" id="cartBody"></div>
@@ -1749,14 +1721,12 @@
     </div>
 
     <script>
-        // ====== PRODUCTION CONFIGURATION ======
         const CONFIG = {
             API_BASE_URL: 'https://hashvex-technologies-backend.onrender.com/api',
-            BITCOIN_API: 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=eur&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true',
+            BITCOIN_API: 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true',
             REFRESH_INTERVAL: 30000
         };
 
-        // ====== APPLICATION STATE ======
         const AppState = {
             user: null,
             token: localStorage.getItem('hashvex_token'),
@@ -1770,7 +1740,6 @@
             news: []
         };
 
-        // ====== DOM ELEMENTS ======
         const elements = {
             loadingScreen: document.getElementById('loadingScreen'),
             authButtons: document.getElementById('authButtons'),
@@ -1786,16 +1755,12 @@
             currentYear: document.getElementById('currentYear')
         };
 
-        // ====== INITIALIZATION ======
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                // Set current year
                 elements.currentYear.textContent = new Date().getFullYear();
                 
-                // Check authentication
                 await checkAuthentication();
                 
-                // Load initial data
                 await Promise.all([
                     loadBitcoinPrice(),
                     loadMiners('rent'),
@@ -1805,10 +1770,8 @@
                     loadBalances()
                 ]);
                 
-                // Setup event listeners
                 setupEventListeners();
                 
-                // Hide loading screen
                 setTimeout(() => {
                     elements.loadingScreen.style.opacity = '0';
                     setTimeout(() => {
@@ -1822,7 +1785,6 @@
             }
         });
 
-        // ====== AUTHENTICATION FUNCTIONS ======
         async function checkAuthentication() {
             if (AppState.token) {
                 try {
@@ -1848,7 +1810,6 @@
             elements.userMenu.classList.remove('hidden');
             elements.balanceDisplay.classList.remove('hidden');
             
-            // Update user avatar initials
             if (AppState.user?.name) {
                 const initials = AppState.user.name
                     .split(' ')
@@ -1869,7 +1830,6 @@
             showNotification('Logged out successfully', 'info');
         }
 
-        // ====== BITCOIN PRICE FUNCTIONS ======
         async function loadBitcoinPrice() {
             try {
                 const response = await fetch(CONFIG.BITCOIN_API);
@@ -1877,20 +1837,19 @@
                 
                 if (data.bitcoin) {
                     AppState.bitcoinPrice = {
-                        price: data.bitcoin.eur,
-                        change: data.bitcoin.eur_24h_change,
-                        marketCap: data.bitcoin.eur_market_cap,
-                        volume: data.bitcoin.eur_24h_vol
+                        price: data.bitcoin.usd,
+                        change: data.bitcoin.usd_24h_change,
+                        marketCap: data.bitcoin.usd_market_cap,
+                        volume: data.bitcoin.usd_24h_vol
                     };
                     updateBitcoinDisplay();
                 }
             } catch (error) {
-                // Fallback data
                 AppState.bitcoinPrice = {
-                    price: 85224,
+                    price: 92415,
                     change: 2.34,
-                    marketCap: 1650000000000,
-                    volume: 69092000000
+                    marketCap: 1790000000000,
+                    volume: 74820000000
                 };
                 updateBitcoinDisplay();
             }
@@ -1900,9 +1859,9 @@
             const btc = AppState.bitcoinPrice;
             if (!btc) return;
             
-            const formatter = new Intl.NumberFormat('de-DE', {
+            const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
-                currency: 'EUR',
+                currency: 'USD',
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0
             });
@@ -1916,14 +1875,15 @@
                 `<i class="fas fa-arrow-up"></i><span>${btc.change.toFixed(2)}%</span>` :
                 `<i class="fas fa-arrow-down"></i><span>${Math.abs(btc.change).toFixed(2)}%</span>`;
             
-            // Calculate simulated high/low
             const high = btc.price * 1.05;
             const low = btc.price * 0.95;
+            const volume = btc.volume ? `$${(btc.volume / 1000000000).toFixed(2)}B` : '$74.82B';
+            
             document.getElementById('btcHigh').textContent = formatter.format(high);
             document.getElementById('btcLow').textContent = formatter.format(low);
+            document.getElementById('btcVolume').textContent = volume;
         }
 
-        // ====== MINER FUNCTIONS ======
         async function loadMiners(type) {
             const loadingEl = document.getElementById(`${type}Loading`);
             const emptyEl = document.getElementById(`${type}Empty`);
@@ -1980,11 +1940,11 @@
             card.className = `miner-card miner-card-${view}`;
             
             const price = type === 'rent' ? 
-                `€${miner.monthly_price}/month` : 
-                `€${miner.price.toLocaleString('de-DE')}`;
+                `$${miner.monthly_price}/month` : 
+                `$${miner.price.toLocaleString('en-US')}`;
             
             const discountedPrice = miner.discount_percentage > 0 ? 
-                `€${(miner.price * (1 - miner.discount_percentage / 100)).toLocaleString('de-DE')}` : 
+                `$${(miner.price * (1 - miner.discount_percentage / 100)).toLocaleString('en-US')}` : 
                 null;
             
             card.innerHTML = `
@@ -2023,7 +1983,7 @@
                         <div class="profit-item">
                             <div class="profit-label">Daily Profit</div>
                             <div class="profit-value ${miner.daily_profit >= 0 ? 'gain' : 'lose'}">
-                                €${(miner.daily_profit || 0).toFixed(2)}
+                                $${(miner.daily_profit || 0).toFixed(2)}
                             </div>
                         </div>
                         <div class="profit-item">
@@ -2103,7 +2063,6 @@
             
             container.innerHTML = html;
             
-            // Add event listeners
             container.querySelector('.pagination-prev')?.addEventListener('click', 
                 () => changePage(type, page - 1));
             container.querySelector('.pagination-next')?.addEventListener('click', 
@@ -2126,13 +2085,12 @@
             const section = document.getElementById(`miners-for-${type}`);
             if (section) {
                 window.scrollTo({
-                    top: section.offsetTop - 80,
+                    top: section.offsetTop - 60,
                     behavior: 'smooth'
                 });
             }
         }
 
-        // ====== MINER DETAILS ======
         async function showMinerDetails(minerId, type) {
             try {
                 const response = await fetch(`${CONFIG.API_BASE_URL}/miners/${minerId}`);
@@ -2150,11 +2108,11 @@
             const body = document.getElementById('modalBody');
             
             const price = type === 'rent' ? 
-                `€${miner.monthly_price}/month` : 
-                `€${miner.price.toLocaleString('de-DE')}`;
+                `$${miner.monthly_price}/month` : 
+                `$${miner.price.toLocaleString('en-US')}`;
             
             const discountedPrice = miner.discount_percentage > 0 ? 
-                `€${(miner.price * (1 - miner.discount_percentage / 100)).toLocaleString('de-DE')}` : 
+                `$${(miner.price * (1 - miner.discount_percentage / 100)).toLocaleString('en-US')}` : 
                 null;
             
             body.innerHTML = `
@@ -2171,26 +2129,26 @@
                         </div>
                     </div>
                     <div style="padding: 1rem;">
-                        <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">${miner.name}</h3>
-                        <div style="font-size: 3rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.75rem; margin-bottom: 0.25rem;">${miner.name}</h3>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 1.5rem;">
                             ${discountedPrice ? `
-                                <span style="font-size: 1.5rem; color: var(--text-tertiary); text-decoration: line-through; margin-right: 0.5rem;">
+                                <span style="font-size: 1.25rem; color: var(--text-tertiary); text-decoration: line-through; margin-right: 0.25rem;">
                                     ${price}
                                 </span>
                                 ${discountedPrice}
                             ` : price}
                         </div>
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem;">
-                            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 12px;">
-                                <div style="font-size: 0.875rem; color: var(--text-tertiary);">Hashrate</div>
-                                <div style="font-size: 1.25rem; font-weight: 700;">${miner.hashrate || '--'} TH/s</div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
+                            <div style="background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 8px;">
+                                <div style="font-size: 0.8rem; color: var(--text-tertiary);">Hashrate</div>
+                                <div style="font-size: 1.1rem; font-weight: 700;">${miner.hashrate || '--'} TH/s</div>
                             </div>
-                            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 12px;">
-                                <div style="font-size: 0.875rem; color: var(--text-tertiary);">Power Consumption</div>
-                                <div style="font-size: 1.25rem; font-weight: 700;">${miner.power_consumption || '--'}W</div>
+                            <div style="background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 8px;">
+                                <div style="font-size: 0.8rem; color: var(--text-tertiary);">Power Consumption</div>
+                                <div style="font-size: 1.1rem; font-weight: 700;">${miner.power_consumption || '--'}W</div>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                        <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                             <button class="btn btn-secondary close-modal-btn">
                                 <i class="fas fa-times"></i> Close
                             </button>
@@ -2213,13 +2171,11 @@
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
             
-            // Add event listeners
             modal.querySelector('.close-modal-btn')?.addEventListener('click', () => closeModal(modal));
             modal.querySelector('.rent-now-btn')?.addEventListener('click', (e) => handleRentNow(e.target.dataset.id));
             modal.querySelector('.add-to-cart-btn')?.addEventListener('click', (e) => handleAddToCart(e.target.dataset.id));
         }
 
-        // ====== CART FUNCTIONS ======
         async function loadCart() {
             if (!AppState.token) return;
             
@@ -2284,9 +2240,9 @@
             if (AppState.cart.length === 0) {
                 body.innerHTML = `
                     <div class="cart-empty">
-                        <i class="fas fa-shopping-cart" style="font-size: 3rem; color: var(--text-tertiary); margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Your cart is empty</h3>
-                        <p style="color: var(--text-secondary);">Add miners to get started</p>
+                        <i class="fas fa-shopping-cart" style="font-size: 2.5rem; color: var(--text-tertiary); margin-bottom: 0.75rem;"></i>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.25rem; font-size: 1.25rem;">Your cart is empty</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Add miners to get started</p>
                     </div>
                 `;
             } else {
@@ -2300,8 +2256,8 @@
                                 <img src="${item.image_url || getDefaultMinerImage()}" alt="${item.name}">
                             </div>
                             <div class="cart-item-details">
-                                <div class="cart-item-title">${item.name}</div>
-                                <div class="cart-item-price">€${item.price.toLocaleString('de-DE')}</div>
+                                <div class="cart-item-title" style="font-weight: 600; margin-bottom: 0.25rem;">${item.name}</div>
+                                <div class="cart-item-price" style="color: var(--accent-cyan); font-weight: 700;">$${item.price.toLocaleString('en-US')}</div>
                             </div>
                         </div>
                     `;
@@ -2312,10 +2268,10 @@
                         ${itemsHTML}
                     </div>
                     <div class="cart-total">
-                        <div class="cart-total-label">Total</div>
-                        <div class="cart-total-amount">€${total.toLocaleString('de-DE')}</div>
+                        <div class="cart-total-label" style="font-weight: 600;">Total</div>
+                        <div class="cart-total-amount" style="font-size: 1.25rem; font-weight: 800; color: var(--accent-cyan);">$${total.toLocaleString('en-US')}</div>
                     </div>
-                    <div style="display: flex; gap: 1rem;">
+                    <div style="display: flex; gap: 0.75rem;">
                         <button class="btn btn-secondary close-cart-btn">
                             <i class="fas fa-times"></i> Close
                         </button>
@@ -2340,7 +2296,6 @@
             
             const total = AppState.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             
-            // Check balance
             if (AppState.balances.main < total) {
                 showNotification('Insufficient balance. Please deposit funds.', 'error');
                 window.location.href = 'deposit.html';
@@ -2376,8 +2331,7 @@
                 return;
             }
             
-            // Check balance for rental deposit
-            if (AppState.balances.main < 500) { // Minimum deposit for rental
+            if (AppState.balances.main < 500) {
                 showNotification('Insufficient balance for rental deposit', 'error');
                 window.location.href = 'deposit.html';
                 return;
@@ -2389,7 +2343,6 @@
             }, 1000);
         }
 
-        // ====== BALANCE FUNCTIONS ======
         async function loadBalances() {
             if (!AppState.token) return;
             
@@ -2409,9 +2362,9 @@
         }
 
         function updateBalanceDisplay() {
-            const formatter = new Intl.NumberFormat('de-DE', {
+            const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
-                currency: 'EUR',
+                currency: 'USD',
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
             });
@@ -2420,7 +2373,6 @@
             elements.incomeBalance.textContent = formatter.format(AppState.balances.income);
         }
 
-        // ====== NEWS FUNCTIONS ======
         async function loadNews() {
             try {
                 const response = await fetch(`${CONFIG.API_BASE_URL}/news`);
@@ -2455,9 +2407,9 @@
                         <img src="${news.image_url || 'https://via.placeholder.com/400x250/1A1F2E/00A3FF?text=News'}" alt="${news.title}">
                     </div>
                     <div class="news-content">
-                        <div style="color: var(--accent-cyan); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem;">${date}</div>
-                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">${news.title}</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">${news.excerpt}</p>
+                        <div style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem;">${date}</div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">${news.title}</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.85rem;">${news.excerpt}</p>
                         <a href="${news.url}" target="_blank" class="btn btn-secondary btn-small">
                             Read More <i class="fas fa-arrow-right"></i>
                         </a>
@@ -2468,14 +2420,11 @@
             });
         }
 
-        // ====== EVENT LISTENERS ======
         function setupEventListeners() {
-            // Mobile menu
             elements.mobileMenuToggle.addEventListener('click', () => {
                 elements.navLinks.classList.toggle('active');
             });
             
-            // Navigation
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -2487,29 +2436,24 @@
                     const target = document.querySelector(targetId);
                     if (target) {
                         window.scrollTo({
-                            top: target.offsetTop - 80,
+                            top: target.offsetTop - 60,
                             behavior: 'smooth'
                         });
                     }
                     
-                    // Close mobile menu
                     elements.navLinks.classList.remove('active');
                 });
             });
             
-            // View toggles
             document.getElementById('rentGridViewBtn').addEventListener('click', () => toggleView('rent', 'grid'));
             document.getElementById('rentListViewBtn').addEventListener('click', () => toggleView('rent', 'list'));
             document.getElementById('saleGridViewBtn').addEventListener('click', () => toggleView('sale', 'grid'));
             document.getElementById('saleListViewBtn').addEventListener('click', () => toggleView('sale', 'list'));
             
-            // Cart
             elements.cartBtn.addEventListener('click', openCartModal);
             
-            // Logout
             elements.logoutBtn.addEventListener('click', logout);
             
-            // Modal close buttons
             document.querySelectorAll('.close-modal').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const modal = this.closest('.modal');
@@ -2517,16 +2461,13 @@
                 });
             });
             
-            // Close modal on outside click
             window.addEventListener('click', (e) => {
                 if (e.target.classList.contains('modal')) {
                     closeModal(e.target);
                 }
             });
             
-            // Dynamic event delegation
             document.addEventListener('click', async (e) => {
-                // View details
                 if (e.target.closest('.view-details')) {
                     const btn = e.target.closest('.view-details');
                     const minerId = btn.dataset.id;
@@ -2534,14 +2475,12 @@
                     await showMinerDetails(minerId, type);
                 }
                 
-                // Add to cart
                 if (e.target.closest('.add-to-cart')) {
                     const btn = e.target.closest('.add-to-cart');
                     const minerId = btn.dataset.id;
                     await addToCart(minerId);
                 }
                 
-                // Rent now
                 if (e.target.closest('.rent-now')) {
                     const btn = e.target.closest('.rent-now');
                     const minerId = btn.dataset.id;
@@ -2550,7 +2489,6 @@
             });
         }
 
-        // ====== UTILITY FUNCTIONS ======
         function closeModal(modal) {
             if (modal) {
                 modal.style.display = 'none';
@@ -2559,7 +2497,6 @@
         }
 
         function showNotification(message, type = 'info') {
-            // Remove existing notifications
             document.querySelectorAll('.notification').forEach(n => n.remove());
             
             const notification = document.createElement('div');
@@ -2574,7 +2511,7 @@
             
             notification.innerHTML = `
                 <i class="fas ${icons[type] || 'fa-info-circle'}"></i>
-                <span>${message}</span>
+                <span style="font-size: 0.85rem;">${message}</span>
             `;
             
             document.body.appendChild(notification);
@@ -2589,13 +2526,12 @@
             const section = document.getElementById(sectionId);
             if (section) {
                 window.scrollTo({
-                    top: section.offsetTop - 80,
+                    top: section.offsetTop - 60,
                     behavior: 'smooth'
                 });
             }
         }
 
-        // ====== GLOBAL EXPORTS ======
         window.scrollToSection = scrollToSection;
         window.checkout = checkout;
         window.closeModal = closeModal;
