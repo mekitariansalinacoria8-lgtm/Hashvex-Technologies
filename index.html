@@ -206,7 +206,7 @@
         /* Navigation */
         .nav-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: center;
         }
         
@@ -256,25 +256,12 @@
         .user-controls {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         .auth-buttons {
-            display: none;
-            position: absolute;
-            top: 70px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-card);
-            border-radius: 12px;
-            padding: 1rem;
-            box-shadow: var(--shadow-lg);
-            z-index: 999;
-            border: 1px solid var(--border-color);
-        }
-        
-        .auth-buttons.show {
             display: flex;
+            align-items: center;
             gap: 0.75rem;
         }
         
@@ -491,12 +478,14 @@
         .hero-content h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            text-align: center;
         }
         
         .hero-content p {
             font-size: 1rem;
             margin-bottom: 1.5rem;
             color: var(--text-secondary);
+            text-align: center;
         }
         
         /* Bitcoin Price Card */
@@ -522,6 +511,7 @@
             font-weight: 800;
             margin-bottom: 0.25rem;
             color: var(--text-primary);
+            text-align: center;
         }
         
         .price-change {
@@ -550,10 +540,19 @@
         }
         
         .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .view-toggle-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
+            justify-content: center;
+            margin-top: 1rem;
         }
         
         .view-toggle {
@@ -700,6 +699,7 @@
             font-weight: 700;
             margin-bottom: 0.25rem;
             color: var(--text-primary);
+            text-align: center;
         }
         
         .miner-price {
@@ -707,6 +707,7 @@
             font-weight: 800;
             color: var(--accent-cyan);
             margin-bottom: 1rem;
+            text-align: center;
         }
         
         .miner-price .original {
@@ -729,6 +730,7 @@
             gap: 0.25rem;
             font-size: 0.8rem;
             color: var(--text-secondary);
+            justify-content: center;
         }
         
         .spec-item i {
@@ -740,6 +742,7 @@
             display: flex;
             gap: 1rem;
             margin: 1rem 0;
+            justify-content: center;
         }
         
         .profit-item {
@@ -824,6 +827,7 @@
             border-radius: 16px;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
+            text-align: center;
         }
         
         .feature-card:hover {
@@ -840,9 +844,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem;
             font-size: 1.25rem;
             color: white;
+        }
+        
+        .feature-card h3 {
+            text-align: center;
         }
         
         /* ====== NEWS SECTION ====== */
@@ -912,6 +920,7 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1rem;
+            justify-content: center;
         }
         
         .footer-logo-img {
@@ -931,6 +940,7 @@
             display: flex;
             gap: 0.5rem;
             margin-top: 1rem;
+            justify-content: center;
         }
         
         .social-icon {
@@ -962,6 +972,7 @@
             font-size: 1.1rem;
             margin-bottom: 1rem;
             color: var(--text-primary);
+            text-align: center;
         }
         
         .footer-links ul {
@@ -970,6 +981,7 @@
         
         .footer-links li {
             margin-bottom: 0.5rem;
+            text-align: center;
         }
         
         .footer-links a {
@@ -1241,6 +1253,20 @@
         .mb-5 { margin-bottom: 2rem !important; }
         
         /* ====== RESPONSIVE DESIGN ====== */
+        @media (min-width: 1200px) {
+            .header-container {
+                padding: 0 2rem;
+            }
+            
+            .nav-links {
+                gap: 2rem;
+            }
+            
+            .user-controls {
+                gap: 2rem;
+            }
+        }
+        
         @media (max-width: 1200px) {
             .container {
                 padding: 0 1rem;
@@ -1312,6 +1338,7 @@
                 width: 100%;
                 padding: 0.75rem 0;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                text-align: center;
             }
             
             .user-controls {
@@ -1334,7 +1361,7 @@
             
             .section-title {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 gap: 0.75rem;
             }
             
@@ -1498,7 +1525,7 @@
                 <div class="hero-content">
                     <h1><span class="santa-hat">🎅</span>Enterprise Bitcoin Mining Solutions</h1>
                     <p>Hashvex Technologies provides cutting-edge Bitcoin mining hardware for purchase and rental. Join thousands of investors earning passive income with our reliable, high-performance mining solutions.</p>
-                    <div class="hero-buttons" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <div class="hero-buttons" style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
                         <button onclick="window.location.href='signup.html'" class="btn btn-primary">
                             <i class="fas fa-rocket"></i> Get Started
                         </button>
@@ -1510,7 +1537,7 @@
                 
                 <div class="bitcoin-price-card">
                     <div class="bitcoin-price-header">
-                        <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                        <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem; justify-content: center;">
                             <i class="fab fa-bitcoin" style="color: #F7931A;"></i> Bitcoin Price
                         </h3>
                         <div class="price-change positive" id="btcChange">
@@ -1521,17 +1548,17 @@
                     <div class="bitcoin-price" id="btcPrice">$85,224.00</div>
                     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 1rem;">
                         <div>
-                            <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.25rem;">24h High</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;" id="btcHigh">$89,220.00</div>
+                            <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.25rem; text-align: center;">24h High</div>
+                            <div style="font-weight: 700; font-size: 0.9rem; text-align: center;" id="btcHigh">$89,220.00</div>
                         </div>
                         <div>
-                            <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.25rem;">24h Low</div>
-                            <div style="font-weight: 700; font-size: 0.9rem;" id="btcLow">$84,581.00</div>
+                            <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.25rem; text-align: center;">24h Low</div>
+                            <div style="font-weight: 700; font-size: 0.9rem; text-align: center;" id="btcLow">$84,581.00</div>
                         </div>
                     </div>
                     <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.25rem;">24h Volume</div>
-                        <div style="font-weight: 700; font-size: 0.9rem;" id="btcVolume">$69.09B</div>
+                        <div style="font-size: 0.8rem; color: var(--text-tertiary); margin-bottom: 0.25rem; text-align: center;">24h Volume</div>
+                        <div style="font-weight: 700; font-size: 0.9rem; text-align: center;" id="btcVolume">$69.09B</div>
                     </div>
                 </div>
             </div>
@@ -1543,13 +1570,15 @@
         <div class="container">
             <div class="section-title">
                 <h2>Miners Available for Rent</h2>
-                <div class="view-toggle">
-                    <button id="rentGridViewBtn" class="active">
-                        <i class="fas fa-th-large"></i> Grid
-                    </button>
-                    <button id="rentListViewBtn">
-                        <i class="fas fa-list"></i> List
-                    </button>
+                <div class="view-toggle-container">
+                    <div class="view-toggle">
+                        <button id="rentGridViewBtn" class="active">
+                            <i class="fas fa-th-large"></i> Grid
+                        </button>
+                        <button id="rentListViewBtn">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                    </div>
                 </div>
             </div>
             
@@ -1576,13 +1605,15 @@
         <div class="container">
             <div class="section-title">
                 <h2>Miners Available for Purchase</h2>
-                <div class="view-toggle">
-                    <button id="saleGridViewBtn" class="active">
-                        <i class="fas fa-th-large"></i> Grid
-                    </button>
-                    <button id="saleListViewBtn">
-                        <i class="fas fa-list"></i> List
-                    </button>
+                <div class="view-toggle-container">
+                    <div class="view-toggle">
+                        <button id="saleGridViewBtn" class="active">
+                            <i class="fas fa-th-large"></i> Grid
+                        </button>
+                        <button id="saleListViewBtn">
+                            <i class="fas fa-list"></i> List
+                        </button>
+                    </div>
                 </div>
             </div>
             
@@ -1658,32 +1689,32 @@
                 <div style="text-align: center;">
                     <div style="width: 48px; height: 48px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; color: white; margin: 0 auto 1rem;">1</div>
                     <div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Select Your Miner</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Choose from verified inventory of high-performance Bitcoin miners.</p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; text-align: center;">Select Your Miner</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center;">Choose from verified inventory of high-performance Bitcoin miners.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
                     <div style="width: 48px; height: 48px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; color: white; margin: 0 auto 1rem;">2</div>
                     <div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Complete Setup</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Create account, complete verification, and set up wallet for payouts.</p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; text-align: center;">Complete Setup</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center;">Create account, complete verification, and set up wallet for payouts.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
                     <div style="width: 48px; height: 48px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; color: white; margin: 0 auto 1rem;">3</div>
                     <div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Deployment</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Our engineers deploy miners at optimal facilities with low electricity costs.</p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; text-align: center;">Deployment</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center;">Our engineers deploy miners at optimal facilities with low electricity costs.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
                     <div style="width: 48px; height: 48px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; color: white; margin: 0 auto 1rem;">4</div>
                     <div>
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Start Earning</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Begin receiving daily Bitcoin payouts directly to your wallet.</p>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; text-align: center;">Start Earning</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center;">Begin receiving daily Bitcoin payouts directly to your wallet.</p>
                     </div>
                 </div>
             </div>
@@ -1727,7 +1758,7 @@
                              class="footer-logo-img">
                         <span class="footer-logo-text">Hashvex</span>
                     </div>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; font-size: 0.9rem;">Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; font-size: 0.9rem; text-align: center;">Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
                     <div class="footer-social">
                         <a href="https://twitter.com" class="social-icon twitter" target="_blank">
                             <i class="fab fa-twitter"></i>
@@ -1766,15 +1797,15 @@
                 
                 <div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary);">Contact</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; justify-content: center;">
                         <i class="fas fa-envelope" style="color: var(--accent-cyan);"></i>
                         support@hashvex.com
                     </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; justify-content: center;">
                         <i class="fas fa-phone" style="color: var(--accent-cyan);"></i>
                         +1 606-363-2032
                     </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; justify-content: center;">
                         <i class="fas fa-map-marker-alt" style="color: var(--accent-cyan);"></i>
                         Delaware, USA
                     </p>
@@ -1859,7 +1890,7 @@
                 // Show auth buttons if not logged in
                 if (!AppState.token) {
                     setTimeout(() => {
-                        elements.authButtons.classList.add('show');
+                        elements.authButtons.style.display = 'flex';
                     }, 500);
                 }
                 
@@ -1912,9 +1943,9 @@
         }
 
         function showUserMenu() {
-            elements.authButtons.classList.remove('show');
-            elements.userMenu.classList.remove('hidden');
-            elements.balanceDisplay.classList.remove('hidden');
+            elements.authButtons.style.display = 'none';
+            elements.userMenu.style.display = 'flex';
+            elements.balanceDisplay.style.display = 'block';
             
             // Update user avatar initials
             if (AppState.user?.name) {
@@ -1931,9 +1962,9 @@
             localStorage.removeItem('hashvex_token');
             AppState.token = null;
             AppState.user = null;
-            elements.authButtons.classList.add('show');
-            elements.userMenu.classList.add('hidden');
-            elements.balanceDisplay.classList.add('hidden');
+            elements.authButtons.style.display = 'flex';
+            elements.userMenu.style.display = 'none';
+            elements.balanceDisplay.style.display = 'none';
             showNotification('Logged out successfully', 'info');
         }
 
@@ -2243,8 +2274,8 @@
                         </div>
                     </div>
                     <div style="padding: 1rem;">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem;">${miner.name}</h3>
-                        <div style="font-size: 2rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem; text-align: center;">${miner.name}</h3>
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 1.5rem; text-align: center;">
                             ${discountedPrice ? `
                                 <span style="font-size: 1rem; color: var(--text-tertiary); text-decoration: line-through; margin-right: 0.25rem;">
                                     ${price}
@@ -2254,15 +2285,15 @@
                         </div>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
                             <div style="background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 10px;">
-                                <div style="font-size: 0.8rem; color: var(--text-tertiary);">Hashrate</div>
-                                <div style="font-size: 1.1rem; font-weight: 700;">${miner.hashrate || '--'} TH/s</div>
+                                <div style="font-size: 0.8rem; color: var(--text-tertiary); text-align: center;">Hashrate</div>
+                                <div style="font-size: 1.1rem; font-weight: 700; text-align: center;">${miner.hashrate || '--'} TH/s</div>
                             </div>
                             <div style="background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 10px;">
-                                <div style="font-size: 0.8rem; color: var(--text-tertiary);">Power Consumption</div>
-                                <div style="font-size: 1.1rem; font-weight: 700;">${miner.power_consumption || '--'}W</div>
+                                <div style="font-size: 0.8rem; color: var(--text-tertiary); text-align: center;">Power Consumption</div>
+                                <div style="font-size: 1.1rem; font-weight: 700; text-align: center;">${miner.power_consumption || '--'}W</div>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); justify-content: center;">
                             <button class="btn btn-secondary close-modal-btn">
                                 <i class="fas fa-times"></i> Close
                             </button>
@@ -2357,8 +2388,8 @@
                 body.innerHTML = `
                     <div class="cart-empty">
                         <i class="fas fa-shopping-cart" style="font-size: 2rem; color: var(--text-tertiary); margin-bottom: 0.75rem;"></i>
-                        <h3 style="color: var(--text-primary); margin-bottom: 0.25rem; font-size: 1.25rem;">Your cart is empty</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Add miners to get started</p>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.25rem; font-size: 1.25rem; text-align: center;">Your cart is empty</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; text-align: center;">Add miners to get started</p>
                     </div>
                 `;
             } else {
@@ -2387,7 +2418,7 @@
                         <div style="font-weight: 600;">Total</div>
                         <div style="font-size: 1.25rem; font-weight: 800; color: var(--accent-cyan);">$${total.toLocaleString('en-US')}</div>
                     </div>
-                    <div style="display: flex; gap: 0.75rem;">
+                    <div style="display: flex; gap: 0.75rem; justify-content: center;">
                         <button class="btn btn-secondary close-cart-btn">
                             <i class="fas fa-times"></i> Close
                         </button>
@@ -2527,10 +2558,10 @@
                         <img src="${news.image_url || 'https://via.placeholder.com/400x250/1A1F2E/00A3FF?text=News'}" alt="${news.title}">
                     </div>
                     <div class="news-content">
-                        <div style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem;">${date}</div>
-                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">${news.title}</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">${news.excerpt}</p>
-                        <a href="${news.url}" target="_blank" class="btn btn-secondary btn-small">
+                        <div style="color: var(--accent-cyan); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem; text-align: center;">${date}</div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; text-align: center;">${news.title}</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem; text-align: center;">${news.excerpt}</p>
+                        <a href="${news.url}" target="_blank" class="btn btn-secondary btn-small" style="display: block; margin: 0 auto; width: fit-content;">
                             Read More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
