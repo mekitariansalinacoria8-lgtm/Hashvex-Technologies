@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hashvex | Anti-Money Laundering Policy</title>
+    <meta name="description" content="Hashvex's comprehensive Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) policy in compliance with global regulations.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-black: #000000;
+            --primary-dark: #0A0E17;
+            --primary-navy: #0F1420;
+            --accent-blue: #00A3FF;
+            --accent-cyan: #00D1FF;
+            --success-green: #00D795;
+            --error-red: #FF3B5C;
+            --warning-yellow: #FFA500;
+            --info-blue: #0066FF;
+            --accent-purple: #8A2BE2;
+            --gold: #FFD700;
+            --gold-gradient-start: #FFD700;
+            --gold-gradient-end: #FFAA00;
+            
+            /* Gray Scale */
+            --gray-light: #2A3145;
+            --gray: #8A94B3;
+            --gray-dark: #B0B8CF;
+            --darker: #1A1F2E;
+            
+            /* Theme Variables */
+            --bg-primary: var(--primary-black);
+            --bg-secondary: var(--primary-dark);
+            --bg-tertiary: #121826;
+            --bg-card: #1A1F2E;
+            --bg-card-hover: #222837;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B8CF;
+            --text-tertiary: #8A94B3;
+            --border-color: #2A3145;
+            --border-active: var(--accent-blue);
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            --gradient-success: linear-gradient(135deg, var(--success-green) 0%, #00E6A9 100%);
+            --gradient-error: linear-gradient(135deg, var(--error-red) 0%, #FF6B8B 100%);
+            --gradient-card: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-tertiary) 100%);
+            --gradient-header: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(15, 20, 32, 0.9) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--gold-gradient-start) 0%, var(--gold-gradient-end) 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+            
+            /* Animation Speeds */
+            --transition-fast: 150ms ease;
+            --transition-normal: 300ms ease;
+            --transition-slow: 500ms ease;
+            
+            /* Border Radius */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+        }
+        
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            animation: pulse 1.5s infinite ease-in-out;
+            border-radius: 16px;
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        a:hover {
+            color: var(--accent-blue);
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--gradient-header);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-md);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition-slow);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            transition: var(--transition-normal);
+            border-radius: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: var(--transition-normal);
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        
+        nav {
+            transition: var(--transition-slow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            transition: var(--transition-normal);
+            position: relative;
+            font-size: 0.95rem;
+            padding: 5px 0;
+        }
+        
+        nav a:hover {
+            color: var(--text-primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-normal);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(0, 209, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* AML Policy Page Styles */
+        .aml-section {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%);
+            min-height: 100vh;
+        }
+        
+        .aml-container {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius-lg);
+            padding: 50px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .aml-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+        }
+        
+        .aml-header {
+            margin-bottom: 40px;
+        }
+        
+        .aml-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .aml-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+        
+        .aml-header .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .aml-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .aml-section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: var(--text-primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .aml-section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+        }
+        
+        .aml-subsection {
+            margin-bottom: 30px;
+        }
+        
+        .aml-subsection-title {
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+            color: var(--text-primary);
+        }
+        
+        .aml-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .aml-list li {
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+        
+        .aml-note {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .aml-note p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+        }
+        
+        .aml-warning {
+            background-color: rgba(255, 59, 92, 0.1);
+            border-left: 3px solid var(--error-red);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .aml-warning p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+        }
+        
+        .aml-contact {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .aml-contact h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .aml-contact p {
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition-normal);
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 30px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-about p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-normal);
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .social-icon.twitter { color: #1DA1F2; }
+        .social-icon.linkedin { color: #0077B5; }
+        .social-icon.facebook { color: #4267B2; }
+        .social-icon.instagram { color: #E4405F; }
+        
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-normal);
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact i {
+            color: var(--accent-cyan);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .aml-container {
+                padding: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                backdrop-filter: blur(20px);
+                box-shadow: var(--shadow-md);
+                padding: 20px;
+                transform: translateY(-150%);
+                opacity: 0;
+                border-top: 1px solid var(--border-color);
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .aml-section {
+                padding: 140px 0 60px;
+            }
+            
+            .aml-container {
+                padding: 30px;
+            }
+            
+            .aml-header h1 {
+                font-size: 2rem;
+            }
+            
+            .aml-section-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .aml-container {
+                padding: 25px 20px;
+            }
+            
+            .aml-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .aml-section-title {
+                font-size: 1.3rem;
+            }
+            
+            .aml-subsection-title {
+                font-size: 1.1rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+             alt="Hashvex Logo" 
+             class="loading-logo">
+        <div class="loading-text">Establishing secure connection...</div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+                         alt="Hashvex Logo">
+                    <span class="logo-text">Hashvex</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                    <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                    <li><a href="index.html#why-us">Why Hashvex</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="dashboard.html" class="btn btn-outline">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- AML Policy Section -->
+    <section class="aml-section">
+        <div class="container">
+            <div class="aml-container" data-aos="fade-up">
+                <div class="aml-header">
+                    <h1>Anti-Money Laundering (AML) Policy</h1>
+                    <p>Hashvex maintains a strict zero-tolerance policy against money laundering, terrorist financing, and all forms of financial crime. This document outlines our comprehensive compliance framework in accordance with global regulatory standards.</p>
+                    <div class="last-updated">Last Updated: <span id="current-date"></span></div>
+                </div>
+                
+                <div class="aml-content">
+                    <!-- Introduction -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">1. Introduction</h2>
+                        <p>Hashvex operates with the highest standards of legal and regulatory compliance. We implement rigorous Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) measures to detect and prevent illicit financial activities through our platform.</p>
+                        
+                        <div class="aml-note">
+                            <p><strong>Policy Scope:</strong> This policy applies to all users, employees, contractors, and third-party service providers interacting with Hashvex services globally.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Regulatory Compliance -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">2. Regulatory Compliance</h2>
+                        <p>Hashvex complies with all applicable AML/CTF laws and regulations, including but not limited to:</p>
+                        
+                        <ul class="aml-list">
+                            <li>Financial Action Task Force (FATF) Recommendations</li>
+                            <li>Bank Secrecy Act (BSA) as amended by the USA PATRIOT Act</li>
+                            <li>EU Fourth and Fifth Anti-Money Laundering Directives (4AMLD/5AMLD)</li>
+                            <li>Financial Crimes Enforcement Network (FinCEN) regulations</li>
+                            <li>Office of Foreign Assets Control (OFAC) sanctions programs</li>
+                            <li>Local regulations in all jurisdictions where we operate</li>
+                        </ul>
+                        
+                        <p>We maintain relationships with regulatory bodies and law enforcement agencies to facilitate information sharing when required by law.</p>
+                    </div>
+                    
+                    <!-- User Identification & KYC -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">3. User Identification & KYC Procedures</h2>
+                        
+                        <h3 class="aml-subsection-title">3.1 Mandatory Verification</h3>
+                        <p>All users must complete our Know Your Customer (KYC) verification process before accessing core platform services, including:</p>
+                        <ul class="aml-list">
+                            <li>Deposits exceeding $1,000 USD equivalent</li>
+                            <li>Withdrawals of any amount</li>
+                            <li>Miner purchases or rentals</li>
+                            <li>Referral program withdrawals</li>
+                        </ul>
+                        
+                        <h3 class="aml-subsection-title">3.2 Document Requirements</h3>
+                        <p>We collect and verify the following information for all users:</p>
+                        <ul class="aml-list">
+                            <li><strong>Individual Users:</strong>
+                                <ul>
+                                    <li>Full legal name</li>
+                                    <li>Date of birth</li>
+                                    <li>Residential address</li>
+                                    <li>Government-issued photo ID (passport, driver's license, national ID)</li>
+                                    <li>Proof of address (utility bill, bank statement)</li>
+                                    <li>Source of funds documentation when required</li>
+                                </ul>
+                            </li>
+                            <li><strong>Corporate Users:</strong>
+                                <ul>
+                                    <li>Certificate of incorporation</li>
+                                    <li>Articles of Association</li>
+                                    <li>Register of beneficial owners (25%+ ownership)</li>
+                                    <li>Proof of directors' identities</li>
+                                    <li>Proof of company address</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <div class="aml-warning">
+                            <p><strong>Important:</strong> Providing false identification documents or misrepresenting source of funds constitutes fraud and will result in immediate account termination and reporting to authorities.</p>
+                        </div>
+                        
+                        <h3 class="aml-subsection-title">3.3 Enhanced Due Diligence (EDD)</h3>
+                        <p>Additional verification measures apply to:</p>
+                        <ul class="aml-list">
+                            <li>Politically Exposed Persons (PEPs)</li>
+                            <li>High-risk jurisdictions (as classified by FATF)</li>
+                            <li>Transactions exceeding $10,000 USD equivalent</li>
+                            <li>Unusual or suspicious activity patterns</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Risk-Based Approach -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">4. Risk-Based Approach</h2>
+                        <p>Hashvex employs a dynamic risk assessment framework that evaluates users and transactions based on multiple factors:</p>
+                        
+                        <h3 class="aml-subsection-title">4.1 Risk Categories</h3>
+                        <ul class="aml-list">
+                            <li><strong>Customer Risk:</strong> PEP status, jurisdiction, business nature</li>
+                            <li><strong>Product Risk:</strong> Anonymity features, transaction velocity</li>
+                            <li><strong>Geographic Risk:</strong> High-risk countries, sanctions lists</li>
+                            <li><strong>Channel Risk:</strong> IP anomalies, device fingerprinting</li>
+                        </ul>
+                        
+                        <h3 class="aml-subsection-title">4.2 Monitoring Thresholds</h3>
+                        <p>Automated systems flag transactions for review when they meet any of the following criteria:</p>
+                        <ul class="aml-list">
+                            <li>Single transactions exceeding $5,000 USD equivalent</li>
+                            <li>Aggregate monthly transactions exceeding $20,000 USD equivalent</li>
+                            <li>Rapid deposit/withdrawal patterns (churning)</li>
+                            <li>Transactions involving mixing services or privacy coins</li>
+                            <li>Geographic inconsistencies (e.g., IP vs. stated residency)</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Ongoing Monitoring -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">5. Ongoing Monitoring</h2>
+                        <p>Hashvex maintains continuous surveillance of all account activity through:</p>
+                        
+                        <h3 class="aml-subsection-title">5.1 Transaction Monitoring System</h3>
+                        <p>Our proprietary system analyzes transactions in real-time using:</p>
+                        <ul class="aml-list">
+                            <li>Behavioral pattern recognition</li>
+                            <li>Network analysis (common counterparties)</li>
+                            <li>Blockchain analytics (cluster identification)</li>
+                            <li>Sanctions/PEP screening</li>
+                        </ul>
+                        
+                        <h3 class="aml-subsection-title">5.2 Suspicious Activity Indicators</h3>
+                        <p>Examples of activity that triggers enhanced review:</p>
+                        <ul class="aml-list">
+                            <li>Structuring transactions to avoid reporting thresholds</li>
+                            <li>Rapid movement of funds without economic purpose</li>
+                            <li>Use of anonymous or high-risk wallet addresses</li>
+                            <li>Inconsistent user behavior with stated profile</li>
+                            <li>Attempts to obscure fund origins (layering)</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Reporting Obligations -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">6. Reporting Obligations</h2>
+                        
+                        <h3 class="aml-subsection-title">6.1 Suspicious Activity Reports (SARs)</h3>
+                        <p>Hashvex files SARs with appropriate authorities when we detect:</p>
+                        <ul class="aml-list">
+                            <li>Known or suspected violations of law</li>
+                            <li>Transactions involving illegal proceeds</li>
+                            <li>Attempts to evade reporting requirements</li>
+                            <li>No apparent lawful purpose for transactions</li>
+                        </ul>
+                        
+                        <div class="aml-note">
+                            <p><strong>Confidentiality:</strong> Users are not notified when SARs are filed or when accounts are restricted due to compliance concerns.</p>
+                        </div>
+                        
+                        <h3 class="aml-subsection-title">6.2 Asset Freezes</h3>
+                        <p>We immediately freeze accounts and assets when:</p>
+                        <ul class="aml-list">
+                            <li>Directed by court order or regulatory mandate</li>
+                            <li>Matches appear on sanctions lists</li>
+                            <li>Credible evidence of criminal activity exists</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Prohibited Activities -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">7. Prohibited Activities</h2>
+                        <p>The following activities are strictly forbidden on Hashvex:</p>
+                        
+                        <ul class="aml-list">
+                            <li>Use of stolen funds or proceeds of crime</li>
+                            <li>Terrorist financing or sanctions evasion</li>
+                            <li>Operation of unlicensed money services businesses</li>
+                            <li>Use of mixing/tumbling services</li>
+                            <li>Transactions with darknet markets</li>
+                            <li>Identity fraud or misrepresentation</li>
+                            <li>Shell company activity</li>
+                            <li>Tax evasion strategies</li>
+                        </ul>
+                        
+                        <div class="aml-warning">
+                            <p><strong>Consequences:</strong> Violations result in immediate account termination, forfeiture of funds, and reporting to financial intelligence units and law enforcement agencies worldwide.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Staff Training & System Safeguards -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">8. Staff Training & System Safeguards</h2>
+                        
+                        <h3 class="aml-subsection-title">8.1 Employee Requirements</h3>
+                        <p>All Hashvex personnel receive:</p>
+                        <ul class="aml-list">
+                            <li>Annual AML/CTF certification training</li>
+                            <li>Background checks prior to employment</li>
+                            <li>Ongoing education on emerging threats</li>
+                        </ul>
+                        
+                        <h3 class="aml-subsection-title">8.2 Technical Controls</h3>
+                        <p>Our security infrastructure includes:</p>
+                        <ul class="aml-list">
+                            <li>Chainalysis Reactor for blockchain forensics</li>
+                            <li>Jumio for identity verification</li>
+                            <li>ComplyAdvantage for sanctions/PEP screening</li>
+                            <li>Custom risk scoring algorithms</li>
+                            <li>Secure document storage with 256-bit encryption</li>
+                        </ul>
+                        
+                        <p>All systems integrate with our backend via secure API endpoints.</p>
+                    </div>
+                    
+                    <!-- Policy Updates -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">9. Policy Updates</h2>
+                        <p>Hashvex reserves the right to modify this AML Policy at any time to comply with evolving regulations. Users will be notified of material changes through:</p>
+                        
+                        <ul class="aml-list">
+                            <li>Email notifications to registered addresses</li>
+                            <li>Dashboard announcements</li>
+                            <li>Updated policy publication date</li>
+                        </ul>
+                        
+                        <p>Continued use of Hashvex services constitutes acceptance of the current AML Policy terms.</p>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="aml-subsection">
+                        <h2 class="aml-section-title">10. Contact Information</h2>
+                        <p>For AML-related inquiries or to report suspicious activity:</p>
+                        
+                        <ul class="aml-list">
+                            <li><strong>Compliance Department:</strong> compliance@hashvex.com</li>
+                            <li><strong>24/7 Support:</strong> Via dashboard live chat</li>
+                            <li><strong>Emergency:</strong> +1 606-363-2032 (Financial Crimes Hotline)</li>
+                        </ul>
+                        
+                        <div class="aml-note">
+                            <p><strong>Note:</strong> For security reasons, please do not include sensitive account information in unencrypted emails.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact CTA -->
+                    <div class="aml-contact">
+                        <h3>AML Compliance Verification</h3>
+                        <p>Financial institutions and regulators may contact our compliance team for verification of our AML program.</p>
+                        <a href="index.html#contact" class="btn btn-primary">
+                            <i class="fas fa-shield-alt"></i> Contact Compliance
+                        </a>
+                    </div>
+                    
+                    <a href="index.html" class="back-to-home">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+                             alt="Hashvex Logo">
+                        <span class="footer-logo-text">Hashvex</span>
+                    </div>
+                    <p>Enterprise Bitcoin mining platform serving institutional and retail investors worldwide with transparent, secure operations.</p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com" class="social-icon twitter" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="social-icon linkedin" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://facebook.com" class="social-icon facebook" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" class="social-icon instagram" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Platform</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                        <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                        <li><a href="accountsetting.html">Account Settings</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="aml.html">AML Policy</a></li>
+                        <li><a href="risk.html">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@hashvex.com</p>
+                    <p><i class="fas fa-phone"></i> +1 606-363-2032</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Delaware, USA</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Hashvex Technologies LLC. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Hide loading overlay when page is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-overlay').classList.add('hidden');
+            }, 1000);
+        });
+        
+        // Current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Current date for policy
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', options);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
