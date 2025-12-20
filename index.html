@@ -14,7 +14,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -36,6 +36,12 @@
             --gold: #FFD700;
             --gold-gradient-start: #FFD700;
             --gold-gradient-end: #FFAA00;
+            
+            /* Gray Scale */
+            --gray-light: #2A3145;
+            --gray: #8A94B3;
+            --gray-dark: #B0B8CF;
+            --darker: #1A1F2E;
             
             /* Status Colors */
             --gain-color: #00D795;
@@ -80,8 +86,7 @@
             
             /* Border Radius */
             --border-radius: 8px;
-            --border-radius-md: 12px;
-            --border-radius-lg: 20px;
+            --border-radius-lg: 16px;
         }
         
         /* ====== RESET & BASE STYLES ====== */
@@ -177,14 +182,14 @@
         }
         
         .header-container {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
+            gap: 3rem;
             height: 100%;
             padding: 0 2rem;
             max-width: 1440px;
             margin: 0 auto;
-            gap: 2rem;
         }
         
         .logo {
@@ -192,7 +197,6 @@
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
-            flex-shrink: 0;
         }
         
         .logo-img {
@@ -235,7 +239,6 @@
             justify-content: center;
             gap: 2rem;
             align-items: center;
-            flex: 1;
         }
         
         .nav-link {
@@ -279,14 +282,19 @@
             font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
         }
         
         /* ====== USER CONTROLS ====== */
         .user-controls {
             display: flex;
             align-items: center;
+            justify-content: flex-end;
             gap: 1.5rem;
-            flex-shrink: 0;
+            width: 100%;
+            margin-top: 0.5rem;
         }
         
         .auth-buttons {
@@ -327,7 +335,7 @@
             right: 0;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: var(--border-radius-md);
+            border-radius: 12px;
             padding: 1rem;
             min-width: 200px;
             box-shadow: var(--shadow-xl);
@@ -343,7 +351,7 @@
             position: relative;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
-            border-radius: var(--border-radius-md);
+            border-radius: 12px;
             width: 40px;
             height: 40px;
             display: flex;
@@ -374,6 +382,123 @@
             background: rgba(0, 163, 255, 0.1);
         }
         
+        /* ====== BITCOIN PRICE CARD STYLES ====== */
+        .btc-price-container {
+            width: 100%;
+            max-width: 380px;
+            background: var(--darker);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition-normal);
+            margin-left: auto;
+        }
+
+        .btc-price-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--gold);
+        }
+
+        .btc-price-header {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(10, 10, 10, 0.8) 100%);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .btc-price-header i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .btc-price-header h3 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .btc-price-display {
+            padding: 16px;
+        }
+
+        .btc-price-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .btc-price {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .btc-change {
+            padding: 4px 8px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .btc-change.positive {
+            background-color: rgba(0, 211, 149, 0.2);
+            color: var(--success-green);
+        }
+
+        .btc-change.negative {
+            background-color: rgba(255, 61, 87, 0.2);
+            color: var(--error-red);
+        }
+
+        .btc-price-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .btc-price-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .btc-price-detail span:first-child {
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .btc-price-detail span:last-child {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .btc-price-footer {
+            padding: 8px 16px;
+            background-color: var(--gray-light);
+            font-size: 0.65rem;
+            color: var(--gray);
+            text-align: center;
+        }
+
+        .bitcoin-animation {
+            color: var(--gold);
+            display: inline-block;
+            animation: pulseBitcoin 2s infinite;
+        }
+
+        @keyframes pulseBitcoin {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
         /* ====== BALANCE DISPLAY ====== */
         .balance-display {
             margin-top: 70px;
@@ -392,7 +517,7 @@
         .balance-card {
             background: rgba(0, 215, 149, 0.1);
             border: 1px solid rgba(0, 215, 149, 0.2);
-            border-radius: var(--border-radius-md);
+            border-radius: 16px;
             padding: 1.5rem 2rem;
             text-align: center;
             min-width: 250px;
@@ -430,7 +555,7 @@
         /* ====== BUTTONS ====== */
         .btn {
             padding: 0.75rem 1.75rem;
-            border-radius: var(--border-radius-md);
+            border-radius: 12px;
             font-weight: 600;
             font-size: 0.95rem;
             cursor: pointer;
@@ -482,7 +607,7 @@
         
         /* ====== HERO SECTION ====== */
         .hero {
-            padding: 6rem 0 4rem;
+            padding: 8rem 0 4rem;
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-black) 100%);
             position: relative;
             overflow: hidden;
@@ -502,7 +627,7 @@
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 3rem;
-            align-items: start;
+            align-items: flex-start;
             position: relative;
             z-index: 1;
         }
@@ -516,125 +641,7 @@
             font-size: 1.1rem;
             margin-bottom: 2rem;
             color: var(--text-secondary);
-            max-width: 600px;
-        }
-        
-        /* Bitcoin Price Container - ENTERPRISE STYLE */
-        .btc-price-container {
-            width: 100%;
-            max-width: 380px;
-            background: var(--bg-card);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-normal);
-        }
-        
-        .btc-price-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border-color: var(--gold);
-        }
-        
-        .btc-price-header {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(10, 10, 10, 0.8) 100%);
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .btc-price-header i {
-            font-size: 1.5rem;
-            color: var(--gold);
-        }
-        
-        .btc-price-header h3 {
-            font-size: 1.2rem;
-            color: var(--text-primary);
-            margin: 0;
-            font-family: 'Manrope', sans-serif;
-            font-weight: 700;
-        }
-        
-        .btc-price-display {
-            padding: 20px;
-        }
-        
-        .btc-price-main {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        
-        .btc-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--gold);
-            font-family: 'Manrope', sans-serif;
-        }
-        
-        .btc-change {
-            padding: 5px 10px;
-            border-radius: var(--border-radius);
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-        
-        .btc-change.positive {
-            background-color: rgba(0, 211, 149, 0.2);
-            color: var(--success-green);
-        }
-        
-        .btc-change.negative {
-            background-color: rgba(255, 61, 87, 0.2);
-            color: var(--error-red);
-        }
-        
-        .btc-price-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        
-        .btc-price-detail {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        
-        .btc-price-detail span:first-child {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
-            font-weight: 500;
-        }
-        
-        .btc-price-detail span:last-child {
-            font-size: 0.95rem;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-family: 'Manrope', sans-serif;
-        }
-        
-        .btc-price-footer {
-            padding: 10px 20px;
-            background-color: var(--bg-tertiary);
-            font-size: 0.7rem;
-            color: var(--text-tertiary);
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .bitcoin-animation {
-            display: inline-block;
-            color: var(--gold);
-            font-weight: 800;
+            max-width: 500px;
         }
         
         /* ====== MINERS SECTION ====== */
@@ -642,23 +649,19 @@
             padding: 4rem 0;
         }
         
-        .section-header {
+        .section-title {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 3rem;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-        
-        .section-title {
             text-align: left;
+            gap: 2rem;
         }
         
         .section-title h2 {
-            margin-bottom: 0.5rem;
+            width: auto;
             text-align: left;
-            padding-bottom: 0;
+            margin-bottom: 0;
         }
         
         .section-title h2::after {
@@ -666,16 +669,10 @@
             transform: none;
         }
         
-        .view-toggle-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
         .view-toggle {
             display: flex;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius-md);
+            border-radius: 12px;
             padding: 0.25rem;
             border: 1px solid var(--border-color);
         }
@@ -689,11 +686,7 @@
             cursor: pointer;
             font-weight: 600;
             font-size: 0.95rem;
-            min-width: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            min-width: 120px;
         }
         
         .view-toggle button.active {
@@ -718,7 +711,7 @@
         /* Miner Card */
         .miner-card {
             background: var(--bg-card);
-            border-radius: var(--border-radius-lg);
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
@@ -773,7 +766,7 @@
         
         .badge {
             padding: 0.5rem 0.75rem;
-            border-radius: var(--border-radius);
+            border-radius: 12px;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -907,7 +900,7 @@
         .pagination button {
             min-width: 40px;
             height: 40px;
-            border-radius: var(--border-radius-md);
+            border-radius: 12px;
             border: 1px solid var(--border-color);
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-primary);
@@ -942,7 +935,7 @@
         .feature-card {
             background: var(--bg-card);
             padding: 2rem;
-            border-radius: var(--border-radius-lg);
+            border-radius: 20px;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
             text-align: center;
@@ -958,7 +951,7 @@
             width: 60px;
             height: 60px;
             background: var(--gradient-primary);
-            border-radius: var(--border-radius-md);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -976,7 +969,7 @@
         
         .news-card {
             background: var(--bg-card);
-            border-radius: var(--border-radius-lg);
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
@@ -1058,7 +1051,7 @@
         .social-icon {
             width: 40px;
             height: 40px;
-            border-radius: var(--border-radius-md);
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
@@ -1133,7 +1126,7 @@
             background: var(--bg-card);
             max-width: 800px;
             margin: 1rem auto;
-            border-radius: var(--border-radius-lg);
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-xl);
             animation: modalSlideIn 0.3s ease;
@@ -1170,7 +1163,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: var(--border-radius-md);
+            border-radius: 12px;
             transition: all var(--transition-normal);
         }
         
@@ -1193,7 +1186,7 @@
         
         .miner-detail-image {
             height: 350px;
-            border-radius: var(--border-radius-lg);
+            border-radius: 20px;
             overflow: hidden;
             background: var(--bg-tertiary);
         }
@@ -1223,7 +1216,7 @@
         .cart-item-image {
             width: 80px;
             height: 80px;
-            border-radius: var(--border-radius-md);
+            border-radius: 12px;
             overflow: hidden;
             background: var(--bg-tertiary);
             flex-shrink: 0;
@@ -1239,7 +1232,7 @@
             align-items: center;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius-md);
+            border-radius: 16px;
             margin-bottom: 1.5rem;
         }
         
@@ -1266,7 +1259,7 @@
         .loading-logo {
             height: 80px;
             width: 80px;
-            border-radius: var(--border-radius-md);
+            border-radius: 16px;
             margin-bottom: 1.5rem;
             animation: pulseLogo 1.5s infinite;
         }
@@ -1288,7 +1281,7 @@
             top: 1rem;
             right: 1rem;
             padding: 1rem 1.5rem;
-            border-radius: var(--border-radius-md);
+            border-radius: 12px;
             color: white;
             z-index: 4000;
             box-shadow: var(--shadow-xl);
@@ -1350,19 +1343,6 @@
             padding: 3rem;
         }
         
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--border-color);
-            border-top-color: var(--accent-blue);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
         .no-data {
             text-align: center;
             padding: 3rem;
@@ -1393,11 +1373,54 @@
         
         @media (max-width: 992px) {
             .header-container {
-                padding: 0 1rem;
+                grid-template-columns: auto 1fr;
+                gap: 2rem;
             }
             
             .nav-links {
                 display: none;
+            }
+            
+            .user-controls {
+                justify-content: flex-end;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .balance-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .miner-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .view-toggle {
+                align-self: flex-end;
+                margin-top: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
                 position: fixed;
                 top: 70px;
                 left: 0;
@@ -1411,6 +1434,7 @@
                 visibility: hidden;
                 transition: all 0.3s ease;
                 z-index: 999;
+                display: flex;
             }
             
             .nav-links.active {
@@ -1425,84 +1449,35 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
             
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .btc-price-container {
-                max-width: 100%;
-                margin: 0 auto;
-            }
-            
-            .balance-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .miner-detail {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .view-toggle-container {
-                align-self: flex-end;
-            }
-        }
-        
-        @media (max-width: 768px) {
             .header-container {
                 padding: 0 1rem;
             }
             
             .user-controls {
-                gap: 1rem;
+                position: static;
             }
             
-            .auth-buttons {
-                gap: 0.75rem;
+            .user-menu {
+                display: none;
             }
             
             .hero {
-                padding: 5rem 0 3rem;
+                padding: 6rem 0 3rem;
             }
             
             .hero-content h1 {
                 font-size: 2rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .view-toggle-container {
-                align-self: stretch;
-                justify-content: space-between;
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
             }
             
             .view-toggle {
                 width: 100%;
                 justify-content: center;
-            }
-            
-            .view-toggle button {
-                flex: 1;
-                min-width: auto;
-                padding: 0.75rem 1rem;
             }
             
             .miner-card-list {
@@ -1524,13 +1499,9 @@
                 font-size: 2rem;
             }
             
-            .btc-price {
-                font-size: 1.75rem;
-            }
-            
-            .btc-price-details {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            .btc-price-container {
+                max-width: 100%;
+                margin: 0 auto;
             }
         }
         
@@ -1541,10 +1512,6 @@
             
             .hero-content h1 {
                 font-size: 1.75rem;
-            }
-            
-            .btc-price {
-                font-size: 1.5rem;
             }
             
             .balance-card {
@@ -1573,53 +1540,21 @@
                 padding: 0.75rem 1.5rem;
             }
             
-            .auth-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .auth-buttons .btn {
-                width: 100%;
-            }
-            
-            .user-controls {
-                flex-wrap: wrap;
-                justify-content: flex-end;
-            }
-            
-            .section-header {
-                gap: 1rem;
-            }
-            
-            .view-toggle-container {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .btc-price-main {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .btc-change {
-                align-self: flex-start;
+            .btc-price {
+                font-size: 1.5rem;
             }
             
             .btc-price-details {
                 grid-template-columns: 1fr;
             }
             
-            .miner-specs {
-                grid-template-columns: 1fr;
+            .auth-buttons {
+                gap: 0.5rem;
             }
             
-            .profitability-display {
-                flex-direction: column;
-                gap: 1rem;
+            .auth-buttons .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -1675,16 +1610,16 @@
                     </div>
                     
                     <div class="user-dropdown">
-                        <a href="dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: var(--border-radius); transition: background var(--transition-normal); font-size: 0.95rem;">
+                        <a href="dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.95rem;">
                             <i class="fas fa-chart-line"></i> Dashboard
                         </a>
-                        <a href="accountsetting.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: var(--border-radius); transition: background var(--transition-normal); font-size: 0.95rem;">
+                        <a href="accountsetting.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.95rem;">
                             <i class="fas fa-user-cog"></i> Account Settings
                         </a>
-                        <a href="balances.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: var(--border-radius); transition: background var(--transition-normal); font-size: 0.95rem;">
+                        <a href="balances.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.95rem;">
                             <i class="fas fa-wallet"></i> Balances
                         </a>
-                        <a href="#" id="logoutBtn" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: var(--border-radius); transition: background var(--transition-normal); font-size: 0.95rem;">
+                        <a href="#" id="logoutBtn" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.95rem;">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
                     </div>
@@ -1720,7 +1655,7 @@
                 <div class="hero-content">
                     <h1><span class="santa-hat">🎅</span>Enterprise Bitcoin Mining Solutions</h1>
                     <p>Hashvex Technologies provides cutting-edge Bitcoin mining hardware for purchase and rental. Join thousands of investors earning passive income with our reliable, high-performance mining solutions.</p>
-                    <div class="hero-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                    <div class="hero-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <button onclick="window.location.href='signup.html'" class="btn btn-primary">
                             <i class="fas fa-rocket"></i> Get Started
                         </button>
@@ -1766,19 +1701,15 @@
     <!-- Miners for Rent -->
     <section id="miners-for-rent" class="miners-section">
         <div class="container">
-            <div class="section-header">
-                <div class="section-title">
-                    <h2>Miners Available for Rent</h2>
-                </div>
-                <div class="view-toggle-container">
-                    <div class="view-toggle">
-                        <button id="rentGridViewBtn" class="active">
-                            <i class="fas fa-th-large"></i> Grid View
-                        </button>
-                        <button id="rentListViewBtn">
-                            <i class="fas fa-list"></i> List View
-                        </button>
-                    </div>
+            <div class="section-title">
+                <h2>Miners Available for Rent</h2>
+                <div class="view-toggle">
+                    <button id="rentGridViewBtn" class="active">
+                        <i class="fas fa-th-large"></i> Grid View
+                    </button>
+                    <button id="rentListViewBtn">
+                        <i class="fas fa-list"></i> List View
+                    </button>
                 </div>
             </div>
             
@@ -1803,19 +1734,15 @@
     <!-- Miners for Sale -->
     <section id="miners-for-sale" class="miners-section" style="background: var(--bg-secondary);">
         <div class="container">
-            <div class="section-header">
-                <div class="section-title">
-                    <h2>Miners Available for Purchase</h2>
-                </div>
-                <div class="view-toggle-container">
-                    <div class="view-toggle">
-                        <button id="saleGridViewBtn" class="active">
-                            <i class="fas fa-th-large"></i> Grid View
-                        </button>
-                        <button id="saleListViewBtn">
-                            <i class="fas fa-list"></i> List View
-                        </button>
-                    </div>
+            <div class="section-title">
+                <h2>Miners Available for Purchase</h2>
+                <div class="view-toggle">
+                    <button id="saleGridViewBtn" class="active">
+                        <i class="fas fa-th-large"></i> Grid View
+                    </button>
+                    <button id="saleListViewBtn">
+                        <i class="fas fa-list"></i> List View
+                    </button>
                 </div>
             </div>
             
@@ -1889,7 +1816,7 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto;">
                 <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">1</div>
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">1</div>
                     <div>
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Select Your Miner</h3>
                         <p style="color: var(--text-secondary); font-size: 1rem;">Choose from verified inventory of high-performance Bitcoin miners.</p>
@@ -1897,7 +1824,7 @@
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">2</div>
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">2</div>
                     <div>
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Complete Setup</h3>
                         <p style="color: var(--text-secondary); font-size: 1rem;">Create account, complete verification, and set up wallet for payouts.</p>
@@ -1905,7 +1832,7 @@
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">3</div>
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">3</div>
                     <div>
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Deployment</h3>
                         <p style="color: var(--text-secondary); font-size: 1rem;">Our engineers deploy miners at optimal facilities with low electricity costs.</p>
@@ -1913,7 +1840,7 @@
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">4</div>
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: white; margin: 0 auto 1.5rem;">4</div>
                     <div>
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Start Earning</h3>
                         <p style="color: var(--text-secondary); font-size: 1rem;">Begin receiving daily Bitcoin payouts directly to your wallet.</p>
@@ -2096,7 +2023,9 @@
                 
                 // Show auth buttons if not logged in
                 if (!AppState.token) {
-                    elements.authButtons.style.display = 'flex';
+                    setTimeout(() => {
+                        elements.authButtons.classList.add('show');
+                    }, 500);
                 }
                 
                 // Load initial data
@@ -2148,7 +2077,7 @@
         }
 
         function showUserMenu() {
-            elements.authButtons.style.display = 'none';
+            elements.authButtons.classList.remove('show');
             elements.userMenu.classList.remove('hidden');
             elements.balanceDisplay.classList.remove('hidden');
             
@@ -2167,7 +2096,7 @@
             localStorage.removeItem('hashvex_token');
             AppState.token = null;
             AppState.user = null;
-            elements.authButtons.style.display = 'flex';
+            elements.authButtons.classList.add('show');
             elements.userMenu.classList.add('hidden');
             elements.balanceDisplay.classList.add('hidden');
             showNotification('Logged out successfully', 'info');
@@ -2187,8 +2116,12 @@
                         volume: data.bitcoin.usd_24h_vol
                     };
                     updateBitcoinDisplay();
+                    
+                    // Schedule refresh
+                    setTimeout(loadBitcoinPrice, CONFIG.REFRESH_INTERVAL);
                 }
             } catch (error) {
+                console.error('Bitcoin price error:', error);
                 // Fallback data
                 AppState.bitcoinPrice = {
                     price: 85224,
@@ -2197,10 +2130,10 @@
                     volume: 69092000000
                 };
                 updateBitcoinDisplay();
+                
+                // Retry after delay
+                setTimeout(loadBitcoinPrice, 10000);
             }
-            
-            // Schedule refresh
-            setTimeout(loadBitcoinPrice, CONFIG.REFRESH_INTERVAL);
         }
 
         function updateBitcoinDisplay() {
@@ -2216,19 +2149,25 @@
             
             elements.btcPrice.textContent = formatter.format(btc.price);
             
-            const changePercent = `${btc.change >= 0 ? '+' : ''}${btc.change.toFixed(2)}%`;
-            elements.btcChange.textContent = changePercent;
+            const changePercent = btc.change ? btc.change.toFixed(2) : '0.00';
+            const changeValue = `${btc.change >= 0 ? '+' : ''}${changePercent}%`;
+            elements.btcChange.textContent = changeValue;
             elements.btcChange.className = `btc-change ${btc.change >= 0 ? 'positive' : 'negative'}`;
             
-            // Calculate simulated high/low
-            const high = btc.price * 1.05;
-            const low = btc.price * 0.95;
+            // Calculate simulated high/low based on current price
+            const high = btc.price * (1 + Math.abs(btc.change || 0.05) / 100);
+            const low = btc.price * (1 - Math.abs(btc.change || 0.05) / 100);
+            
             elements.btcHigh.textContent = formatter.format(high);
             elements.btcLow.textContent = formatter.format(low);
             
             // Format volume
-            const volumeBtc = (btc.volume / btc.price).toFixed(0);
-            elements.btcVolume.textContent = `${volumeBtc} BTC`;
+            if (btc.volume) {
+                const volumeB = (btc.volume / 1000000000).toFixed(2);
+                elements.btcVolume.textContent = `$${volumeB}B`;
+            } else {
+                elements.btcVolume.textContent = '$0.00';
+            }
         }
 
         // ====== MINER FUNCTIONS ======
@@ -2254,10 +2193,13 @@
                     if (AppState.miners[type].items.length === 0) {
                         emptyEl.classList.remove('hidden');
                     }
+                } else {
+                    throw new Error('Failed to load miners');
                 }
             } catch (error) {
                 console.error(`Error loading ${type} miners:`, error);
                 emptyEl.classList.remove('hidden');
+                showNotification(`Failed to load ${type} miners`, 'error');
             } finally {
                 loadingEl.classList.add('hidden');
             }
@@ -2447,8 +2389,11 @@
                 if (response.ok) {
                     const miner = await response.json();
                     openMinerModal(miner, type);
+                } else {
+                    throw new Error('Failed to load miner details');
                 }
             } catch (error) {
+                console.error('Miner details error:', error);
                 showNotification('Failed to load miner details', 'error');
             }
         }
@@ -2489,11 +2434,11 @@
                             ` : price}
                         </div>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem;">
-                            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: var(--border-radius-md);">
+                            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 12px;">
                                 <div style="font-size: 0.9rem; color: var(--text-tertiary);">Hashrate</div>
                                 <div style="font-size: 1.25rem; font-weight: 700;">${miner.hashrate || '--'} TH/s</div>
                             </div>
-                            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: var(--border-radius-md);">
+                            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 12px;">
                                 <div style="font-size: 0.9rem; color: var(--text-tertiary);">Power Consumption</div>
                                 <div style="font-size: 1.25rem; font-weight: 700;">${miner.power_consumption || '--'}W</div>
                             </div>
@@ -2567,10 +2512,11 @@
                     await loadCart();
                     showNotification('Added to cart', 'success');
                 } else {
-                    showNotification('Failed to add to cart', 'error');
+                    throw new Error('Failed to add to cart');
                 }
             } catch (error) {
-                showNotification('Error adding to cart', 'error');
+                console.error('Add to cart error:', error);
+                showNotification('Failed to add to cart', 'error');
             }
         }
 
@@ -2666,8 +2612,11 @@
                     await loadBalances();
                     closeModal(document.getElementById('cartModal'));
                     showNotification('Purchase successful!', 'success');
+                } else {
+                    throw new Error('Checkout failed');
                 }
             } catch (error) {
+                console.error('Checkout error:', error);
                 showNotification('Checkout failed', 'error');
             }
         }
