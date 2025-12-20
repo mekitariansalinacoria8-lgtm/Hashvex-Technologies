@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hashvex | Frequently Asked Questions</title>
+    <meta name="description" content="Get answers to common questions about Hashvex enterprise Bitcoin mining platform.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-black: #000000;
+            --primary-dark: #0A0E17;
+            --primary-navy: #0F1420;
+            --accent-blue: #00A3FF;
+            --accent-cyan: #00D1FF;
+            --success-green: #00D795;
+            --error-red: #FF3B5C;
+            --warning-yellow: #FFA500;
+            --info-blue: #0066FF;
+            --accent-purple: #8A2BE2;
+            --gold: #FFD700;
+            --gold-gradient-start: #FFD700;
+            --gold-gradient-end: #FFAA00;
+            
+            /* Gray Scale */
+            --gray-light: #2A3145;
+            --gray: #8A94B3;
+            --gray-dark: #B0B8CF;
+            --darker: #1A1F2E;
+            
+            /* Theme Variables */
+            --bg-primary: var(--primary-black);
+            --bg-secondary: var(--primary-dark);
+            --bg-tertiary: #121826;
+            --bg-card: #1A1F2E;
+            --bg-card-hover: #222837;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B8CF;
+            --text-tertiary: #8A94B3;
+            --border-color: #2A3145;
+            --border-active: var(--accent-blue);
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            --gradient-success: linear-gradient(135deg, var(--success-green) 0%, #00E6A9 100%);
+            --gradient-error: linear-gradient(135deg, var(--error-red) 0%, #FF6B8B 100%);
+            --gradient-card: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-tertiary) 100%);
+            --gradient-header: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(15, 20, 32, 0.9) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--gold-gradient-start) 0%, var(--gold-gradient-end) 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+            
+            /* Animation Speeds */
+            --transition-fast: 150ms ease;
+            --transition-normal: 300ms ease;
+            --transition-slow: 500ms ease;
+            
+            /* Border Radius */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+        }
+        
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            animation: pulse 1.5s infinite ease-in-out;
+            border-radius: 16px;
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        a:hover {
+            color: var(--accent-blue);
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--gradient-header);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-md);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition-slow);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            transition: var(--transition-normal);
+            border-radius: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: var(--transition-normal);
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        
+        nav {
+            transition: var(--transition-slow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            transition: var(--transition-normal);
+            position: relative;
+            font-size: 0.95rem;
+            padding: 5px 0;
+        }
+        
+        nav a:hover {
+            color: var(--text-primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-normal);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(0, 209, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* FAQ Page Styles */
+        .faq-section {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%);
+            min-height: 100vh;
+        }
+        
+        .faq-container {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius-lg);
+            padding: 50px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .faq-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+        }
+        
+        .faq-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .faq-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .faq-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-search {
+            max-width: 600px;
+            margin: 30px auto 40px;
+            position: relative;
+        }
+        
+        .faq-search input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            transition: var(--transition-normal);
+            padding-right: 50px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+        }
+        
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        .faq-search button {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-tertiary);
+            cursor: pointer;
+        }
+        
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .faq-category-btn {
+            padding: 8px 16px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            color: var(--text-secondary);
+        }
+        
+        .faq-category-btn.active,
+        .faq-category-btn:hover {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: var(--accent-blue);
+        }
+        
+        .faq-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-group {
+            margin-bottom: 30px;
+        }
+        
+        .faq-group-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .faq-group-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-normal);
+        }
+        
+        .faq-item:hover {
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .faq-question {
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: var(--transition-normal);
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(0, 163, 255, 0.1);
+        }
+        
+        .faq-question i {
+            transition: var(--transition-normal);
+            color: var(--accent-cyan);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .faq-answer-content {
+            padding: 5px 0;
+        }
+        
+        .faq-answer-content p {
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer-content li {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        
+        .faq-contact {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .faq-contact h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .faq-contact p {
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition-normal);
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 30px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-about p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-normal);
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .social-icon.twitter { color: #1DA1F2; }
+        .social-icon.linkedin { color: #0077B5; }
+        .social-icon.facebook { color: #4267B2; }
+        .social-icon.instagram { color: #E4405F; }
+        
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-normal);
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-contact i {
+            color: var(--accent-cyan);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .faq-container {
+                padding: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                backdrop-filter: blur(20px);
+                box-shadow: var(--shadow-md);
+                padding: 20px;
+                transform: translateY(-150%);
+                opacity: 0;
+                border-top: 1px solid var(--border-color);
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .faq-section {
+                padding: 140px 0 60px;
+            }
+            
+            .faq-container {
+                padding: 30px;
+            }
+            
+            .faq-header h1 {
+                font-size: 2rem;
+            }
+            
+            .faq-group-title {
+                font-size: 1.3rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .faq-container {
+                padding: 25px 20px;
+            }
+            
+            .faq-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .faq-group-title {
+                font-size: 1.2rem;
+            }
+            
+            .faq-question {
+                padding: 15px;
+                font-size: 0.95rem;
+            }
+            
+            .faq-categories {
+                gap: 8px;
+            }
+            
+            .faq-category-btn {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+             alt="Hashvex Logo" 
+             class="loading-logo">
+        <div class="loading-text">Establishing secure connection...</div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+                         alt="Hashvex Logo">
+                    <span class="logo-text">Hashvex</span>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                    <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                    <li><a href="index.html#why-us">Why Hashvex</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="dashboard.html" class="btn btn-outline">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container" data-aos="fade-up">
+                <div class="faq-header">
+                    <h1>Frequently Asked Questions</h1>
+                    <p>Find answers to common questions about Hashvex enterprise Bitcoin mining platform.</p>
+                </div>
+                
+                <div class="faq-search">
+                    <input type="text" placeholder="Search FAQs...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="faq-categories">
+                    <button class="faq-category-btn active" data-category="all">All</button>
+                    <button class="faq-category-btn" data-category="general">General</button>
+                    <button class="faq-category-btn" data-category="accounts">Accounts</button>
+                    <button class="faq-category-btn" data-category="mining">Mining</button>
+                    <button class="faq-category-btn" data-category="transactions">Transactions</button>
+                    <button class="faq-category-btn" data-category="security">Security</button>
+                    <button class="faq-category-btn" data-category="hardware">Hardware</button>
+                </div>
+                
+                <div class="faq-content">
+                    <!-- General Questions -->
+                    <div class="faq-group" data-category="general">
+                        <h2 class="faq-group-title">General Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is Hashvex?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex is an enterprise-grade Bitcoin mining platform that provides institutional and retail investors with access to industrial-scale mining operations through hardware purchase and rental solutions. We combine cutting-edge mining technology with professional management services to deliver competitive returns on cryptocurrency investments.</p>
+                                    <p>Our platform is designed for serious investors seeking exposure to Bitcoin mining without the operational complexities of running their own facilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Is Hashvex a legitimate mining platform?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Yes, Hashvex is a fully registered and compliant cryptocurrency mining platform. We operate under Hashvex Technologies LLC, registered in Delaware, USA. Our operations are transparent, and we adhere to all applicable regulations in the jurisdictions where we operate.</p>
+                                    <p>Key indicators of our legitimacy include:</p>
+                                    <ul>
+                                        <li>Registered business entity with verifiable documentation</li>
+                                        <li>Transparent terms of service and privacy policy</li>
+                                        <li>Physical mining facilities with verifiable locations</li>
+                                        <li>Professional customer support and responsive service</li>
+                                        <li>Positive track record with institutional partners</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I get started with Hashvex?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Getting started with Hashvex is simple and takes just a few minutes:</p>
+                                    <ol>
+                                        <li>Click the "Sign Up" button on our homepage</li>
+                                        <li>Complete the registration form with your details</li>
+                                        <li>Verify your email address</li>
+                                        <li>Log in to your new Hashvex account</li>
+                                        <li>Browse available miners for purchase or rental</li>
+                                        <li>Make your first deposit and select your mining solution</li>
+                                        <li>Start earning Bitcoin rewards according to your chosen plan</li>
+                                    </ol>
+                                    <p>Our platform is designed to be intuitive, and our support team is available 24/7 if you need any assistance during the process.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What cryptocurrencies do you support?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex currently supports the following cryptocurrencies:</p>
+                                    <ul>
+                                        <li>Bitcoin (BTC) - Primary mining operation</li>
+                                        <li>Ethereum (ETH) - For payments and conversions</li>
+                                        <li>Litecoin (LTC) - For payments and conversions</li>
+                                        <li>Bitcoin Cash (BCH) - For payments and conversions</li>
+                                        <li>Tether (USDT) - ERC20 and TRC20 for stable payments</li>
+                                    </ul>
+                                    <p>We primarily focus on Bitcoin mining, which generates BTC rewards. All payouts are made in Bitcoin unless otherwise specified in your mining contract.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Account Questions -->
+                    <div class="faq-group" data-category="accounts">
+                        <h2 class="faq-group-title">Account Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Why is KYC (Know Your Customer) required?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>KYC verification is a standard security procedure required by financial regulations to prevent fraud, money laundering, and other illegal activities. At Hashvex, we implement KYC to:</p>
+                                    <ul>
+                                        <li>Protect our platform and users from fraudulent activities</li>
+                                        <li>Comply with anti-money laundering (AML) regulations</li>
+                                        <li>Ensure the security of all transactions on our platform</li>
+                                        <li>Maintain the integrity of our mining operations</li>
+                                    </ul>
+                                    <p>KYC is required for all accounts making purchases or rentals above $10,000 equivalent value.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What documents are accepted for KYC verification?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>For KYC verification, we accept the following documents:</p>
+                                    <p><strong>Identity Verification:</strong></p>
+                                    <ul>
+                                        <li>Passport (preferred)</li>
+                                        <li>Driver's license</li>
+                                        <li>National ID card</li>
+                                    </ul>
+                                    <p><strong>Address Verification:</strong></p>
+                                    <ul>
+                                        <li>Utility bill (electricity, water, gas) not older than 3 months</li>
+                                        <li>Bank statement</li>
+                                        <li>Government-issued tax bill</li>
+                                    </ul>
+                                    <p>All documents must be clear, valid, and show your full name and residential address. Documents in languages other than English must be accompanied by a certified translation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How long does KYC approval take?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Our standard KYC processing time is 1-3 business days after submission of all required documents. Processing may take longer during periods of high volume or if additional verification is required.</p>
+                                    <p>You can help expedite the process by:</p>
+                                    <ul>
+                                        <li>Ensuring all documents are clear and legible</li>
+                                        <li>Providing complete documents (all corners visible, no cut-off information)</li>
+                                        <li>Making sure the name and address on all documents match exactly</li>
+                                    </ul>
+                                    <p>You will receive email notifications about your KYC status throughout the verification process.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What should I do if I forget my password?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>If you've forgotten your password, follow these steps to reset it:</p>
+                                    <ol>
+                                        <li>Go to the Hashvex login page</li>
+                                        <li>Click on "Forgot Password"</li>
+                                        <li>Enter the email address associated with your account</li>
+                                        <li>Check your email for a password reset link (check spam folder if not received)</li>
+                                        <li>Click the link and follow the instructions to create a new password</li>
+                                    </ol>
+                                    <p>For security reasons, password reset links expire after 24 hours. If you encounter any issues, please contact our support team for assistance.</p>
+                                    <p><strong>Security Tip:</strong> Always create a strong, unique password that you don't use for other services.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mining Questions -->
+                    <div class="faq-group" data-category="mining">
+                        <h2 class="faq-group-title">Mining Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What mining solutions are available?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex offers several mining solutions designed to suit different investment levels and risk preferences:</p>
+                                    <p><strong>1. Miner Purchase</strong></p>
+                                    <ul>
+                                        <li>Ownership of physical mining hardware</li>
+                                        <li>Hosting at our industrial facilities</li>
+                                        <li>Maintenance and monitoring included</li>
+                                        <li>Direct BTC rewards minus electricity costs</li>
+                                    </ul>
+                                    <p><strong>2. Miner Rental</strong></p>
+                                    <ul>
+                                        <li>Fixed-term rental of mining capacity</li>
+                                        <li>No hardware ownership required</li>
+                                        <li>All-inclusive monthly pricing</li>
+                                        <li>Predictable cost structure</li>
+                                    </ul>
+                                    <p><strong>3. Cloud Mining Contracts</strong></p>
+                                    <ul>
+                                        <li>Hashrate-based contracts</li>
+                                        <li>Flexible durations (30-365 days)</li>
+                                        <li>Daily BTC payouts</li>
+                                        <li>No technical knowledge required</li>
+                                    </ul>
+                                    <p>All solutions include 24/7 monitoring, professional maintenance, and access to low-cost renewable energy sources.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What is the expected return on mining investments?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>The expected returns vary based on several factors including Bitcoin price, network difficulty, and electricity costs. Here are typical projections:</p>
+                                    <p><strong>ASIC Miner Purchase:</strong></p>
+                                    <ul>
+                                        <li>ROI: 12-18 months under current market conditions</li>
+                                        <li>Daily revenue: $25-150 per machine depending on model</li>
+                                        <li>Operating costs: $3-10 per day for electricity</li>
+                                    </ul>
+                                    <p><strong>Miner Rental:</strong></p>
+                                    <ul>
+                                        <li>Daily returns: 1.5-3.5% on invested capital</li>
+                                        <li>Fixed costs: Included in monthly rental fee</li>
+                                        <li>Net profitability: Based on BTC price performance</li>
+                                    </ul>
+                                    <p><strong>Cloud Mining:</strong></p>
+                                    <ul>
+                                        <li>Daily returns: 0.8-1.8% depending on contract</li>
+                                        <li>All-inclusive pricing</li>
+                                        <li>Break-even: Typically 60-90 days</li>
+                                    </ul>
+                                    <p><strong>Important:</strong> Mining profitability fluctuates with Bitcoin price and network difficulty. Our dashboard provides real-time profitability calculators for each miner model.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How does the mining reward system work?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex's mining reward system operates as follows:</p>
+                                    <ul>
+                                        <li><strong>Pool Mining:</strong> We pool all our mining power to increase block discovery frequency</li>
+                                        <li><strong>Daily Payouts:</strong> Rewards are distributed daily based on contributed hashrate</li>
+                                        <li><strong>Automatic Reinvestment:</strong> Option to automatically compound earnings into additional mining power</li>
+                                        <li><strong>Withdrawal Flexibility:</strong> Withdraw BTC rewards to any wallet at any time</li>
+                                    </ul>
+                                    <p>Key features of our reward system:</p>
+                                    <ul>
+                                        <li>Transparent reward calculation visible in dashboard</li>
+                                        <li>No hidden fees or charges</li>
+                                        <li>Real-time monitoring of mining performance</li>
+                                        <li>Automated efficiency optimization</li>
+                                    </ul>
+                                    <p>Mining rewards are paid directly from our mining pool earnings, with detailed breakdowns available in your account dashboard.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Transaction Questions -->
+                    <div class="faq-group" data-category="transactions">
+                        <h2 class="faq-group-title">Transaction Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What payment methods do you accept?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex accepts the following payment methods for deposits and purchases:</p>
+                                    <p><strong>Cryptocurrency Payments:</strong></p>
+                                    <ul>
+                                        <li>Bitcoin (BTC)</li>
+                                        <li>Ethereum (ETH)</li>
+                                        <li>Litecoin (LTC)</li>
+                                        <li>Bitcoin Cash (BCH)</li>
+                                        <li>Tether (USDT) - ERC20 and TRC20 networks</li>
+                                    </ul>
+                                    <p><strong>Fiat Currency Options:</strong></p>
+                                    <ul>
+                                        <li>Bank wire transfer (USD, EUR, GBP)</li>
+                                        <li>Credit/debit cards (Visa, Mastercard) - through our payment processors</li>
+                                        <li>SEPA transfers for European customers</li>
+                                    </ul>
+                                    <p>All cryptocurrency payments require network confirmations before being credited to your account. The required confirmations vary by cryptocurrency:</p>
+                                    <ul>
+                                        <li>BTC: 3 confirmations</li>
+                                        <li>ETH: 12 confirmations</li>
+                                        <li>LTC: 6 confirmations</li>
+                                        <li>BCH: 3 confirmations</li>
+                                        <li>USDT: 12 confirmations (ERC20), 6 confirmations (TRC20)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How long do deposits and withdrawals take to process?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Processing times vary depending on the payment method and network conditions:</p>
+                                    <p><strong>Deposit Processing Times:</strong></p>
+                                    <ul>
+                                        <li><strong>Cryptocurrency:</strong> 5-30 minutes after required network confirmations</li>
+                                        <li><strong>Bank Wire:</strong> 1-3 business days</li>
+                                        <li><strong>Credit/Debit Card:</strong> Instant to 1 hour</li>
+                                        <li><strong>SEPA Transfer:</strong> 1-2 business days</li>
+                                    </ul>
+                                    <p><strong>Withdrawal Processing Times:</strong></p>
+                                    <ul>
+                                        <li><strong>Bitcoin Rewards:</strong> Processed within 24 hours (usually within 4 hours)</li>
+                                        <li><strong>Bank Wire:</strong> 2-5 business days</li>
+                                        <li><strong>SEPA Transfer:</strong> 1-3 business days</li>
+                                    </ul>
+                                    <p>All withdrawals are subject to security review, which may add additional processing time for large or unusual transactions. You'll receive email notifications at each stage of the withdrawal process.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Are there any fees for deposits or withdrawals?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex aims to keep fees as low as possible. Our current fee structure is as follows:</p>
+                                    <p><strong>Deposit Fees:</strong></p>
+                                    <ul>
+                                        <li><strong>Cryptocurrency:</strong> Free (network fees paid by sender)</li>
+                                        <li><strong>Bank Wire:</strong> 0.5% (min $25, max $250)</li>
+                                        <li><strong>Credit/Debit Card:</strong> 3.5%</li>
+                                        <li><strong>SEPA Transfer:</strong> 0.1% (min €10, max €100)</li>
+                                    </ul>
+                                    <p><strong>Withdrawal Fees:</strong></p>
+                                    <ul>
+                                        <li><strong>Bitcoin Rewards:</strong> Network fee only (typically $2-5)</li>
+                                        <li><strong>Bank Wire:</strong> 1% (min $30, max $300)</li>
+                                        <li><strong>SEPA Transfer:</strong> 0.2% (min €15, max €150)</li>
+                                    </ul>
+                                    <p><strong>Mining Fees:</strong></p>
+                                    <ul>
+                                        <li><strong>Pool Fee:</strong> 1% of mining rewards</li>
+                                        <li><strong>Maintenance:</strong> Included in hosting fees for purchased miners</li>
+                                        <li><strong>Electricity:</strong> $0.045-0.065 per kWh depending on location</li>
+                                    </ul>
+                                    <p>All fees are clearly displayed before you confirm any transaction. We periodically review and update our fee structure to remain competitive.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Questions -->
+                    <div class="faq-group" data-category="security">
+                        <h2 class="faq-group-title">Security Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do you secure my funds and data?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>At Hashvex, security is our top priority. We implement multiple layers of protection to safeguard your funds and personal information:</p>
+                                    <p><strong>Fund Security:</strong></p>
+                                    <ul>
+                                        <li>95% of digital assets held in cold storage (offline)</li>
+                                        <li>Multi-signature wallets for all hot wallets</li>
+                                        <li>Regular security audits by third-party firms</li>
+                                        <li>Insurance coverage for digital assets</li>
+                                        <li>Reserve fund to ensure liquidity</li>
+                                    </ul>
+                                    <p><strong>Data Protection:</strong></p>
+                                    <ul>
+                                        <li>Bank-grade 256-bit SSL encryption</li>
+                                        <li>Two-factor authentication (2FA) for all accounts</li>
+                                        <li>Regular penetration testing of our systems</li>
+                                        <li>Strict access controls and monitoring</li>
+                                        <li>GDPR-compliant data handling procedures</li>
+                                    </ul>
+                                    <p><strong>Account Security Features:</strong></p>
+                                    <ul>
+                                        <li>Login notifications</li>
+                                        <li>Withdrawal confirmation emails</li>
+                                        <li>Device management and recognition</li>
+                                        <li>Session timeouts</li>
+                                        <li>IP address monitoring</li>
+                                    </ul>
+                                    <p>We continuously update our security measures to address emerging threats in the cryptocurrency space.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What security measures should I take for my account?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>While we implement robust security measures on our end, you play a crucial role in keeping your account secure. Here are our top recommendations:</p>
+                                    <p><strong>Essential Security Practices:</strong></p>
+                                    <ul>
+                                        <li><strong>Enable Two-Factor Authentication (2FA):</strong> Use an authenticator app (Google Authenticator, Authy) rather than SMS when possible</li>
+                                        <li><strong>Use a Strong, Unique Password:</strong> At least 12 characters with mixed cases, numbers, and symbols</li>
+                                        <li><strong>Beware of Phishing:</strong> Always check URLs before entering credentials; we'll never ask for your password via email</li>
+                                        <li><strong>Secure Your Email:</strong> Use 2FA on your email account as it's often the weakest link</li>
+                                        <li><strong>Monitor Account Activity:</strong> Regularly review login history and withdrawal activity</li>
+                                    </ul>
+                                    <p><strong>Advanced Security Measures:</strong></p>
+                                    <ul>
+                                        <li>Use a dedicated device for cryptocurrency transactions</li>
+                                        <li>Consider using a password manager</li>
+                                        <li>Whitelist withdrawal addresses where possible</li>
+                                        <li>Set up withdrawal limits and notifications</li>
+                                        <li>Keep your devices and browsers updated</li>
+                                    </ul>
+                                    <p>If you suspect any unauthorized access to your account, immediately change your password, revoke any active sessions through your account settings, and contact our security team.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hardware Questions -->
+                    <div class="faq-group" data-category="hardware">
+                        <h2 class="faq-group-title">Hardware Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What mining hardware do you use?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex operates with industry-leading Bitcoin mining hardware to ensure maximum efficiency and profitability:</p>
+                                    <p><strong>Current Generation ASICs:</strong></p>
+                                    <ul>
+                                        <li><strong>Bitmain Antminer S19 XP Hyd (255TH):</strong> Most efficient air-cooled miner</li>
+                                        <li><strong>Bitmain Antminer S21 Hydro (335TH):</strong> High-performance hydro-cooled</li>
+                                        <li><strong>MicroBT Whatsminer M56S++ (230TH):</strong> Reliable and efficient</li>
+                                        <li><strong>Canaan Avalon A1366 (130TH):</strong> Cost-effective alternative</li>
+                                        <li><strong>Bitmain Antminer S19j Pro+ (122TH):</strong> Proven workhorse model</li>
+                                    </ul>
+                                    <p><strong>Infrastructure Features:</strong></p>
+                                    <ul>
+                                        <li>Immersion cooling systems for higher efficiency</li>
+                                        <li>Industrial-grade power distribution</li>
+                                        <li>Advanced heat management systems</li>
+                                        <li>Redundant internet connectivity</li>
+                                        <li>24/7 on-site technical staff</li>
+                                    </ul>
+                                    <p>We continuously upgrade our fleet to maintain competitive efficiency ratios and minimize operational costs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Where are your mining facilities located?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex operates mining facilities in strategic locations worldwide to optimize for low electricity costs and favorable regulatory environments:</p>
+                                    <p><strong>Primary Facilities:</strong></p>
+                                    <ul>
+                                        <li><strong>Texas, USA:</strong> 50 MW facility with access to renewable energy and competitive rates</li>
+                                        <li><strong>Québec, Canada:</strong> 30 MW hydro-powered facility with stable climate</li>
+                                        <li><strong>Norway:</strong> 20 MW facility powered by 100% renewable hydroelectricity</li>
+                                        <li><strong>Kazakhstan:</strong> 40 MW facility with access to low-cost energy</li>
+                                    </ul>
+                                    <p><strong>Facility Features:</strong></p>
+                                    <ul>
+                                        <li>Enterprise-grade security with 24/7 monitoring</li>
+                                        <li>Redundant power supplies and internet connections</li>
+                                        <li>Advanced cooling systems for optimal hardware performance</li>
+                                        <li>Regular maintenance and hardware optimization</li>
+                                        <li>Environmental controls for temperature and humidity</li>
+                                    </ul>
+                                    <p>All facilities undergo regular audits and maintain compliance with local regulations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What happens if mining hardware needs repair?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Hashvex maintains comprehensive hardware support and maintenance programs:</p>
+                                    <p><strong>For Purchased Miners:</strong></p>
+                                    <ul>
+                                        <li>12-month manufacturer warranty on all new equipment</li>
+                                        <li>On-site technical team for immediate troubleshooting</li>
+                                        <li>Spare parts inventory for quick repairs</li>
+                                        <li>Dedicated repair facilities for major issues</li>
+                                        <li>Replacement units provided during extended repairs</li>
+                                    </ul>
+                                    <p><strong>For Rented Miners:</strong></p>
+                                    <ul>
+                                        <li>All maintenance and repairs included in rental fee</li>
+                                        <li>Automatic replacement of underperforming units</li>
+                                        <li>No downtime charges - we guarantee hashrate delivery</li>
+                                        <li>Regular performance optimization</li>
+                                    </ul>
+                                    <p><strong>Preventive Maintenance:</strong></p>
+                                    <ul>
+                                        <li>Regular cleaning and inspection schedules</li>
+                                        <li>Performance monitoring and optimization</li>
+                                        <li>Firmware updates for efficiency improvements</li>
+                                        <li>Thermal management optimization</li>
+                                    </ul>
+                                    <p>Our average hardware uptime exceeds 98% across all facilities, ensuring consistent mining revenue for our clients.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact CTA -->
+                    <div class="faq-contact">
+                        <h3>Didn't find your answer?</h3>
+                        <p>Our enterprise support team is available 24/7 to assist you with any questions about Bitcoin mining solutions.</p>
+                        <a href="index.html#contact" class="btn btn-primary">
+                            <i class="fas fa-headset"></i> Contact Support
+                        </a>
+                    </div>
+                    
+                    <a href="index.html" class="back-to-home">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+                             alt="Hashvex Logo">
+                        <span class="footer-logo-text">Hashvex</span>
+                    </div>
+                    <p>Enterprise Bitcoin mining platform serving institutional and retail investors worldwide with industrial-scale mining solutions.</p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com" class="social-icon twitter" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="social-icon linkedin" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://facebook.com" class="social-icon facebook" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" class="social-icon instagram" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Platform</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                        <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                        <li><a href="accountsetting.html">Account Settings</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="aml.html">AML Policy</a></li>
+                        <li><a href="risk.html">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@hashvex.com</p>
+                    <p><i class="fas fa-phone"></i> +1 606-363-2032</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Delaware, USA</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Hashvex Technologies LLC. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Hide loading overlay when page is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-overlay').classList.add('hidden');
+            }, 1000);
+        });
+        
+        // Current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        const answer = item.querySelector('.faq-answer');
+                        answer.style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    faqItem.classList.remove('active');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+        
+        // FAQ Category Filter
+        document.querySelectorAll('.faq-category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.faq-category-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+                
+                // Filter FAQ items
+                const category = btn.dataset.category;
+                if (category === 'all') {
+                    document.querySelectorAll('.faq-group').forEach(group => {
+                        group.style.display = 'block';
+                    });
+                } else {
+                    document.querySelectorAll('.faq-group').forEach(group => {
+                        if (group.dataset.category === category) {
+                            group.style.display = 'block';
+                        } else {
+                            group.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+        
+        // FAQ Search Functionality
+        const faqSearchInput = document.querySelector('.faq-search input');
+        faqSearchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            if (searchTerm.length < 2) {
+                // Show all items if search term is too short
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.style.display = 'block';
+                });
+                return;
+            }
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    // Expand and show matching questions
+                    item.classList.add('active');
+                    const answerEl = item.querySelector('.faq-answer');
+                    answerEl.style.maxHeight = answerEl.scrollHeight + 'px';
+                    item.style.display = 'block';
+                } else {
+                    // Hide non-matching items
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
