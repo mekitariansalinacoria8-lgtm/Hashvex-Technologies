@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Terms and Conditions | Hashvex Technologies - Enterprise Bitcoin Mining</title>
+    <meta name="description" content="Official Terms and Conditions for Hashvex Technologies enterprise Bitcoin mining platform.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-black: #000000;
+            --primary-dark: #0A0E17;
+            --primary-navy: #0F1420;
+            --accent-blue: #00A3FF;
+            --accent-cyan: #00D1FF;
+            --success-green: #00D795;
+            --error-red: #FF3B5C;
+            --warning-yellow: #FFA500;
+            --info-blue: #0066FF;
+            --accent-purple: #8A2BE2;
+            --gold: #FFD700;
+            --gold-gradient-start: #FFD700;
+            --gold-gradient-end: #FFAA00;
+            
+            /* Gray Scale */
+            --gray-light: #2A3145;
+            --gray: #8A94B3;
+            --gray-dark: #B0B8CF;
+            --darker: #1A1F2E;
+            
+            /* Theme Variables */
+            --bg-primary: var(--primary-black);
+            --bg-secondary: var(--primary-dark);
+            --bg-tertiary: #121826;
+            --bg-card: #1A1F2E;
+            --bg-card-hover: #222837;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B8CF;
+            --text-tertiary: #8A94B3;
+            --border-color: #2A3145;
+            --border-active: var(--accent-blue);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            --gradient-success: linear-gradient(135deg, var(--success-green) 0%, #00E6A9 100%);
+            --gradient-error: linear-gradient(135deg, var(--error-red) 0%, #FF6B8B 100%);
+            --gradient-card: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-tertiary) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--gold-gradient-start) 0%, var(--gold-gradient-end) 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+            
+            /* Animation Speeds */
+            --transition-fast: 150ms ease;
+            --transition-normal: 300ms ease;
+            --transition-slow: 500ms ease;
+            
+            /* Border Radius */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-black);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            animation: pulse 1.5s infinite ease-in-out;
+            filter: drop-shadow(0 0 10px rgba(0, 163, 255, 0.3));
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        
+        /* Header */
+        header {
+            background: var(--primary-dark);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            height: 70px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: 40px;
+            border-radius: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition-normal);
+            font-size: 0.95rem;
+        }
+        
+        nav a:hover {
+            color: var(--text-primary);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent-blue);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+        }
+        
+        /* Terms Section */
+        .terms-section {
+            padding: 140px 0 60px;
+            background-color: var(--bg-primary);
+            min-height: 100vh;
+        }
+        
+        .terms-container {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .terms-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .terms-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .terms-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .terms-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .terms-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .terms-section-title {
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .terms-section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+        }
+        
+        .terms-subtitle {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        .terms-text {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .terms-list {
+            margin: 1.25rem 0 1.25rem 2rem;
+        }
+        
+        .terms-list li {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .terms-note {
+            background-color: rgba(0, 163, 255, 0.1);
+            border-left: 4px solid var(--accent-blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            border: 1px solid rgba(0, 163, 255, 0.2);
+        }
+        
+        .terms-note p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+        }
+        
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--primary-black);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition-normal);
+            text-decoration: none;
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            padding: 3rem 0 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-logo img {
+            height: 30px;
+            width: 30px;
+            border-radius: 8px;
+        }
+        
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-about p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-normal);
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .social-icon.twitter:hover {
+            background: #1DA1F2;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .social-icon.linkedin:hover {
+            background: #0077B5;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .social-icon.facebook:hover {
+            background: #1877F2;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .social-icon.instagram:hover {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-normal);
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+            transform: translateX(3px);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .footer-contact i {
+            color: var(--accent-cyan);
+            width: 20px;
+            text-align: center;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .terms-container {
+                padding: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                box-shadow: var(--shadow-lg);
+                padding: 1rem;
+                transform: translateY(-150%);
+                opacity: 0;
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .terms-section {
+                padding: 120px 0 40px;
+            }
+            
+            .terms-container {
+                padding: 2rem;
+            }
+            
+            .terms-header h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-section-title {
+                font-size: 1.4rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .terms-container {
+                padding: 1.5rem;
+            }
+            
+            .terms-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-section-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+             alt="Hashvex Logo" 
+             class="loading-logo">
+        <div class="loading-text">Loading Secure Platform...</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+                     alt="Hashvex Logo">
+                <span class="logo-text">Hashvex</span>
+            </a>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                    <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                    <li><a href="index.html#why-us">Why Hashvex</a></li>
+                    <li><a href="dashboard.html" class="btn btn-outline">Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Terms Section -->
+    <section class="terms-section">
+        <div class="container">
+            <div class="terms-container">
+                <div class="terms-header">
+                    <h1>Terms and Conditions</h1>
+                    <p>Last Updated: <span id="current-date"></span></p>
+                </div>
+                
+                <div class="terms-content">
+                    <div class="terms-text">
+                        <p>Welcome to Hashvex Technologies! These Terms and Conditions ("Terms") govern your use of our enterprise Bitcoin mining platform and services. By accessing or using Hashvex, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you must not use our services.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">1. Introduction</h2>
+                    <div class="terms-text">
+                        <p>Hashvex Technologies ("we," "us," or "our") provides enterprise-grade Bitcoin mining solutions through hardware purchases and rental services. These Terms constitute a legally binding agreement between you ("User" or "you") and Hashvex Technologies LLC.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">2. Eligibility</h2>
+                    <div class="terms-text">
+                        <p>To use our services, you must:</p>
+                        <ul class="terms-list">
+                            <li>Be at least 18 years of age or the legal age of majority in your jurisdiction</li>
+                            <li>Have the legal capacity to enter into binding contracts</li>
+                            <li>Not be a resident of any jurisdiction where cryptocurrency mining is prohibited</li>
+                            <li>Comply with all applicable laws and regulations</li>
+                        </ul>
+                        <p>We reserve the right to refuse service to anyone at our sole discretion.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">3. Account Registration</h2>
+                    <div class="terms-text">
+                        <p>To access our services, you must create an account by providing accurate and complete information. You are responsible for:</p>
+                        <ul class="terms-list">
+                            <li>Maintaining the confidentiality of your account credentials</li>
+                            <li>All activities that occur under your account</li>
+                            <li>Promptly notifying us of any unauthorized access or security breaches</li>
+                        </ul>
+                        <div class="terms-note">
+                            <p><strong>Note:</strong> You may only maintain one account per individual or legal entity. Creating multiple accounts may result in termination of all associated accounts.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="terms-section-title">4. Use of Platform</h2>
+                    <div class="terms-text">
+                        <p>By using Hashvex, you agree to:</p>
+                        <ul class="terms-list">
+                            <li>Use the platform only for lawful purposes</li>
+                            <li>Not engage in any fraudulent, deceptive, or manipulative activities</li>
+                            <li>Not attempt to interfere with or disrupt the platform's operations</li>
+                            <li>Not use any automated systems to access the platform without our prior written consent</li>
+                            <li>Comply with all applicable laws and regulations</li>
+                        </ul>
+                    </div>
+                    
+                    <h2 class="terms-section-title">5. Mining Services</h2>
+                    <h3 class="terms-subtitle">5.1 Miner Purchases</h3>
+                    <div class="terms-text">
+                        <p>When purchasing Bitcoin miners through Hashvex:</p>
+                        <ul class="terms-list">
+                            <li>All purchases are subject to availability</li>
+                            <li>Prices are subject to change without notice</li>
+                            <li>Delivery times may vary based on miner model and location</li>
+                            <li>Warranty terms are specified for each miner model</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="terms-subtitle">5.2 Miner Rentals</h3>
+                    <div class="terms-text">
+                        <p>Our rental services operate under the following terms:</p>
+                        <ul class="terms-list">
+                            <li>Minimum rental periods apply</li>
+                            <li>Rental fees are calculated monthly</li>
+                            <li>Maintenance and electricity costs are included in rental fees</li>
+                            <li>Early termination may incur penalties</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="terms-subtitle">5.3 Mining Revenue</h3>
+                    <div class="terms-text">
+                        <p>Mining revenue is calculated based on:</p>
+                        <ul class="terms-list">
+                            <li>Current Bitcoin network difficulty</li>
+                            <li>Miner hash rate efficiency</li>
+                            <li>Electricity costs (for purchased miners)</li>
+                            <li>Maintenance fees (if applicable)</li>
+                        </ul>
+                        <p>Daily payouts are made to your designated wallet address, subject to minimum payout thresholds.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">6. Risk Disclosure</h2>
+                    <div class="terms-text">
+                        <p>Bitcoin mining involves substantial risk, including but not limited to:</p>
+                        <ul class="terms-list">
+                            <li>Market volatility and Bitcoin price fluctuations</li>
+                            <li>Increasing Bitcoin network difficulty</li>
+                            <li>Regulatory changes affecting cryptocurrency operations</li>
+                            <li>Technological risks and hardware failures</li>
+                            <li>Potential loss of principal investment</li>
+                        </ul>
+                        <div class="terms-note">
+                            <p><strong>Important:</strong> Past mining performance is not indicative of future results. You should only invest funds that you can afford to lose.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="terms-section-title">7. Payments and Fees</h2>
+                    <h3 class="terms-subtitle">7.1 Purchases</h3>
+                    <div class="terms-text">
+                        <p>All miner purchases require:</p>
+                        <ul class="terms-list">
+                            <li>Full payment before shipment</li>
+                            <li>Acceptance of our payment methods (cryptocurrency preferred)</li>
+                            <li>Coverage of any applicable taxes or import duties</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="terms-subtitle">7.2 Rental Fees</h3>
+                    <div class="terms-text">
+                        <p>Rental fees are billed:</p>
+                        <ul class="terms-list">
+                            <li>Monthly in advance</li>
+                            <li>Via automatic payment methods</li>
+                            <li>Subject to periodic adjustment based on electricity costs</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="terms-subtitle">7.3 Network Fees</h3>
+                    <div class="terms-text">
+                        <p>All blockchain transactions incur network fees (gas fees):</p>
+                        <ul class="terms-list">
+                            <li>Fees are deducted from your main balance</li>
+                            <li>Minimum balance requirements apply for transaction processing</li>
+                            <li>Fees vary based on network congestion</li>
+                        </ul>
+                        <div class="terms-note">
+                            <p><strong>Important Note:</strong> Users must maintain sufficient balance in their main wallet to cover network fees. Failure to maintain minimum balance may result in transaction failures or account restrictions.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="terms-section-title">8. KYC and Identity Verification</h2>
+                    <div class="terms-text">
+                        <p>Hashvex may require Know Your Customer (KYC) verification for certain transactions or account activities. You agree to:</p>
+                        <ul class="terms-list">
+                            <li>Provide accurate and current identification documents when requested</li>
+                            <li>Cooperate with any additional verification procedures</li>
+                            <li>Understand that failure to complete KYC may restrict account functionality</li>
+                        </ul>
+                        <p>All personal information is handled in accordance with our Privacy Policy.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">9. Referral Program</h2>
+                    <div class="terms-text">
+                        <p>Hashvex offers a referral program with the following terms:</p>
+                        <ul class="terms-list">
+                            <li>Referral bonuses are awarded when referred users make qualifying purchases or rentals</li>
+                            <li>Bonus amounts vary based on current promotions</li>
+                            <li>Referral earnings are subject to the same withdrawal terms as other earnings</li>
+                            <li>We reserve the right to modify or terminate the referral program at any time</li>
+                        </ul>
+                        <p>Abuse of the referral program may result in account termination and forfeiture of bonuses.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">10. Security and Account Responsibility</h2>
+                    <div class="terms-text">
+                        <p>You are solely responsible for:</p>
+                        <ul class="terms-list">
+                            <li>Maintaining the security of your account credentials</li>
+                            <li>All transactions initiated from your account</li>
+                            <li>Ensuring your registered email and wallet addresses are secure and up-to-date</li>
+                            <li>Maintaining sufficient balance to cover network fees (gas fees)</li>
+                        </ul>
+                        <p>Hashvex implements enterprise-grade security measures, but cannot guarantee absolute security against unauthorized access.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">11. Termination of Access</h2>
+                    <div class="terms-text">
+                        <p>We reserve the right to suspend or terminate your account at our sole discretion if:</p>
+                        <ul class="terms-list">
+                            <li>You violate these Terms or any applicable laws</li>
+                            <li>We suspect fraudulent or abusive activity</li>
+                            <li>Required by law enforcement or regulatory authorities</li>
+                            <li>You fail to maintain sufficient balance for network fees</li>
+                        </ul>
+                        <p>Upon termination, any outstanding balances may be forfeited at our discretion.</p>
+                        <div class="terms-note">
+                            <p><strong>Security Policy:</strong> If a user's account is suspended and the security team decides to give them a last chance, the user must be fined 0.0025 BTC from their main balance wallet. This fine will be deducted before account restoration is considered.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="terms-section-title">12. Changes to the Terms</h2>
+                    <div class="terms-text">
+                        <p>We may modify these Terms at any time by posting the updated version on our website. Your continued use of Hashvex after such changes constitutes acceptance of the modified Terms.</p>
+                        <p>Material changes will be communicated to users via email or platform notifications at least 30 days before taking effect.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">13. Governing Law</h2>
+                    <div class="terms-text">
+                        <p>These Terms shall be governed by and construed in accordance with the laws of Delaware, United States, without regard to its conflict of law provisions.</p>
+                        <p>Any disputes arising from these Terms shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association.</p>
+                    </div>
+                    
+                    <h2 class="terms-section-title">14. Contact Information</h2>
+                    <div class="terms-text">
+                        <p>For questions about these Terms or our services, please contact us at:</p>
+                        <p><strong>Email:</strong> legal@hashvex.com</p>
+                        <p><strong>Address:</strong> Delaware, USA</p>
+                    </div>
+                    
+                    <a href="index.html" class="back-to-home">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
+                             alt="Hashvex Logo">
+                        <span class="footer-logo-text">Hashvex</span>
+                    </div>
+                    <p>Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com" class="social-icon twitter" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="social-icon linkedin" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://facebook.com" class="social-icon facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" class="social-icon instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Platform</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                        <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="aml.html">AML Policy</a></li>
+                        <li><a href="risk.html">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact</h3>
+                    <p><i class="fas fa-envelope"></i> support@hashvex.com</p>
+                    <p><i class="fas fa-phone"></i> +1 606-363-2032</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Delaware, USA</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Hashvex Technologies LLC. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Set current date
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', options);
+            
+            // Setup mobile menu
+            setupMobileMenu();
+            
+            // Hide loading overlay
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('loading-overlay').classList.add('hidden');
+                }, 1000);
+            });
+        });
+
+        // Setup mobile menu
+        function setupMobileMenu() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                this.innerHTML = mainNav.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            document.querySelectorAll('#main-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        mainNav.classList.remove('active');
+                        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
