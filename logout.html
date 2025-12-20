@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Logout | Hashvex Technologies - Enterprise Bitcoin Mining</title>
+    <meta name="description" content="Securely log out of your Hashvex Technologies account with enterprise-grade security standards.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Hashvex Primary Colors */
+            --primary-black: #000000;
+            --primary-dark: #0A0E17;
+            --primary-navy: #0F1420;
+            --accent-blue: #00A3FF;
+            --accent-cyan: #00D1FF;
+            --success-green: #00D795;
+            --error-red: #FF3B5C;
+            --warning-yellow: #FFA500;
+            --info-blue: #0066FF;
+            --accent-purple: #8A2BE2;
+            --gold: #FFD700;
+            --gold-gradient-start: #FFD700;
+            --gold-gradient-end: #FFAA00;
+            
+            /* Gray Scale */
+            --gray-light: #2A3145;
+            --gray: #8A94B3;
+            --gray-dark: #B0B8CF;
+            --darker: #1A1F2E;
+            
+            /* Theme Variables */
+            --bg-primary: var(--primary-black);
+            --bg-secondary: var(--primary-dark);
+            --bg-tertiary: #121826;
+            --bg-card: #1A1F2E;
+            --bg-card-hover: #222837;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B8CF;
+            --text-tertiary: #8A94B3;
+            --border-color: #2A3145;
+            --border-active: var(--accent-blue);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
+            --gradient-success: linear-gradient(135deg, var(--success-green) 0%, #00E6A9 100%);
+            --gradient-error: linear-gradient(135deg, var(--error-red) 0%, #FF6B8B 100%);
+            --gradient-gold: linear-gradient(135deg, var(--gold-gradient-start) 0%, var(--gold-gradient-end) 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+            
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-normal: 300ms ease;
+            --transition-slow: 500ms ease;
+            
+            /* Border Radius */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            font-size: 15px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Bitcoin Logo Animation */
+        @keyframes bitcoinFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(0) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(270deg);
+            }
+        }
+
+        .bitcoin-animation {
+            display: inline-block;
+            animation: bitcoinFloat 4s ease-in-out infinite;
+            margin-right: 5px;
+            vertical-align: middle;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            font-weight: bold;
+            transform-origin: center;
+        }
+
+        /* Security Badge */
+        .security-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-dark);
+            padding: 12px 16px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 100;
+            border-left: 4px solid var(--success-green);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        .security-badge i {
+            color: var(--success-green);
+            font-size: 1rem;
+        }
+        
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--bg-secondary);
+            box-shadow: var(--shadow-md);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition-slow);
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(10, 14, 23, 0.98);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: 40px;
+            border-radius: 10px;
+            transition: var(--transition-normal);
+        }
+        
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+        
+        /* Auth Buttons */
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .auth-buttons .btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+        
+        .user-balance {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .user-balance:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .user-balance i {
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+            transition: var(--transition-normal);
+        }
+        
+        .mobile-menu-toggle:hover {
+            color: var(--accent-cyan);
+        }
+        
+        nav {
+            transition: var(--transition-slow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            transition: var(--transition-normal);
+            position: relative;
+            font-size: 0.95rem;
+            padding: 5px 0;
+        }
+        
+        nav a:hover {
+            color: var(--text-primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-normal);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(0, 209, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Enhanced Security Indicators */
+        .security-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            margin-top: 10px;
+        }
+        
+        .security-indicator i {
+            color: var(--success-green);
+        }
+        
+        /* Logout Section */
+        .logout-section {
+            padding: 180px 0 100px;
+            background-color: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logout-container {
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .logout-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius-lg);
+            padding: 60px 40px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logout-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .logout-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        
+        .logout-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logout-message {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .logout-features {
+            margin: 40px 0;
+            text-align: left;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .logout-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logout-feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .logout-feature-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        
+        .logout-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .logout-button {
+            min-width: 200px;
+        }
+        
+        /* Status Messages */
+        .logout-status {
+            padding: 12px 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            text-align: center;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .logout-status.success {
+            background: var(--gradient-success);
+        }
+        
+        .logout-status.error {
+            background: var(--gradient-error);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-logo img {
+            height: 30px;
+            width: 30px;
+            border-radius: 8px;
+        }
+        
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-about p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-normal);
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background-color: rgba(0, 163, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-normal);
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+            transform: translateX(3px);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .footer-contact i {
+            color: var(--accent-cyan);
+            width: 20px;
+            text-align: center;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-secondary);
+                box-shadow: var(--shadow-md);
+                padding: 20px;
+                transform: translateY(-150%);
+                opacity: 0;
+                z-index: 999;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .logout-card {
+                padding: 40px 20px;
+            }
+            
+            .logout-message {
+                max-width: 100%;
+            }
+            
+            .logout-features {
+                max-width: 100%;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            /* Mobile-specific bitcoin animation adjustments */
+            .bitcoin-animation {
+                animation: bitcoinFloat 4s ease-in-out infinite;
+                display: inline-block;
+                transform-origin: center;
+            }
+            
+            /* Enhanced mobile header */
+            .header-container {
+                flex-wrap: wrap;
+                padding: 10px 15px;
+            }
+            
+            .auth-buttons {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+                display: none;
+            }
+            
+            .auth-buttons.active {
+                display: flex;
+            }
+            
+            .user-balance {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+                display: none;
+            }
+            
+            .user-balance.active {
+                display: flex;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logout-title {
+                font-size: 1.8rem;
+            }
+            
+            .logout-message {
+                font-size: 1rem;
+            }
+            
+            .logout-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logout-button {
+                width: 100%;
+            }
+            
+            /* Enhanced mobile navigation */
+            nav {
+                top: 70px;
+                padding: 15px;
+            }
+            
+            nav ul {
+                gap: 10px;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+            }
+            
+            /* Enhanced mobile buttons */
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" alt="Hashvex Logo" class="loading-logo">    
+        <div class="loading-text">Terminating Secure Session...</div>
+    </div>
+
+    <!-- Enhanced Security Badge -->
+    <div class="security-badge">
+        <i class="fas fa-shield-alt"></i>
+        <span>256-bit AES & TLS 1.3 Encrypted</span>
+    </div>
+
+    <!-- Enhanced Header -->
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" alt="Hashvex Logo">
+                <span class="logo-text">Hashvex</span>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                    <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                    <li><a href="index.html#why-us">Why Hashvex</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons" id="auth-buttons">
+                <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
+                <button class="btn btn-primary" onclick="window.location.href='signup.html'">Sign Up</button>
+            </div>
+            
+            <div class="user-balance" id="user-balance" style="display: none;" onclick="window.location.href='dashboard.html'">
+                <i class="fas fa-wallet"></i>
+                <span id="balance-amount">$0.00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Logout Section -->
+    <section class="logout-section">
+        <div class="container">
+            <div class="logout-container" data-aos="zoom-in">
+                <div class="logout-card">
+                    <div class="logout-icon">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                    <h1 class="logout-title">Logging out from <span>Hashvex Technologies</span></h1>
+                    <p class="logout-message">You're being securely logged out from all devices. All session tokens will be invalidated and you'll need to log in again to access your mining dashboard.</p>
+                    
+                    <div id="logout-status" class="logout-status" style="display: none;"></div>
+                    
+                    <div class="logout-features">
+                        <div class="logout-feature">
+                            <div class="logout-feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="logout-feature-text">
+                                All active mining sessions have been terminated
+                            </div>
+                        </div>
+                        <div class="logout-feature">
+                            <div class="logout-feature-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="logout-feature-text">
+                                Authentication tokens have been revoked
+                            </div>
+                        </div>
+                        <div class="logout-feature">
+                            <div class="logout-feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="logout-feature-text">
+                                Your mining account security has been maintained
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Security Indicators -->
+                    <div class="security-indicator">
+                        <i class="fas fa-lock"></i>
+                        <span>256-bit AES Encryption</span>
+                    </div>
+                    <div class="security-indicator">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Session Tokens Invalidated</span>
+                    </div>
+                    <div class="security-indicator">
+                        <i class="fas fa-user-shield"></i>
+                        <span>SOC 2 Type II Certified</span>
+                    </div>
+                    
+                    <div class="logout-actions">
+                        <button class="btn btn-primary logout-button" id="logout-button">
+                            <span id="logout-button-text">Complete Logout</span>
+                            <span id="logout-spinner" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                        <button class="btn btn-outline logout-button" id="cancel-button">
+                            Cancel and Return
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" alt="Hashvex Logo">
+                        <span class="footer-logo-text">Hashvex</span>
+                    </div>
+                    <p>Enterprise Bitcoin mining platform serving institutional and retail investors worldwide with transparent operations and reliable returns.</p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com" class="social-icon" aria-label="Twitter" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://facebook.com" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Platform</h3>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                        <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                        <li><a href="accountsetting.html">My Account</a></li>
+                        <li><a href="balances.html">Balances</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@hashvex.com</p>
+                    <p><i class="fas fa-phone"></i> +1 606-363-2032</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Delaware, USA</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Support</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Hashvex Technologies LLC. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Hide loading overlay when page is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-overlay').classList.add('hidden');
+            }, 1000);
+            
+            // Check if we should automatically logout
+            const autoLogout = new URLSearchParams(window.location.search).get('auto') === 'true';
+            if (autoLogout) {
+                performLogout();
+            }
+        });
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Enhanced Mobile menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        const authButtons = document.getElementById('auth-buttons');
+        const userBalance = document.getElementById('user-balance');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            authButtons.classList.toggle('active');
+            if (userBalance.style.display !== 'none') {
+                userBalance.classList.toggle('active');
+            }
+            this.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            this.setAttribute('aria-expanded', mainNav.classList.contains('active'));
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    authButtons.classList.remove('active');
+                    if (userBalance.style.display !== 'none') {
+                        userBalance.classList.remove('active');
+                    }
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+        
+        // Initialize all functionality when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Enhanced security indicators
+            const securityBadge = document.querySelector('.security-badge');
+            if (securityBadge) {
+                setInterval(() => {
+                    securityBadge.style.boxShadow = `0 0 10px ${Math.random() > 0.5 ? 'rgba(0, 215, 149, 0.5)' : 'rgba(0, 163, 255, 0.5)'}`;
+                }, 2000);
+            }
+            
+            // Check if user is logged in
+            checkAuthState();
+        });
+        
+        // Check authentication state on page load
+        async function checkAuthState() {
+            try {
+                const token = localStorage.getItem('hashvex_token');
+                if (!token) {
+                    // User is not logged in, redirect to login
+                    window.location.href = 'login.html';
+                    return;
+                }
+                
+                // Show auth buttons as appropriate
+                document.getElementById('auth-buttons').style.display = 'none';
+                document.getElementById('user-balance').style.display = 'flex';
+            } catch (error) {
+                console.error('Authentication check failed:', error);
+            }
+        }
+        
+        // Logout button handler
+        document.getElementById('logout-button').addEventListener('click', function() {
+            performLogout();
+        });
+        
+        // Cancel button handler
+        document.getElementById('cancel-button').addEventListener('click', function() {
+            window.location.href = 'dashboard.html';
+        });
+        
+        // Perform the logout operation
+        async function performLogout() {
+            const logoutButton = document.getElementById('logout-button');
+            const buttonText = document.getElementById('logout-button-text');
+            const spinner = document.getElementById('logout-spinner');
+            const statusElement = document.getElementById('logout-status');
+            
+            // Show loading state
+            buttonText.style.display = 'none';
+            spinner.style.display = 'inline-block';
+            logoutButton.disabled = true;
+            document.getElementById('cancel-button').style.display = 'none';
+            
+            try {
+                const token = localStorage.getItem('hashvex_token');
+                
+                // Make logout request to backend
+                const response = await fetch('https://hashvex-technologies-backend.onrender.com/api/auth/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Clear local storage
+                    localStorage.removeItem('hashvex_token');
+                    localStorage.removeItem('hashvex_user');
+                    localStorage.removeItem('hashvex_remember');
+                    
+                    // Show success message
+                    statusElement.textContent = 'You have been successfully logged out from all devices.';
+                    statusElement.className = 'logout-status success';
+                    statusElement.style.display = 'block';
+                    
+                    // Update UI
+                    document.getElementById('auth-buttons').style.display = 'flex';
+                    document.getElementById('user-balance').style.display = 'none';
+                    
+                    // Redirect after delay
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 3000);
+                } else {
+                    // Show error message
+                    const data = await response.json();
+                    statusElement.textContent = data.message || 'Logout failed. Please try again.';
+                    statusElement.className = 'logout-status error';
+                    statusElement.style.display = 'block';
+                    
+                    // Reset button state
+                    buttonText.style.display = 'inline-block';
+                    spinner.style.display = 'none';
+                    logoutButton.disabled = false;
+                    document.getElementById('cancel-button').style.display = 'inline-block';
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+                
+                // Show error message
+                statusElement.textContent = 'Network error during logout. Please check your connection.';
+                statusElement.className = 'logout-status error';
+                statusElement.style.display = 'block';
+                
+                // Reset button state
+                buttonText.style.display = 'inline-block';
+                spinner.style.display = 'none';
+                logoutButton.disabled = false;
+                document.getElementById('cancel-button').style.display = 'inline-block';
+            }
+        }
+    </script>
+</body>
+</html>
