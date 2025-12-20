@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hashvex Technologies | Enterprise Bitcoin Mining Platform</title>
     
     <!-- Favicon -->
@@ -77,6 +77,18 @@
             --transition-fast: 150ms ease;
             --transition-normal: 300ms ease;
             --transition-slow: 500ms ease;
+            
+            /* Font Sizes */
+            --fs-xs: 0.75rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-md: 1.125rem;
+            --fs-lg: 1.25rem;
+            --fs-xl: 1.5rem;
+            --fs-2xl: 1.75rem;
+            --fs-3xl: 2rem;
+            --fs-4xl: 2.5rem;
+            --fs-5xl: 3rem;
         }
         
         /* ====== RESET & BASE STYLES ====== */
@@ -88,24 +100,25 @@
         
         html {
             scroll-behavior: smooth;
-            font-size: 15px;
+            font-size: 16px;
         }
         
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.5;
+            line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            font-size: var(--fs-base);
         }
         
         .container {
             width: 100%;
             max-width: 1440px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
         
         /* ====== TYPOGRAPHY ====== */
@@ -113,11 +126,13 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         h1 { 
-            font-size: 2.75rem;
+            font-size: var(--fs-5xl);
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             background-clip: text;
@@ -125,10 +140,10 @@
         }
         
         h2 { 
-            font-size: 2.25rem;
+            font-size: var(--fs-4xl);
             color: var(--text-primary);
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             position: relative;
             padding-bottom: 1rem;
         }
@@ -139,22 +154,23 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
+            width: 80px;
+            height: 4px;
             background: var(--gradient-primary);
             border-radius: 2px;
         }
         
         h3 { 
-            font-size: 1.5rem;
+            font-size: var(--fs-2xl);
             color: var(--text-primary);
         }
         
         p {
             color: var(--text-secondary);
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 0.75rem;
-            font-size: 0.95rem;
+            font-size: var(--fs-base);
+            word-wrap: break-word;
         }
         
         /* ====== HEADER & NAVIGATION ====== */
@@ -172,11 +188,12 @@
         }
         
         .header-container {
-            display: flex;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
-            justify-content: space-between;
+            gap: 3rem;
             height: 100%;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
             max-width: 1440px;
             margin: 0 auto;
         }
@@ -186,7 +203,6 @@
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
-            flex-shrink: 0;
         }
         
         .logo-img {
@@ -199,7 +215,7 @@
         .logo-text {
             font-family: 'Poppins', sans-serif;
             font-weight: 900;
-            font-size: 1.35rem;
+            font-size: var(--fs-xl);
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             background-clip: text;
@@ -211,33 +227,30 @@
         /* Santa Hat Animation */
         .santa-hat {
             position: absolute;
-            top: -15px;
-            left: -6px;
-            font-size: 1.5rem;
+            top: -18px;
+            left: -8px;
+            font-size: 1.75rem;
             animation: bounceHat 2s infinite;
             transform-origin: bottom center;
         }
         
         @keyframes bounceHat {
             0%, 100% { transform: rotate(-5deg) translateY(0); }
-            50% { transform: rotate(5deg) translateY(-2px); }
+            50% { transform: rotate(5deg) translateY(-3px); }
         }
         
         /* Navigation */
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 1.75rem;
+            gap: 2rem;
             align-items: center;
-            margin: 0 2rem;
-            flex: 1;
-            max-width: 600px;
         }
         
         .nav-link {
             color: var(--text-secondary);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: var(--fs-sm);
             text-decoration: none;
             padding: 0.5rem 0;
             position: relative;
@@ -272,7 +285,7 @@
             background: transparent;
             border: none;
             color: var(--text-primary);
-            font-size: 1.35rem;
+            font-size: var(--fs-xl);
             cursor: pointer;
             padding: 0.5rem;
             position: absolute;
@@ -284,52 +297,14 @@
         .user-controls {
             display: flex;
             align-items: center;
-            gap: 1.25rem;
-            flex-shrink: 0;
-        }
-        
-        .view-toggle-container {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-right: 0.5rem;
-        }
-        
-        .view-toggle-label {
-            color: var(--text-tertiary);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        .view-toggle {
-            display: flex;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 0.2rem;
-            border: 1px solid var(--border-color);
-        }
-        
-        .view-toggle button {
-            padding: 0.6rem 1.2rem;
-            border: none;
-            background: transparent;
-            color: var(--text-secondary);
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.85rem;
-            min-width: 100px;
-            transition: all var(--transition-normal);
-        }
-        
-        .view-toggle button.active {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-primary);
+            justify-content: flex-end;
+            gap: 1.5rem;
+            width: 100%;
         }
         
         .auth-buttons {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
             align-items: center;
         }
         
@@ -351,7 +326,7 @@
             font-weight: 700;
             cursor: pointer;
             transition: transform var(--transition-normal);
-            font-size: 0.95rem;
+            font-size: var(--fs-base);
         }
         
         .user-avatar:hover {
@@ -361,13 +336,13 @@
         .user-dropdown {
             display: none;
             position: absolute;
-            top: calc(100% + 8px);
+            top: calc(100% + 10px);
             right: 0;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 1rem;
-            min-width: 180px;
+            min-width: 200px;
             box-shadow: var(--shadow-xl);
             z-index: 1000;
         }
@@ -393,14 +368,14 @@
         
         .cart-count {
             position: absolute;
-            top: -5px;
-            right: -5px;
+            top: -6px;
+            right: -6px;
             background: var(--error-red);
             color: white;
-            font-size: 0.7rem;
+            font-size: var(--fs-xs);
             font-weight: 700;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -415,7 +390,7 @@
         /* ====== BALANCE DISPLAY ====== */
         .balance-display {
             margin-top: 70px;
-            padding: 1.25rem 0;
+            padding: 1.5rem 0;
             background: rgba(15, 20, 32, 0.8);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -424,16 +399,16 @@
         .balance-container {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         .balance-card {
             background: rgba(0, 215, 149, 0.1);
             border: 1px solid rgba(0, 215, 149, 0.2);
-            border-radius: 14px;
-            padding: 1.25rem 1.75rem;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
             text-align: center;
-            min-width: 220px;
+            min-width: 250px;
             transition: all var(--transition-normal);
         }
         
@@ -444,19 +419,19 @@
         
         .balance-card:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
         
         .balance-label {
-            font-size: 0.85rem;
+            font-size: var(--fs-sm);
             color: var(--text-secondary);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
         
         .balance-amount {
-            font-size: 1.75rem;
+            font-size: var(--fs-3xl);
             font-weight: 800;
             color: var(--success-green);
         }
@@ -467,10 +442,10 @@
         
         /* ====== BUTTONS ====== */
         .btn {
-            padding: 0.7rem 1.5rem;
-            border-radius: 10px;
+            padding: 0.75rem 1.75rem;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: var(--fs-sm);
             cursor: pointer;
             border: none;
             transition: all var(--transition-normal);
@@ -514,13 +489,13 @@
         }
         
         .btn-small {
-            padding: 0.5rem 1.1rem;
-            font-size: 0.8rem;
+            padding: 0.5rem 1.25rem;
+            font-size: var(--fs-xs);
         }
         
         /* ====== HERO SECTION ====== */
         .hero {
-            padding: 7rem 0 3.5rem;
+            padding: 8rem 0 4rem;
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-black) 100%);
             position: relative;
             overflow: hidden;
@@ -539,59 +514,60 @@
         .hero-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
+            gap: 3rem;
             align-items: center;
             position: relative;
             z-index: 1;
         }
         
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1.25rem;
+            font-size: var(--fs-5xl);
+            margin-bottom: 1.5rem;
         }
         
         .hero-content p {
-            font-size: 1rem;
-            margin-bottom: 1.75rem;
+            font-size: var(--fs-md);
+            margin-bottom: 2rem;
             color: var(--text-secondary);
             max-width: 500px;
         }
         
-        /* Bitcoin Price Card - Compact */
+        /* Bitcoin Price Card - ENHANCED & SMALLER */
         .bitcoin-price-card {
             background: var(--bg-card);
-            border-radius: 18px;
-            padding: 1.75rem;
+            border-radius: 20px;
+            padding: 1.5rem;
             border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
             background: linear-gradient(135deg, var(--bg-card) 0%, #2d2a1a 50%, var(--bg-card) 100%);
             border: 1px solid rgba(255, 215, 0, 0.2);
-            max-width: 100%;
+            max-width: 400px;
+            margin-left: auto;
         }
         
         .bitcoin-price-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
         
         .bitcoin-price {
-            font-size: 2rem;
+            font-size: var(--fs-3xl);
             font-weight: 800;
             margin-bottom: 0.5rem;
             color: var(--text-primary);
-            word-break: break-all;
+            line-height: 1.2;
         }
         
         .price-change {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.4rem 0.8rem;
+            gap: 0.5rem;
+            padding: 0.375rem 0.75rem;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: var(--fs-xs);
         }
         
         .price-change.positive {
@@ -604,62 +580,118 @@
             color: var(--error-red);
         }
         
+        .bitcoin-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: var(--fs-xs);
+            color: var(--text-tertiary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-value {
+            font-weight: 700;
+            font-size: var(--fs-sm);
+        }
+        
         /* ====== MINERS SECTION ====== */
         .miners-section {
-            padding: 3.5rem 0;
+            padding: 4rem 0;
         }
         
         .section-title {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2.5rem;
-            text-align: left;
+            margin-bottom: 3rem;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
         
         .section-title h2 {
-            text-align: left;
+            width: auto;
             margin-bottom: 0;
         }
         
-        .section-title h2::after {
-            left: 0;
-            transform: none;
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 2rem;
         }
         
-        .section-controls {
+        /* View Toggle - MOVED TO RIGHT END */
+        .view-toggle-container {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
+        }
+        
+        .view-toggle {
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 0.25rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .view-toggle button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: var(--fs-sm);
+            min-width: 100px;
+            transition: all var(--transition-normal);
+        }
+        
+        .view-toggle button.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
         }
         
         /* Miners Grid/List */
         .miners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.75rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .miners-list {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1rem;
         }
         
         /* Miner Card */
         .miner-card {
             background: var(--bg-card);
-            border-radius: 18px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
         }
         
         .miner-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             border-color: var(--accent-blue);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
         
         .miner-card-grid {
@@ -668,6 +700,7 @@
         
         .miner-card-list {
             display: flex;
+            flex-direction: row;
         }
         
         .miner-image {
@@ -678,7 +711,8 @@
         }
         
         .miner-card-list .miner-image {
-            width: 280px;
+            width: 200px;
+            height: auto;
             flex-shrink: 0;
         }
         
@@ -696,20 +730,20 @@
         /* Badges */
         .miner-badges {
             position: absolute;
-            top: 0.9rem;
-            left: 0.9rem;
+            top: 0.75rem;
+            left: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
         
         .badge {
-            padding: 0.4rem 0.7rem;
-            border-radius: 10px;
-            font-size: 0.7rem;
+            padding: 0.375rem 0.5rem;
+            border-radius: 8px;
+            font-size: var(--fs-xs);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
             border: 1px solid;
         }
         
@@ -749,64 +783,65 @@
         }
         
         .miner-title {
-            font-size: 1.35rem;
+            font-size: var(--fs-lg);
             font-weight: 700;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
             color: var(--text-primary);
         }
         
         .miner-price {
-            font-size: 1.5rem;
+            font-size: var(--fs-xl);
             font-weight: 800;
             color: var(--accent-cyan);
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.75rem;
         }
         
         .miner-price .original {
-            font-size: 1rem;
+            font-size: var(--fs-sm);
             color: var(--text-tertiary);
             text-decoration: line-through;
-            margin-right: 0.4rem;
+            margin-right: 0.5rem;
         }
         
         .miner-specs {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0.9rem;
-            margin-bottom: 1.25rem;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
         }
         
         .spec-item {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            font-size: 0.85rem;
+            gap: 0.5rem;
+            font-size: var(--fs-sm);
             color: var(--text-secondary);
         }
         
         .spec-item i {
             color: var(--accent-cyan);
-            width: 15px;
+            width: 16px;
         }
         
         .profitability-display {
             display: flex;
-            gap: 1.25rem;
-            margin: 1.25rem 0;
+            gap: 1rem;
+            margin: 1rem 0;
         }
         
         .profit-item {
             text-align: center;
+            flex: 1;
         }
         
         .profit-label {
-            font-size: 0.75rem;
+            font-size: var(--fs-xs);
             color: var(--text-tertiary);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.25rem;
         }
         
         .profit-value {
-            font-size: 1rem;
+            font-size: var(--fs-md);
             font-weight: 700;
         }
         
@@ -822,8 +857,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1.25rem;
-            padding-top: 1.25rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
             border-top: 1px solid var(--border-color);
         }
         
@@ -832,21 +867,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 0.4rem;
-            margin-top: 2.5rem;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         .pagination button {
             min-width: 36px;
             height: 36px;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-primary);
             cursor: pointer;
             font-weight: 600;
             transition: all var(--transition-normal);
-            font-size: 0.9rem;
+            font-size: var(--fs-sm);
         }
         
         .pagination button:hover:not(:disabled) {
@@ -867,35 +903,35 @@
         /* ====== FEATURES SECTION ====== */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
         
         .feature-card {
             background: var(--bg-card);
-            padding: 1.75rem;
-            border-radius: 18px;
+            padding: 1.5rem;
+            border-radius: 16px;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
             text-align: center;
         }
         
         .feature-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             border-color: var(--accent-blue);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
         
         .feature-icon {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             background: var(--gradient-primary);
-            border-radius: 14px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.25rem;
-            font-size: 1.35rem;
+            margin: 0 auto 1rem;
+            font-size: var(--fs-lg);
             color: white;
         }
         
@@ -903,20 +939,20 @@
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.75rem;
+            gap: 1.5rem;
         }
         
         .news-card {
             background: var(--bg-card);
-            border-radius: 18px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             transition: all var(--transition-normal);
         }
         
         .news-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         
         .news-image {
@@ -943,29 +979,29 @@
         }
         
         .cta-section h2 {
-            font-size: 2.25rem;
-            margin-bottom: 1.25rem;
+            font-size: var(--fs-4xl);
+            margin-bottom: 1.5rem;
         }
         
         /* ====== FOOTER ====== */
         footer {
             background: var(--primary-dark);
-            padding: 3.5rem 0 1.75rem;
+            padding: 3rem 0 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
         .footer-logo {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
         
         .footer-logo-img {
@@ -977,20 +1013,20 @@
         .footer-logo-text {
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
-            font-size: 1.35rem;
+            font-size: var(--fs-xl);
             color: var(--text-primary);
         }
         
         .footer-social {
             display: flex;
             gap: 0.75rem;
-            margin-top: 1.25rem;
+            margin-top: 1rem;
         }
         
         .social-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
@@ -998,7 +1034,7 @@
             color: var(--text-primary);
             transition: all var(--transition-normal);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: var(--fs-md);
         }
         
         /* Social Media Brand Colors */
@@ -1014,8 +1050,8 @@
         
         .footer-links h3,
         .footer-contact h3 {
-            font-size: 1.15rem;
-            margin-bottom: 1.25rem;
+            font-size: var(--fs-lg);
+            margin-bottom: 1rem;
             color: var(--text-primary);
         }
         
@@ -1024,14 +1060,14 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.7rem;
+            margin-bottom: 0.5rem;
         }
         
         .footer-links a {
             color: var(--text-secondary);
             transition: color var(--transition-normal);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: var(--fs-sm);
         }
         
         .footer-links a:hover {
@@ -1040,10 +1076,10 @@
         
         .footer-bottom {
             text-align: center;
-            padding-top: 1.75rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-tertiary);
-            font-size: 0.85rem;
+            font-size: var(--fs-sm);
         }
         
         /* ====== MODALS ====== */
@@ -1065,7 +1101,7 @@
             background: var(--bg-card);
             max-width: 800px;
             margin: 1rem auto;
-            border-radius: 18px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-xl);
             animation: modalSlideIn 0.3s ease;
@@ -1094,15 +1130,15 @@
         .close-modal {
             background: transparent;
             border: none;
-            font-size: 1.35rem;
+            font-size: var(--fs-xl);
             color: var(--text-primary);
             cursor: pointer;
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
+            border-radius: 8px;
             transition: all var(--transition-normal);
         }
         
@@ -1120,42 +1156,42 @@
         .miner-detail {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.75rem;
+            gap: 1.5rem;
         }
         
         .miner-detail-image {
             height: 300px;
-            border-radius: 18px;
+            border-radius: 16px;
             overflow: hidden;
             background: var(--bg-tertiary);
         }
         
         .detail-badges {
             position: absolute;
-            top: 0.9rem;
-            left: 0.9rem;
+            top: 1rem;
+            left: 1rem;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
         
         /* Cart Modal */
         .cart-items {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
         
         .cart-item {
             display: flex;
             align-items: center;
-            padding: 1.25rem;
+            padding: 1rem;
             border-bottom: 1px solid var(--border-color);
-            gap: 1.25rem;
+            gap: 1rem;
         }
         
         .cart-item-image {
-            width: 70px;
-            height: 70px;
-            border-radius: 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
             overflow: hidden;
             background: var(--bg-tertiary);
             flex-shrink: 0;
@@ -1169,15 +1205,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem;
+            padding: 1rem;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 14px;
-            margin-bottom: 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
         }
         
         .cart-empty {
             text-align: center;
-            padding: 3.5rem 1rem;
+            padding: 3rem 1rem;
         }
         
         /* ====== LOADING SCREEN ====== */
@@ -1196,42 +1232,42 @@
         }
         
         .loading-logo {
-            height: 70px;
-            width: 70px;
-            border-radius: 14px;
-            margin-bottom: 1.25rem;
+            height: 80px;
+            width: 80px;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
             animation: pulseLogo 1.5s infinite;
         }
         
         @keyframes pulseLogo {
             0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
         
         .loading-text {
             color: var(--text-secondary);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: var(--fs-base);
         }
         
         /* ====== NOTIFICATIONS ====== */
         .notification {
             position: fixed;
-            top: 0.9rem;
-            right: 0.9rem;
-            padding: 0.9rem 1.25rem;
-            border-radius: 10px;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
             color: white;
             z-index: 4000;
             box-shadow: var(--shadow-xl);
             animation: slideInRight 0.3s ease;
-            max-width: 320px;
+            max-width: 300px;
             display: flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 0.5rem;
             backdrop-filter: blur(20px);
             border: 1px solid;
-            font-size: 0.9rem;
+            font-size: var(--fs-sm);
         }
         
         @keyframes slideInRight {
@@ -1279,26 +1315,39 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2.5rem;
+            padding: 2rem;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         .no-data {
             text-align: center;
-            padding: 2.5rem;
+            padding: 3rem;
             color: var(--text-tertiary);
         }
         
         .mb-0 { margin-bottom: 0 !important; }
         .mb-1 { margin-bottom: 0.25rem !important; }
         .mb-2 { margin-bottom: 0.5rem !important; }
-        .mb-3 { margin-bottom: 0.75rem !important; }
-        .mb-4 { margin-bottom: 1.25rem !important; }
-        .mb-5 { margin-bottom: 1.75rem !important; }
+        .mb-3 { margin-bottom: 1rem !important; }
+        .mb-4 { margin-bottom: 1.5rem !important; }
+        .mb-5 { margin-bottom: 2rem !important; }
         
         /* ====== RESPONSIVE DESIGN ====== */
         @media (max-width: 1200px) {
             .container {
-                padding: 0 1.25rem;
+                padding: 0 1.5rem;
             }
             
             .hero-container {
@@ -1306,21 +1355,22 @@
             }
             
             .miners-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
         }
         
         @media (max-width: 992px) {
-            html {
-                font-size: 14.5px;
-            }
-            
             .header-container {
-                padding: 0 1rem;
+                grid-template-columns: auto 1fr;
+                gap: 2rem;
             }
             
             .nav-links {
                 display: none;
+            }
+            
+            .user-controls {
+                justify-content: flex-end;
             }
             
             .hero-container {
@@ -1329,7 +1379,7 @@
             }
             
             .hero-content h1 {
-                font-size: 2.25rem;
+                font-size: var(--fs-4xl);
             }
             
             .bitcoin-price-card {
@@ -1350,20 +1400,15 @@
             .section-title {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 1.25rem;
             }
             
-            .section-controls {
+            .view-toggle-container {
                 width: 100%;
-                justify-content: space-between;
+                justify-content: flex-end;
             }
         }
         
         @media (max-width: 768px) {
-            html {
-                font-size: 14px;
-            }
-            
             .mobile-menu-toggle {
                 display: block;
             }
@@ -1375,7 +1420,7 @@
                 right: 0;
                 background: var(--primary-dark);
                 flex-direction: column;
-                padding: 1.25rem;
+                padding: 1.5rem;
                 gap: 0;
                 transform: translateY(-100%);
                 opacity: 0;
@@ -1393,28 +1438,45 @@
             
             .nav-link {
                 width: 100%;
-                padding: 0.9rem 0;
+                padding: 1rem 0;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .header-container {
+                padding: 0 1rem;
             }
             
             .user-controls {
                 position: static;
             }
             
-            .view-toggle-container {
+            .user-menu {
                 display: none;
             }
             
             .hero {
-                padding: 5rem 0 2.5rem;
+                padding: 6rem 0 3rem;
             }
             
             .hero-content h1 {
-                font-size: 1.9rem;
+                font-size: var(--fs-3xl);
             }
             
-            .miners-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .view-toggle-container {
+                width: 100%;
+                justify-content: center;
             }
             
             .miner-card-list {
@@ -1427,20 +1489,21 @@
             }
             
             .features-grid,
-            .news-grid {
+            .news-grid,
+            .miners-grid {
                 grid-template-columns: 1fr;
             }
             
-            .bitcoin-price {
-                font-size: 1.75rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.9rem;
-            }
-            
             .cta-section h2 {
-                font-size: 1.9rem;
+                font-size: var(--fs-3xl);
+            }
+            
+            h1 {
+                font-size: var(--fs-4xl);
+            }
+            
+            h2 {
+                font-size: var(--fs-3xl);
             }
         }
         
@@ -1450,82 +1513,83 @@
             }
             
             .hero-content h1 {
-                font-size: 1.65rem;
-            }
-            
-            .hero-content p {
-                font-size: 0.95rem;
+                font-size: var(--fs-2xl);
             }
             
             .bitcoin-price {
-                font-size: 1.5rem;
-            }
-            
-            .bitcoin-price-card {
-                padding: 1.25rem;
+                font-size: var(--fs-2xl);
             }
             
             .balance-card {
-                padding: 1rem 1.25rem;
+                padding: 1rem;
                 min-width: auto;
                 width: 100%;
             }
             
             .balance-amount {
-                font-size: 1.5rem;
+                font-size: var(--fs-2xl);
             }
             
             .modal-body {
                 padding: 1rem;
             }
             
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.65rem;
-            }
-            
             .btn {
-                padding: 0.65rem 1.25rem;
+                padding: 0.75rem 1.5rem;
             }
             
-            .section-controls {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
+            .view-toggle button {
+                min-width: 80px;
+                padding: 0.5rem;
             }
             
-            .view-toggle {
-                align-self: flex-start;
-            }
-        }
-        
-        @media (max-width: 375px) {
-            html {
-                font-size: 13px;
-            }
-            
-            .hero-content h1 {
-                font-size: 1.5rem;
-            }
-            
-            .bitcoin-price {
-                font-size: 1.35rem;
-            }
-            
-            .miners-grid {
-                gap: 1rem;
-            }
-            
-            .miner-content {
+            .bitcoin-price-card {
                 padding: 1rem;
             }
             
-            .footer-container {
+            .bitcoin-stats-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+            }
+            
+            .profitability-display {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .miner-specs {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            :root {
+                --fs-xs: 0.7rem;
+                --fs-sm: 0.8rem;
+                --fs-base: 0.9rem;
+                --fs-md: 1rem;
+                --fs-lg: 1.1rem;
+                --fs-xl: 1.25rem;
+                --fs-2xl: 1.5rem;
+                --fs-3xl: 1.75rem;
+                --fs-4xl: 2rem;
+                --fs-5xl: 2.25rem;
+            }
+            
+            .header-container {
+                padding: 0 0.5rem;
+            }
+            
+            .auth-buttons {
+                gap: 0.5rem;
+            }
+            
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: var(--fs-xs);
+            }
+            
+            .bitcoin-price-card {
+                padding: 0.75rem;
             }
         }
     </style>
@@ -1561,18 +1625,6 @@
             </nav>
             
             <div class="user-controls">
-                <div class="view-toggle-container">
-                    <span class="view-toggle-label">View:</span>
-                    <div class="view-toggle">
-                        <button id="globalGridViewBtn" class="active">
-                            <i class="fas fa-th-large"></i>
-                        </button>
-                        <button id="globalListViewBtn">
-                            <i class="fas fa-list"></i>
-                        </button>
-                    </div>
-                </div>
-                
                 <div class="auth-buttons" id="authButtons">
                     <button onclick="window.location.href='login.html'" class="btn btn-secondary btn-small">
                         <i class="fas fa-sign-in-alt"></i> Login
@@ -1593,16 +1645,16 @@
                     </div>
                     
                     <div class="user-dropdown">
-                        <a href="dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.9rem;">
+                        <a href="dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: var(--fs-sm);">
                             <i class="fas fa-chart-line"></i> Dashboard
                         </a>
-                        <a href="accountsetting.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.9rem;">
+                        <a href="accountsetting.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: var(--fs-sm);">
                             <i class="fas fa-user-cog"></i> Account Settings
                         </a>
-                        <a href="balances.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.9rem;">
+                        <a href="balances.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: var(--fs-sm);">
                             <i class="fas fa-wallet"></i> Balances
                         </a>
-                        <a href="#" id="logoutBtn" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.9rem;">
+                        <a href="#" id="logoutBtn" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: var(--fs-sm);">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
                     </div>
@@ -1638,7 +1690,7 @@
                 <div class="hero-content">
                     <h1><span class="santa-hat">🎅</span>Enterprise Bitcoin Mining Solutions</h1>
                     <p>Hashvex Technologies provides cutting-edge Bitcoin mining hardware for purchase and rental. Join thousands of investors earning passive income with our reliable, high-performance mining solutions.</p>
-                    <div class="hero-buttons" style="display: flex; gap: 0.9rem; flex-wrap: wrap;">
+                    <div class="hero-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <button onclick="window.location.href='signup.html'" class="btn btn-primary">
                             <i class="fas fa-rocket"></i> Get Started
                         </button>
@@ -1648,9 +1700,10 @@
                     </div>
                 </div>
                 
+                <!-- ENHANCED BITCOIN PRICE CARD - SMALLER AND BETTER STYLED -->
                 <div class="bitcoin-price-card">
                     <div class="bitcoin-price-header">
-                        <h3 style="display: flex; align-items: center; gap: 0.4rem; font-size: 1.15rem;">
+                        <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: var(--fs-lg); margin: 0;">
                             <i class="fab fa-bitcoin" style="color: #F7931A;"></i> Bitcoin Price
                         </h3>
                         <div class="price-change positive" id="btcChange">
@@ -1659,19 +1712,24 @@
                         </div>
                     </div>
                     <div class="bitcoin-price" id="btcPrice">$85,224.00</div>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem; margin-top: 1.25rem;">
-                        <div>
-                            <div style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 0.4rem;">24h High</div>
-                            <div style="font-weight: 700; font-size: 0.95rem;" id="btcHigh">$89,220.00</div>
+                    
+                    <div class="bitcoin-stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">24h High</div>
+                            <div class="stat-value" id="btcHigh">$89,220.00</div>
                         </div>
-                        <div>
-                            <div style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 0.4rem;">24h Low</div>
-                            <div style="font-weight: 700; font-size: 0.95rem;" id="btcLow">$84,581.00</div>
+                        <div class="stat-item">
+                            <div class="stat-label">24h Low</div>
+                            <div class="stat-value" id="btcLow">$84,581.00</div>
                         </div>
-                    </div>
-                    <div style="margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                        <div style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 0.4rem;">24h Volume</div>
-                        <div style="font-weight: 700; font-size: 0.95rem;" id="btcVolume">$69.09B</div>
+                        <div class="stat-item">
+                            <div class="stat-label">Market Cap</div>
+                            <div class="stat-value" id="btcMarketCap">$1.65T</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">24h Volume</div>
+                            <div class="stat-value" id="btcVolume">$69.09B</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1683,13 +1741,14 @@
         <div class="container">
             <div class="section-title">
                 <h2>Miners Available for Rent</h2>
-                <div class="section-controls">
+                <!-- VIEW TOGGLE MOVED TO RIGHT END -->
+                <div class="view-toggle-container">
                     <div class="view-toggle">
                         <button id="rentGridViewBtn" class="active">
-                            <i class="fas fa-th-large"></i> Grid
+                            <i class="fas fa-th-large"></i> Grid View
                         </button>
                         <button id="rentListViewBtn">
-                            <i class="fas fa-list"></i> List
+                            <i class="fas fa-list"></i> List View
                         </button>
                     </div>
                 </div>
@@ -1700,12 +1759,12 @@
                 <div id="rentListContainer" class="miners-list hidden"></div>
                 <div id="rentLoading" class="loading">
                     <div class="loading-spinner"></div>
-                    <p style="color: var(--text-secondary); margin-top: 0.9rem; font-size: 0.95rem;">Loading rental miners...</p>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; font-size: var(--fs-base);">Loading rental miners...</p>
                 </div>
                 <div id="rentEmpty" class="no-data hidden">
-                    <i class="fas fa-search" style="font-size: 2.25rem; margin-bottom: 0.9rem; color: var(--text-tertiary);"></i>
-                    <h3 style="color: var(--text-primary); margin-bottom: 0.4rem; font-size: 1.35rem;">No rental miners available</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Check back soon for new rental opportunities</p>
+                    <i class="fas fa-search" style="font-size: var(--fs-4xl); margin-bottom: 1rem; color: var(--text-tertiary);"></i>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: var(--fs-2xl);">No rental miners available</h3>
+                    <p style="color: var(--text-secondary); font-size: var(--fs-base);">Check back soon for new rental opportunities</p>
                 </div>
             </div>
             
@@ -1718,13 +1777,14 @@
         <div class="container">
             <div class="section-title">
                 <h2>Miners Available for Purchase</h2>
-                <div class="section-controls">
+                <!-- VIEW TOGGLE MOVED TO RIGHT END -->
+                <div class="view-toggle-container">
                     <div class="view-toggle">
                         <button id="saleGridViewBtn" class="active">
-                            <i class="fas fa-th-large"></i> Grid
+                            <i class="fas fa-th-large"></i> Grid View
                         </button>
                         <button id="saleListViewBtn">
-                            <i class="fas fa-list"></i> List
+                            <i class="fas fa-list"></i> List View
                         </button>
                     </div>
                 </div>
@@ -1735,12 +1795,12 @@
                 <div id="saleListContainer" class="miners-list hidden"></div>
                 <div id="saleLoading" class="loading">
                     <div class="loading-spinner"></div>
-                    <p style="color: var(--text-secondary); margin-top: 0.9rem; font-size: 0.95rem;">Loading miners for sale...</p>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; font-size: var(--fs-base);">Loading miners for sale...</p>
                 </div>
                 <div id="saleEmpty" class="no-data hidden">
-                    <i class="fas fa-search" style="font-size: 2.25rem; margin-bottom: 0.9rem; color: var(--text-tertiary);"></i>
-                    <h3 style="color: var(--text-primary); margin-bottom: 0.4rem; font-size: 1.35rem;">No miners available for sale</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Check back soon for new inventory</p>
+                    <i class="fas fa-search" style="font-size: var(--fs-4xl); margin-bottom: 1rem; color: var(--text-tertiary);"></i>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: var(--fs-2xl);">No miners available for sale</h3>
+                    <p style="color: var(--text-secondary); font-size: var(--fs-base);">Check back soon for new inventory</p>
                 </div>
             </div>
             
@@ -1760,7 +1820,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 style="font-size: 1.35rem; margin-bottom: 0.7rem;">Secure & Reliable</h3>
+                    <h3 style="font-size: var(--fs-xl); margin-bottom: 0.75rem;">Secure & Reliable</h3>
                     <p>Military-grade security with 99.9% uptime guarantee across all mining facilities.</p>
                 </div>
                 
@@ -1768,7 +1828,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 style="font-size: 1.35rem; margin-bottom: 0.7rem;">Maximum Profitability</h3>
+                    <h3 style="font-size: var(--fs-xl); margin-bottom: 0.75rem;">Maximum Profitability</h3>
                     <p>Optimized mining configurations and strategic location selection for maximum ROI.</p>
                 </div>
                 
@@ -1776,7 +1836,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3 style="font-size: 1.35rem; margin-bottom: 0.7rem;">24/7 Support</h3>
+                    <h3 style="font-size: var(--fs-xl); margin-bottom: 0.75rem;">24/7 Support</h3>
                     <p>Round-the-clock technical support and real-time monitoring of your mining operations.</p>
                 </div>
                 
@@ -1784,7 +1844,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-globe"></i>
                     </div>
-                    <h3 style="font-size: 1.35rem; margin-bottom: 0.7rem;">Global Infrastructure</h3>
+                    <h3 style="font-size: var(--fs-xl); margin-bottom: 0.75rem;">Global Infrastructure</h3>
                     <p>Strategically located facilities worldwide with access to renewable energy sources.</p>
                 </div>
             </div>
@@ -1798,36 +1858,36 @@
                 <h2>How Hashvex Works</h2>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
                 <div style="text-align: center;">
-                    <div style="width: 55px; height: 55px; background: var(--gradient-primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; font-weight: 800; color: white; margin: 0 auto 1.25rem;">1</div>
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: var(--fs-xl); font-weight: 800; color: white; margin: 0 auto 1.5rem;">1</div>
                     <div>
-                        <h3 style="font-size: 1.35rem; margin-bottom: 0.7rem;">Select Your Miner</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Choose from verified inventory of high-performance Bitcoin miners.</p>
+                        <h3 style="font-size: var(--fs-xl); margin-bottom: 0.75rem;">Select Your Miner</h3>
+                        <p style="color: var(--text-secondary); font-size: var(--fs-base);">Choose from verified inventory of high-performance Bitcoin miners.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 55px; height: 55px; background: var(--gradient-primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; font-weight: 800; color: white; margin: 0 auto 1.25rem;">2</div>
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: var(--fs-xl); font-weight: 800; color: white; margin: 0 auto 1.5rem;">2</div>
                     <div>
-                        <h3 style="font-size: 1.35rem; margin-bottom: 0.7rem;">Complete Setup</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Create account, complete verification, and set up wallet for payouts.</p>
+                        <h3 style="font-size: var(--fs-xl); margin-bottom: 0.75rem;">Complete Setup</h3>
+                        <p style="color: var(--text-secondary); font-size: var(--fs-base);">Create account, complete verification, and set up wallet for payouts.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 55px; height: 55px; background: var(--gradient-primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; font-weight: 800; color: white; margin: 0 auto 1.25rem;">3</div>
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: var(--fs-xl); font-weight: 800; color: white; margin: 0 auto 1.5rem;">3</div>
                     <div>
-                        <h3 style="font-size: 1.35rem; margin-bottom: 0.7rem;">Deployment</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Our engineers deploy miners at optimal facilities with low electricity costs.</p>
+                        <h3 style="font-size: var(--fs-xl); margin-bottom: 0.75rem;">Deployment</h3>
+                        <p style="color: var(--text-secondary); font-size: var(--fs-base);">Our engineers deploy miners at optimal facilities with low electricity costs.</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="width: 55px; height: 55px; background: var(--gradient-primary); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; font-weight: 800; color: white; margin: 0 auto 1.25rem;">4</div>
+                    <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: var(--fs-xl); font-weight: 800; color: white; margin: 0 auto 1.5rem;">4</div>
                     <div>
-                        <h3 style="font-size: 1.35rem; margin-bottom: 0.7rem;">Start Earning</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Begin receiving daily Bitcoin payouts directly to your wallet.</p>
+                        <h3 style="font-size: var(--fs-xl); margin-bottom: 0.75rem;">Start Earning</h3>
+                        <p style="color: var(--text-secondary); font-size: var(--fs-base);">Begin receiving daily Bitcoin payouts directly to your wallet.</p>
                     </div>
                 </div>
             </div>
@@ -1844,7 +1904,7 @@
             <div class="news-grid" id="newsContainer"></div>
             <div id="newsLoading" class="loading">
                 <div class="loading-spinner"></div>
-                <p style="color: var(--text-secondary); margin-top: 0.9rem; font-size: 0.95rem;">Loading news...</p>
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-size: var(--fs-base);">Loading news...</p>
             </div>
         </div>
     </section>
@@ -1853,8 +1913,8 @@
     <section class="cta-section">
         <div class="container">
             <h2>Start Your Bitcoin Mining Journey Today</h2>
-            <p style="font-size: 1rem; max-width: 600px; margin: 0 auto 2rem; font-size: 0.95rem;">Join thousands of investors earning passive income with Hashvex Technologies enterprise mining solutions.</p>
-            <button onclick="window.location.href='signup.html'" class="btn btn-primary" style="padding: 0.7rem 2.25rem; font-size: 1rem;">
+            <p style="font-size: var(--fs-md); max-width: 600px; margin: 0 auto 2.5rem; font-size: var(--fs-base);">Join thousands of investors earning passive income with Hashvex Technologies enterprise mining solutions.</p>
+            <button onclick="window.location.href='signup.html'" class="btn btn-primary" style="padding: 0.75rem 2.5rem; font-size: var(--fs-md);">
                 <i class="fas fa-rocket"></i> Get Started Now
             </button>
         </div>
@@ -1871,7 +1931,7 @@
                              class="footer-logo-img">
                         <span class="footer-logo-text">Hashvex</span>
                     </div>
-                    <p style="color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem; font-size: 0.95rem;">Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem; font-size: var(--fs-base);">Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
                     <div class="footer-social">
                         <a href="https://twitter.com" class="social-icon twitter" target="_blank">
                             <i class="fab fa-twitter"></i>
@@ -1889,36 +1949,36 @@
                 </div>
                 
                 <div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--text-primary);">Platform</h3>
+                    <h3 style="font-size: var(--fs-lg); margin-bottom: 1.5rem; color: var(--text-primary);">Platform</h3>
                     <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.7rem;"><a href="dashboard.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Dashboard</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="#miners-for-sale" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Buy Miners</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="#miners-for-rent" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Rent Miners</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="accountsetting.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">My Account</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="dashboard.html" style="color: var(--text-secondary); text-decoration: none; font-size: var(--fs-base);">Dashboard</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="#miners-for-sale" style="color: var(--text-secondary); text-decoration: none; font-size: var(--fs-base);">Buy Miners</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="#miners-for-rent" style="color: var(--text-secondary); text-decoration: none; font-size: var(--fs-base);">Rent Miners</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="accountsetting.html" style="color: var(--text-secondary); text-decoration: none; font-size: var(--fs-base);">My Account</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--text-primary);">Company</h3>
+                    <h3 style="font-size: var(--fs-lg); margin-bottom: 1.5rem; color: var(--text-primary);">Company</h3>
                     <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.7rem;"><a href="about.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">About Us</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="careers.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Careers</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="blog.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Blog</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="partners.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Partners</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="about.html" style="color: var(--text-secondary); text-decoration: none; font-size: var(--fs-base);">About Us</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="careers.html" style="color: var(--text-secondary); text-decoration: none; font-size: var(--fs-base);">Careers</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="blog.html" style="color: var(--text-secondary); text-decoration: none; font-size: var(--fs-base);">Blog</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="partners.html" style="color: var(--text-secondary); text-decoration: none; font-size: var(--fs-base);">Partners</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--text-primary);">Contact</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.7rem; font-size: 0.95rem;">
+                    <h3 style="font-size: var(--fs-lg); margin-bottom: 1.5rem; color: var(--text-primary);">Contact</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: var(--fs-base);">
                         <i class="fas fa-envelope" style="color: var(--accent-cyan);"></i>
                         support@hashvex.com
                     </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.7rem; font-size: 0.95rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: var(--fs-base);">
                         <i class="fas fa-phone" style="color: var(--accent-cyan);"></i>
                         +1 606-363-2032
                     </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.7rem; font-size: 0.95rem;">
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: var(--fs-base);">
                         <i class="fas fa-map-marker-alt" style="color: var(--accent-cyan);"></i>
                         Delaware, USA
                     </p>
@@ -1935,7 +1995,7 @@
     <div id="minerModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 style="font-size: 1.75rem; color: var(--text-primary);">Miner Details</h2>
+                <h2 style="font-size: var(--fs-3xl); color: var(--text-primary);">Miner Details</h2>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body" id="modalBody"></div>
@@ -1944,9 +2004,9 @@
 
     <!-- Cart Modal -->
     <div id="cartModal" class="modal">
-        <div class="modal-content" style="max-width: 450px;">
+        <div class="modal-content" style="max-width: 500px;">
             <div class="modal-header">
-                <h2 style="font-size: 1.75rem; color: var(--text-primary);">Your Cart</h2>
+                <h2 style="font-size: var(--fs-3xl); color: var(--text-primary);">Your Cart</h2>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body" id="cartBody"></div>
@@ -1988,9 +2048,7 @@
             cartBtn: document.getElementById('cartBtn'),
             cartCount: document.getElementById('cartCount'),
             logoutBtn: document.getElementById('logoutBtn'),
-            currentYear: document.getElementById('currentYear'),
-            globalGridViewBtn: document.getElementById('globalGridViewBtn'),
-            globalListViewBtn: document.getElementById('globalListViewBtn')
+            currentYear: document.getElementById('currentYear')
         };
 
         // ====== INITIALIZATION ======
@@ -2135,6 +2193,10 @@
             const low = btc.price * 0.95;
             document.getElementById('btcHigh').textContent = formatter.format(high);
             document.getElementById('btcLow').textContent = formatter.format(low);
+            
+            // Format market cap
+            const marketCapT = (btc.marketCap / 1000000000000).toFixed(2);
+            document.getElementById('btcMarketCap').textContent = `$${marketCapT}T`;
             
             // Format volume
             const volumeB = (btc.volume / 1000000000).toFixed(2);
@@ -2290,13 +2352,6 @@
             renderMiners(type);
         }
 
-        function toggleGlobalView(view) {
-            ['rent', 'sale'].forEach(type => {
-                AppState.miners[type].view = view;
-                renderMiners(type);
-            });
-        }
-
         function renderPagination(type) {
             const container = document.getElementById(`${type}Pagination`);
             const { page, totalPages } = AppState.miners[type];
@@ -2395,27 +2450,27 @@
                                 `<div class="badge badge-discount">${miner.discount_percentage}% OFF</div>` : ''}
                         </div>
                     </div>
-                    <div style="padding: 1.25rem;">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 0.4rem;">${miner.name}</h3>
-                        <div style="font-size: 2rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 1.75rem;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: var(--fs-2xl); margin-bottom: 0.5rem;">${miner.name}</h3>
+                        <div style="font-size: var(--fs-3xl); font-weight: 800; color: var(--accent-cyan); margin-bottom: 2rem;">
                             ${discountedPrice ? `
-                                <span style="font-size: 1.15rem; color: var(--text-tertiary); text-decoration: line-through; margin-right: 0.4rem;">
+                                <span style="font-size: var(--fs-lg); color: var(--text-tertiary); text-decoration: line-through; margin-right: 0.5rem;">
                                     ${price}
                                 </span>
                                 ${discountedPrice}
                             ` : price}
                         </div>
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem; margin-bottom: 1.75rem;">
-                            <div style="background: rgba(255,255,255,0.02); padding: 0.9rem; border-radius: 10px;">
-                                <div style="font-size: 0.85rem; color: var(--text-tertiary);">Hashrate</div>
-                                <div style="font-size: 1.15rem; font-weight: 700;">${miner.hashrate || '--'} TH/s</div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 12px;">
+                                <div style="font-size: var(--fs-sm); color: var(--text-tertiary);">Hashrate</div>
+                                <div style="font-size: var(--fs-xl); font-weight: 700;">${miner.hashrate || '--'} TH/s</div>
                             </div>
-                            <div style="background: rgba(255,255,255,0.02); padding: 0.9rem; border-radius: 10px;">
-                                <div style="font-size: 0.85rem; color: var(--text-tertiary);">Power Consumption</div>
-                                <div style="font-size: 1.15rem; font-weight: 700;">${miner.power_consumption || '--'}W</div>
+                            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 12px;">
+                                <div style="font-size: var(--fs-sm); color: var(--text-tertiary);">Power Consumption</div>
+                                <div style="font-size: var(--fs-xl); font-weight: 700;">${miner.power_consumption || '--'}W</div>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 0.9rem; margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid var(--border-color);">
+                        <div style="display: flex; gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
                             <button class="btn btn-secondary close-modal-btn">
                                 <i class="fas fa-times"></i> Close
                             </button>
@@ -2509,9 +2564,9 @@
             if (AppState.cart.length === 0) {
                 body.innerHTML = `
                     <div class="cart-empty">
-                        <i class="fas fa-shopping-cart" style="font-size: 2.25rem; color: var(--text-tertiary); margin-bottom: 0.9rem;"></i>
-                        <h3 style="color: var(--text-primary); margin-bottom: 0.4rem; font-size: 1.35rem;">Your cart is empty</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Add miners to get started</p>
+                        <i class="fas fa-shopping-cart" style="font-size: var(--fs-4xl); color: var(--text-tertiary); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: var(--fs-2xl);">Your cart is empty</h3>
+                        <p style="color: var(--text-secondary); font-size: var(--fs-base);">Add miners to get started</p>
                     </div>
                 `;
             } else {
@@ -2525,8 +2580,8 @@
                                 <img src="${item.image_url || getDefaultMinerImage()}" alt="${item.name}">
                             </div>
                             <div class="cart-item-details">
-                                <div style="font-weight: 600; margin-bottom: 0.4rem; font-size: 0.95rem;">${item.name}</div>
-                                <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.95rem;">$${item.price.toLocaleString('en-US')}</div>
+                                <div style="font-weight: 600; margin-bottom: 0.5rem; font-size: var(--fs-base);">${item.name}</div>
+                                <div style="color: var(--accent-cyan); font-weight: 700; font-size: var(--fs-base);">$${item.price.toLocaleString('en-US')}</div>
                             </div>
                         </div>
                     `;
@@ -2538,9 +2593,9 @@
                     </div>
                     <div class="cart-total">
                         <div style="font-weight: 600;">Total</div>
-                        <div style="font-size: 1.35rem; font-weight: 800; color: var(--accent-cyan);">$${total.toLocaleString('en-US')}</div>
+                        <div style="font-size: var(--fs-xl); font-weight: 800; color: var(--accent-cyan);">$${total.toLocaleString('en-US')}</div>
                     </div>
-                    <div style="display: flex; gap: 0.9rem;">
+                    <div style="display: flex; gap: 1rem;">
                         <button class="btn btn-secondary close-cart-btn">
                             <i class="fas fa-times"></i> Close
                         </button>
@@ -2680,9 +2735,9 @@
                         <img src="${news.image_url || 'https://via.placeholder.com/400x250/1A1F2E/00A3FF?text=News'}" alt="${news.title}">
                     </div>
                     <div class="news-content">
-                        <div style="color: var(--accent-cyan); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.7rem;">${date}</div>
-                        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.7rem;">${news.title}</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem;">${news.excerpt}</p>
+                        <div style="color: var(--accent-cyan); font-size: var(--fs-sm); font-weight: 600; margin-bottom: 0.75rem;">${date}</div>
+                        <h3 style="font-size: var(--fs-lg); font-weight: 700; margin-bottom: 0.75rem;">${news.title}</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: var(--fs-base);">${news.excerpt}</p>
                         <a href="${news.url}" target="_blank" class="btn btn-secondary btn-small">
                             Read More <i class="fas fa-arrow-right"></i>
                         </a>
@@ -2727,10 +2782,6 @@
             document.getElementById('rentListViewBtn').addEventListener('click', () => toggleView('rent', 'list'));
             document.getElementById('saleGridViewBtn').addEventListener('click', () => toggleView('sale', 'grid'));
             document.getElementById('saleListViewBtn').addEventListener('click', () => toggleView('sale', 'list'));
-            
-            // Global view toggle
-            elements.globalGridViewBtn.addEventListener('click', () => toggleGlobalView('grid'));
-            elements.globalListViewBtn.addEventListener('click', () => toggleGlobalView('list'));
             
             // Cart
             elements.cartBtn.addEventListener('click', openCartModal);
