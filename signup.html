@@ -20,16 +20,16 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17721052671">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17721052671">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'AW-17721052671');
-</script>
+        gtag('config', 'AW-17721052671');
+    </script>
     
     <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -436,18 +436,7 @@
             50% { transform: rotate(5deg) translateY(-3px); }
         }
         
-        /* Auth Buttons */
-        .auth-buttons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .auth-buttons .btn {
-            padding: 8px 16px;
-            font-size: 0.9rem;
-        }
-        
+        /* User Balance */
         .user-balance {
             background-color: var(--primary);
             color: var(--darker);
@@ -1142,18 +1131,6 @@
                 padding: 10px 15px;
             }
             
-            .auth-buttons {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                margin-top: 15px;
-                display: none;
-            }
-            
-            .auth-buttons.active {
-                display: flex;
-            }
-            
             .user-balance {
                 order: 3;
                 width: 100%;
@@ -1313,8 +1290,7 @@
             <div class="logo" onclick="window.location.href='index.html'">
                 <img src="https://www.dropbox.com/scl/fi/1dq16nex1borvvknpcwox/circular_dark_background.png?rlkey=sq2ujl2oxxk9vyvg1j7oz0cdb&raw=1" alt="Hashvex Logo">
                 <span class="logo-text">
-                    <span class="santa-hat">🎅</span>Hashvex
-                </span>
+                
             </div>
             
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation">
@@ -1331,11 +1307,6 @@
                 </ul>
             </nav>
             
-            <div class="auth-buttons" id="auth-buttons">
-                <button class="btn btn-outline" onclick="window.location.href='login.html'">Login</button>
-                <button class="btn btn-primary" onclick="window.location.href='signup.html'">Sign Up</button>
-            </div>
-            
             <div class="user-balance" id="user-balance" style="display: none;" onclick="window.location.href='dashboard.html'">
                 <i class="fas fa-wallet"></i>
                 <span id="balance-amount">$0.00</span>
@@ -1347,7 +1318,61 @@
     <section class="signup-section">
         <div class="container">
             <div class="signup-container">
-                <div class="signup-form-container" data-aos="fade-up">
+                <div class="signup-content" data-aos="fade-right">
+                    <h1>Join Hashvex Today</h1>
+                    <p>Create your account to start investing in institutional-grade Bitcoin mining with enterprise security standards and guaranteed returns.</p>
+                    
+                    <div class="signup-features">
+                        <div class="signup-feature">
+                            <div class="signup-feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="signup-feature-text">
+                                Military-grade security with 256-bit AES encryption
+                            </div>
+                        </div>
+                        <div class="signup-feature">
+                            <div class="signup-feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="signup-feature-text">
+                                Guaranteed returns with principal protection
+                            </div>
+                        </div>
+                        <div class="signup-feature">
+                            <div class="signup-feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="signup-feature-text">
+                                24/7 account monitoring and support
+                            </div>
+                        </div>
+                        <div class="signup-feature">
+                            <div class="signup-feature-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div class="signup-feature-text">
+                                Instant withdrawals with no hidden fees
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Security Indicators -->
+                    <div class="security-indicator">
+                        <i class="fas fa-lock"></i>
+                        <span>256-bit AES Encryption</span>
+                    </div>
+                    <div class="security-indicator">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Multi-Signature Wallets</span>
+                    </div>
+                    <div class="security-indicator">
+                        <i class="fas fa-user-shield"></i>
+                        <span>SOC 2 Type II Certified</span>
+                    </div>
+                </div>
+                
+                <div class="signup-form-container" data-aos="fade-left">
                     <h2 class="signup-form-title">Create Account</h2>
                     
                     <form id="signup-form">
@@ -1565,12 +1590,10 @@
         // Enhanced Mobile menu toggle functionality
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const mainNav = document.getElementById('main-nav');
-        const authButtons = document.getElementById('auth-buttons');
         const userBalance = document.getElementById('user-balance');
         
         mobileMenuToggle.addEventListener('click', function() {
             mainNav.classList.toggle('active');
-            authButtons.classList.toggle('active');
             if (userBalance.style.display !== 'none') {
                 userBalance.classList.toggle('active');
             }
@@ -1584,7 +1607,6 @@
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
                     mainNav.classList.remove('active');
-                    authButtons.classList.remove('active');
                     if (userBalance.style.display !== 'none') {
                         userBalance.classList.remove('active');
                     }
@@ -2193,8 +2215,6 @@
             try {
                 const token = localStorage.getItem('hashvex_token');
                 if (!token) {
-                    document.getElementById('auth-buttons').style.display = 'flex';
-                    document.getElementById('user-balance').style.display = 'none';
                     return;
                 }
                 
@@ -2209,8 +2229,6 @@
                     window.location.href = 'dashboard.html';
                 } else {
                     localStorage.removeItem('hashvex_token');
-                    document.getElementById('auth-buttons').style.display = 'flex';
-                    document.getElementById('user-balance').style.display = 'none';
                 }
             } catch (error) {
                 console.error('Authentication check failed:', error);
