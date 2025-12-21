@@ -2,85 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hashvex Technologies | Dashboard</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hashvex | Dashboard</title>
+    <meta name="description" content="Manage your Bitcoin miners and track your earnings in real-time.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" type="image/png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17721052671"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17721052671');
+    </script>
     
     <style>
-        /* ====== HASHVEX THEME - Enhanced Dashboard Design ====== */
         :root {
-            /* Primary Colors */
-            --primary-black: #000000;
-            --primary-dark: #0A0E17;
-            --primary-navy: #0F1420;
-            --accent-blue: #00A3FF;
-            --accent-cyan: #00D1FF;
-            --success-green: #00D795;
-            --error-red: #FF3B5C;
-            --warning-yellow: #FFA500;
-            --info-blue: #0066FF;
-            --accent-purple: #8A2BE2;
-            --gold: #FFD700;
-            --gold-gradient-start: #FFD700;
-            --gold-gradient-end: #FFAA00;
-            
-            /* Gray Scale */
-            --gray-light: #2A3145;
+            /* Hashvex Color Scheme */
+            --primary: #00D395;
+            --primary-dark: #00B783;
+            --primary-light: #00E5A1;
+            --secondary: #0F1420;
+            --secondary-dark: #0A0E17;
+            --dark: #FFFFFF;
+            --darker: #000000;
+            --light: #121826;
+            --lighter: #1A1F2E;
             --gray: #8A94B3;
-            --gray-dark: #B0B8CF;
-            --darker: #1A1F2E;
-            
-            /* Theme Variables */
-            --bg-primary: var(--primary-black);
-            --bg-secondary: var(--primary-dark);
-            --bg-tertiary: #121826;
-            --bg-card: #1A1F2E;
-            --bg-card-hover: #222837;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B0B8CF;
-            --text-tertiary: #8A94B3;
-            --border-color: #2A3145;
-            --border-active: var(--accent-blue);
-            --shadow-color: rgba(0, 0, 0, 0.3);
-            
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
-            --gradient-success: linear-gradient(135deg, var(--success-green) 0%, #00E6A9 100%);
-            --gradient-error: linear-gradient(135deg, var(--error-red) 0%, #FF6B8B 100%);
-            --gradient-card: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-tertiary) 100%);
-            --gradient-header: linear-gradient(180deg, rgba(10, 14, 23, 0.95) 0%, rgba(15, 20, 32, 0.9) 100%);
-            --gradient-gold: linear-gradient(135deg, var(--gold-gradient-start) 0%, var(--gold-gradient-end) 100%);
-            
-            /* Shadows */
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
-            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
-            
-            /* Animation Speeds */
-            --transition-fast: 150ms ease;
-            --transition-normal: 300ms ease;
-            --transition-slow: 500ms ease;
-            
-            /* Border Radius */
+            --gray-light: #2A3145;
+            --gray-lighter: #222837;
+            --success: #00D795;
+            --warning: #FFA500;
+            --error: #FF3B5C;
+            --gold: #FFD700;
+            --gold-light: #FFAA00;
+            --gold-dark: #996515;
+            --blue: #0066FF;
+            --blue-dark: #0052CC;
+            --blue-light: #00A3FF;
+            --purple: #8A2BE2;
+            --pink: #EC4899;
+            --cyan: #00D1FF;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            --gradient-blue: linear-gradient(135deg, var(--blue-light) 0%, var(--cyan) 100%);
+            --gold-gradient: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            --blue-gradient: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
             --border-radius: 8px;
-            --border-radius-lg: 16px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* ====== RESET & BASE STYLES ====== */
         * {
             margin: 0;
             padding: 0;
@@ -89,728 +76,752 @@
         
         html {
             scroll-behavior: smooth;
-            font-size: 15px;
+            overflow-x: hidden;
         }
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            color: var(--dark);
+            background-color: var(--darker);
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
         
-        .container {
-            width: 100%;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        /* Bitcoin Logo Animation */
+        @keyframes bitcoinFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(0) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(270deg);
+            }
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+
+        .bitcoin-animation {
+            display: inline-block;
+            animation: bitcoinFloat 4s ease-in-out infinite;
+            margin-right: 5px;
+            vertical-align: middle;
+            color: var(--gold);
+            text-shadow: 0 0 10px var(--gold-light);
+            font-weight: bold;
+            transform-origin: center;
         }
-        
-        h1 { 
-            font-size: 2.8rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        h2 { 
-            font-size: 2.3rem;
-            color: var(--text-primary);
-            margin-bottom: 2rem;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-        
-        /* ====== HEADER & NAVIGATION ====== */
-        header {
+
+        /* Loading Overlay */
+        .loading-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            height: 100%;
+            background-color: var(--darker);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            animation: pulse 1.5s infinite ease-in-out;
+            filter: drop-shadow(0 0 10px rgba(0, 211, 149, 0.3));
+            border-radius: 16px;
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-weight: 500;
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Enhanced Header Styles */
+        header {
+            background-color: var(--secondary-dark);
+            box-shadow: var(--box-shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
             z-index: 1000;
-            background: var(--gradient-header);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            height: 70px;
-            padding: 0;
+            padding: 8px 0;
+            transition: var(--transition-slow);
+            border-bottom: 1px solid var(--gray-light);
+            height: 60px;
+        }
+        
+        header.scrolled {
+            background-color: rgba(10, 14, 23, 0.98);
+            backdrop-filter: blur(5px);
         }
         
         .header-container {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            height: 100%;
-            padding: 0 2rem;
-            max-width: 1440px;
-            margin: 0 auto;
+            align-items: center;
             position: relative;
-            gap: 1rem;
+            height: 100%;
+            padding: 0 15px;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
+            gap: 8px;
+            cursor: pointer;
             z-index: 1001;
-            flex-shrink: 0;
         }
         
-        .logo-img {
-            height: 40px;
-            width: 40px;
-            border-radius: 10px;
-            border: none;
+        .logo img {
+            height: 32px;
+            width: auto;
+            transition: var(--transition);
+            border-radius: 8px;
+        }
+        
+        .logo:hover img {
+            transform: scale(1.05);
         }
         
         .logo-text {
             font-family: 'Poppins', sans-serif;
             font-weight: 900;
-            font-size: 1.4rem;
-            background: var(--gradient-primary);
+            font-size: 1.3rem;
+            background: var(--gradient-blue);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             position: relative;
-            white-space: nowrap;
         }
         
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            align-items: center;
-            flex: 1;
-            margin: 0 2rem;
+        /* PC Toggle Menu */
+        .pc-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+            transition: var(--transition);
+            position: absolute;
+            right: 15px;
+            top: 15px;
         }
         
-        .nav-link {
-            color: var(--text-secondary);
-            font-weight: 600;
-            font-size: 0.92rem;
+        .pc-menu-toggle:hover {
+            color: var(--primary);
+        }
+        
+        .pc-menu-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--secondary-dark);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-lg);
+            padding: 10px 0;
+            min-width: 180px;
+            transform: translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .pc-menu-dropdown.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .pc-menu-dropdown ul {
+            list-style: none;
+        }
+        
+        .pc-menu-dropdown li {
+            padding: 8px 15px;
+        }
+        
+        .pc-menu-dropdown a {
+            color: var(--dark);
             text-decoration: none;
-            padding: 0.5rem 0;
-            position: relative;
-            transition: color var(--transition-normal);
-            white-space: nowrap;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: block;
         }
         
-        .nav-link::after {
+        .pc-menu-dropdown a:hover {
+            color: var(--primary);
+            transform: translateX(3px);
+        }
+        
+        /* Auth Buttons */
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: auto;
+            margin-right: 60px;
+        }
+        
+        .auth-buttons .btn {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+            transition: var(--transition);
+            position: absolute;
+            right: 15px;
+        }
+        
+        .mobile-menu-toggle:hover {
+            color: var(--primary);
+        }
+        
+        nav {
+            transition: var(--transition-slow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.9rem;
+            padding: 3px 0;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient-primary);
-            transition: width var(--transition-normal);
+            background: var(--primary);
+            transition: var(--transition);
         }
         
-        .nav-link:hover::after,
-        .nav-link.active::after {
+        nav a:hover::after {
             width: 100%;
         }
         
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--text-primary);
-        }
-        
-        .user-controls {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 1.5rem;
-            z-index: 1001;
-            flex-shrink: 0;
-        }
-        
-        .user-menu {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform var(--transition-normal);
-            font-size: 0.95rem;
-        }
-        
-        .user-avatar:hover {
-            transform: scale(1.05);
-        }
-        
-        .user-dropdown {
-            display: none;
-            position: absolute;
-            top: calc(100% + 10px);
-            right: 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem;
-            min-width: 200px;
-            box-shadow: var(--shadow-xl);
-            z-index: 1000;
-        }
-        
-        .user-avatar:hover + .user-dropdown,
-        .user-dropdown:hover {
-            display: block;
-        }
-        
-        .cart-btn {
-            position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -6px;
-            right: -6px;
-            background: var(--error-red);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .cart-btn:hover {
-            border-color: var(--accent-blue);
-            background: rgba(0, 163, 255, 0.1);
-        }
-        
-        .mobile-menu-toggle {
-            display: none;
-            background: transparent;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.4rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
-            flex-shrink: 0;
-        }
-        
-        /* ====== DASHBOARD LAYOUT ====== */
-        .dashboard-section {
-            margin-top: 70px;
-            padding: 2rem 0;
-        }
-        
-        .dashboard-header {
-            margin-bottom: 2rem;
-        }
-        
-        .dashboard-header h1 {
-            font-size: 2.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .dashboard-header p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-        
-        /* ====== BALANCE DISPLAY ====== */
-        .balance-display {
-            background: rgba(15, 20, 32, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.5rem 0;
-        }
-        
-        .balance-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        .balance-card {
-            background: rgba(0, 215, 149, 0.1);
-            border: 1px solid rgba(0, 215, 149, 0.2);
-            border-radius: 16px;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            min-width: 280px;
-            transition: all var(--transition-normal);
-            backdrop-filter: blur(10px);
-        }
-        
-        .balance-card.income {
-            background: rgba(0, 209, 255, 0.1);
-            border-color: rgba(0, 209, 255, 0.2);
-        }
-        
-        .balance-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .balance-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .balance-amount {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: var(--success-green);
-            letter-spacing: -0.5px;
-        }
-        
-        .balance-card.income .balance-amount {
-            color: var(--accent-cyan);
-        }
-        
-        /* ====== DASHBOARD GRID ====== */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .dashboard-card {
-            background: var(--bg-card);
-            border-radius: var(--border-radius-lg);
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-normal);
-        }
-        
-        .dashboard-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-blue);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .card-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        /* ====== MINERS SECTION ====== */
-        .miners-section {
-            padding: 3rem 0;
-        }
-        
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-        
-        .section-title h2 {
-            text-align: left;
-            margin-bottom: 0;
-        }
-        
-        .section-title h2::after {
-            left: 0;
-            transform: none;
-        }
-        
-        .view-toggle {
-            display: flex;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 0.25rem;
-            border: 1px solid var(--border-color);
-        }
-        
-        .view-toggle button {
-            padding: 0.7rem 1.25rem;
-            border: none;
-            background: transparent;
-            color: var(--text-secondary);
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            min-width: 110px;
-            transition: all var(--transition-normal);
-        }
-        
-        .view-toggle button:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .view-toggle button.active {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-primary);
-        }
-        
-        .miners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .miners-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .miner-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-normal);
-        }
-        
-        .miner-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-blue);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .miner-card-grid {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .miner-card-list {
-            display: flex;
-            flex-direction: row;
-        }
-        
-        .miner-image {
-            position: relative;
-            height: 200px;
-            background: var(--bg-tertiary);
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        
-        .miner-card-list .miner-image {
-            width: 250px;
-            height: auto;
-        }
-        
-        .miner-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-slow);
-        }
-        
-        .miner-card:hover .miner-image img {
-            transform: scale(1.05);
-        }
-        
-        .miner-badges {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            z-index: 2;
-        }
-        
-        .badge {
-            padding: 0.45rem 0.65rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid;
-            backdrop-filter: blur(10px);
-        }
-        
-        .badge-stock {
-            background: rgba(0, 215, 149, 0.2);
-            color: var(--success-green);
-            border-color: rgba(0, 215, 149, 0.3);
-        }
-        
-        .badge-out {
-            background: rgba(255, 59, 92, 0.2);
-            color: var(--error-red);
-            border-color: rgba(255, 59, 92, 0.3);
-        }
-        
-        .badge-discount {
-            background: rgba(255, 215, 0, 0.2);
-            color: var(--gold);
-            border-color: rgba(255, 215, 0, 0.3);
-        }
-        
-        .badge-rental {
-            background: rgba(138, 43, 226, 0.2);
-            color: var(--accent-purple);
-            border-color: rgba(138, 43, 226, 0.3);
-        }
-        
-        .miner-content {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .miner-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            line-height: 1.2;
-        }
-        
-        .miner-price {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--accent-cyan);
-            margin-bottom: 1rem;
-            line-height: 1;
-        }
-        
-        .miner-price .original {
-            font-size: 1rem;
-            color: var(--text-tertiary);
-            text-decoration: line-through;
-            margin-right: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .miner-specs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .spec-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-        
-        .spec-item i {
-            color: var(--accent-cyan);
-            width: 16px;
-            font-size: 0.85rem;
-        }
-        
-        .profitability-display {
-            display: flex;
-            gap: 1rem;
-            margin: 1rem 0;
-            padding: 0.9rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .profit-item {
-            text-align: center;
-            flex: 1;
-        }
-        
-        .profit-label {
-            font-size: 0.75rem;
-            color: var(--text-tertiary);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .profit-value {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--success-green);
-        }
-        
-        .miner-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-            gap: 0.9rem;
-        }
-        
-        /* ====== LOAN SECTION ====== */
-        .loan-card {
-            grid-column: span 6;
-        }
-        
-        .loan-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background-color: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            transition: var(--transition-normal);
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.1);
-        }
-        
-        .loan-calculator {
-            background: var(--bg-tertiary);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin-top: 1.5rem;
-            border: 1px solid var(--border-color);
-        }
-        
-        .calculator-result {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 1rem 0;
-            color: var(--accent-cyan);
-        }
-        
-        /* ====== BUTTONS ====== */
         .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
             font-weight: 600;
-            font-size: 0.9rem;
             cursor: pointer;
+            transition: var(--transition);
             border: none;
-            transition: all var(--transition-normal);
-            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 6px;
             white-space: nowrap;
         }
         
         .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
+            background: var(--gradient);
+            color: var(--darker);
+            box-shadow: 0 4px 15px rgba(0, 211, 149, 0.3);
         }
         
         .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 6px 20px rgba(0, 211, 149, 0.4);
         }
         
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
         }
         
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-blue);
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: translateY(-2px);
         }
         
-        .btn-success {
-            background: var(--gradient-success);
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: var(--darker);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Dashboard Specific Styles */
+        .dashboard-section {
+            padding: 90px 0 30px;
+            background-color: var(--darker);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .dashboard-title h1 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .dashboard-title p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .dashboard-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .balance-card {
+            grid-column: span 4;
+            background-color: var(--lighter);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-light);
+        }
+
+        .balance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .balance-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .balance-title {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .balance-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .balance-icon.main {
+            background-color: rgba(0, 211, 149, 0.1);
+            color: var(--primary);
+        }
+
+        .balance-icon.income {
+            background-color: rgba(0, 163, 255, 0.1);
+            color: var(--blue-light);
+        }
+
+        .balance-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .balance-card .balance-amount {
+            color: var(--primary);
+        }
+
+        .balance-card.income .balance-amount {
+            color: var(--cyan);
+        }
+
+        .btc-amount {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .balance-change {
+            font-size: 0.85rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .balance-change.positive {
+            color: var(--primary);
+        }
+
+        .balance-change.negative {
+            color: var(--error);
+        }
+
+        .dashboard-card {
+            background-color: var(--lighter);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-light);
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .card-action-btn {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+
+        .card-action-btn:hover {
+            color: var(--primary);
+        }
+
+        .loan-card {
+            grid-column: span 6;
+        }
+
+        .loan-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            background-color: var(--light);
+            border: 1px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            color: var(--dark);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 211, 149, 0.1);
+        }
+
+        .loan-calculator {
+            background-color: var(--blue);
             color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
         }
-        
-        .btn-error {
-            background: var(--gradient-error);
-            color: white;
+
+        .calculator-result {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 12px 0;
+            color: var(--gold);
         }
-        
-        .btn-small {
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
+
+        .calculator-details {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            color: rgba(255, 255, 255, 0.8);
         }
-        
-        /* ====== MODALS ====== */
+
+        /* Miners Section */
+        .miners-container {
+            margin-top: 20px;
+        }
+
+        .miners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .miner-card {
+            background: var(--lighter);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .miner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .miner-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .miner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .miner-card:hover .miner-image img {
+            transform: scale(1.05);
+        }
+
+        .miner-badges {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-stock {
+            background: rgba(0, 215, 149, 0.2);
+            color: var(--success);
+            border: 1px solid rgba(0, 215, 149, 0.3);
+        }
+
+        .badge-out {
+            background: rgba(255, 59, 92, 0.2);
+            color: var(--error);
+            border: 1px solid rgba(255, 59, 92, 0.3);
+        }
+
+        .badge-discount {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--gold);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .badge-rental {
+            background: rgba(138, 43, 226, 0.2);
+            color: var(--purple);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .badge-new {
+            background: rgba(0, 163, 255, 0.2);
+            color: var(--blue-light);
+            border: 1px solid rgba(0, 163, 255, 0.3);
+        }
+
+        .miner-content {
+            padding: 15px;
+        }
+
+        .miner-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .miner-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        .miner-price .original {
+            font-size: 1rem;
+            color: var(--gray);
+            text-decoration: line-through;
+            margin-right: 5px;
+        }
+
+        .miner-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .spec-item i {
+            color: var(--cyan);
+            width: 16px;
+        }
+
+        .profitability-display {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .profit-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .profit-label {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .profit-value {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .profit-value.gain {
+            color: var(--success);
+        }
+
+        .miner-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--gray-light);
+            gap: 10px;
+        }
+
+        .miner-actions .btn {
+            flex: 1;
+        }
+
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -822,19 +833,19 @@
             backdrop-filter: blur(10px);
             z-index: 2000;
             overflow-y: auto;
-            padding: 1rem;
+            padding: 20px;
         }
-        
+
         .modal-content {
-            background: var(--bg-card);
+            background: var(--lighter);
             max-width: 900px;
-            margin: 2rem auto;
-            border-radius: 20px;
+            margin: 20px auto;
+            border-radius: var(--border-radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--box-shadow-lg);
             animation: modalSlideIn 0.3s ease;
         }
-        
+
         @keyframes modalSlideIn {
             from {
                 opacity: 0;
@@ -845,21 +856,21 @@
                 transform: translateY(0);
             }
         }
-        
+
         .modal-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
+            padding: 20px;
+            border-bottom: 1px solid var(--gray-light);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%);
+            background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 100%);
         }
-        
+
         .close-modal {
             background: transparent;
             border: none;
             font-size: 1.5rem;
-            color: var(--text-primary);
+            color: var(--dark);
             cursor: pointer;
             width: 40px;
             height: 40px;
@@ -867,333 +878,375 @@
             align-items: center;
             justify-content: center;
             border-radius: 12px;
-            transition: all var(--transition-normal);
+            transition: var(--transition);
         }
-        
+
         .close-modal:hover {
             background: rgba(255, 255, 255, 0.1);
         }
-        
+
         .modal-body {
-            padding: 1.5rem;
+            padding: 20px;
             max-height: 70vh;
             overflow-y: auto;
         }
-        
-        /* Miner Detail Modal */
+
         .miner-detail {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 30px;
         }
-        
+
+        @media (max-width: 768px) {
+            .miner-detail {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .miner-detail-image {
-            height: 350px;
-            border-radius: 20px;
+            border-radius: var(--border-radius-lg);
             overflow: hidden;
-            background: var(--bg-tertiary);
+            background: var(--light);
             position: relative;
         }
-        
+
+        .miner-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .detail-badges {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
+            top: 15px;
+            left: 15px;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 5px;
         }
-        
-        .miner-specs-grid {
+
+        .specs-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
+            gap: 15px;
+            margin: 20px 0;
         }
-        
+
         .spec-group {
             background: rgba(255, 255, 255, 0.02);
-            padding: 1rem;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: var(--border-radius);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .spec-group h4 {
             font-size: 1rem;
-            margin-bottom: 0.75rem;
-            color: var(--accent-cyan);
+            margin-bottom: 10px;
+            color: var(--cyan);
         }
-        
+
         .spec-row {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
+            padding: 8px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
         .spec-label {
-            color: var(--text-secondary);
+            color: var(--gray);
             font-size: 0.85rem;
         }
-        
+
         .spec-value {
-            color: var(--text-primary);
+            color: var(--dark);
             font-weight: 600;
             font-size: 0.9rem;
         }
-        
+
         .profitability-chart {
-            margin: 1.5rem 0;
-            padding: 1rem;
+            margin: 20px 0;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
+            border-radius: var(--border-radius);
         }
-        
+
         .profitability-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 15px;
+            margin-top: 20px;
         }
-        
+
+        @media (max-width: 576px) {
+            .profitability-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .profit-stat {
             text-align: center;
-            padding: 1rem;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
+            border-radius: var(--border-radius);
         }
-        
+
         .profit-stat-value {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: var(--success-green);
-            margin-bottom: 0.25rem;
+            color: var(--success);
+            margin-bottom: 5px;
         }
-        
+
         .profit-stat-label {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            color: var(--gray);
         }
-        
+
         /* Cart Modal */
-        .cart-modal .modal-content {
-            max-width: 600px;
-        }
-        
         .cart-items {
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
-        
+
         .cart-item {
             display: flex;
             align-items: center;
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            gap: 1.5rem;
+            padding: 15px;
+            border-bottom: 1px solid var(--gray-light);
+            gap: 15px;
         }
-        
+
         .cart-item-image {
             width: 80px;
             height: 80px;
-            border-radius: 12px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            background: var(--bg-tertiary);
+            background: var(--light);
             flex-shrink: 0;
         }
-        
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .cart-item-details {
             flex: 1;
         }
-        
+
         .cart-total {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 16px;
-            margin-bottom: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
         }
-        
+
         .cart-empty {
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 40px 20px;
         }
-        
-        /* ====== LOADING STATES ====== */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-black) 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.3s ease;
+
+        .cart-empty i {
+            font-size: 3rem;
+            color: var(--gray);
+            margin-bottom: 15px;
         }
-        
-        .loading-logo {
-            height: 80px;
-            width: 80px;
-            border-radius: 16px;
-            margin-bottom: 1.5rem;
-            animation: pulseLogo 1.5s infinite;
-        }
-        
-        @keyframes pulseLogo {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-        
-        .loading {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem;
-        }
-        
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top-color: var(--accent-blue);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .no-data {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-tertiary);
-        }
-        
-        .hidden {
-            display: none !important;
-        }
-        
-        /* ====== NOTIFICATIONS ====== */
-        .notification {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-dark);
             color: white;
-            z-index: 4000;
-            box-shadow: var(--shadow-xl);
-            animation: slideInRight 0.3s ease;
-            max-width: 350px;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            backdrop-filter: blur(20px);
-            border: 1px solid;
-            font-size: 0.95rem;
+            gap: 8px;
         }
         
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+        .footer-logo img {
+            height: 28px;
+            width: auto;
+            border-radius: 8px;
         }
         
-        .notification.success {
-            background: rgba(0, 215, 149, 0.2);
-            border-color: rgba(0, 215, 149, 0.3);
+        .footer-logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
-        .notification.error {
-            background: rgba(255, 59, 92, 0.2);
-            border-color: rgba(255, 59, 92, 0.3);
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
         
-        .notification.warning {
-            background: rgba(255, 165, 0, 0.2);
-            border-color: rgba(255, 165, 0, 0.3);
+        .footer-social {
+            display: flex;
+            gap: 10px;
         }
         
-        .notification.info {
-            background: rgba(0, 209, 255, 0.2);
-            border-color: rgba(0, 209, 255, 0.3);
+        .social-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            color: white;
+            text-decoration: none;
         }
         
-        /* ====== RESPONSIVE DESIGN ====== */
+        /* Social media icons */
+        .social-icon.twitter {
+            background-color: #1DA1F2;
+        }
+        
+        .social-icon.linkedin {
+            background-color: #0077B5;
+        }
+        
+        .social-icon.facebook {
+            background-color: #1877F2;
+        }
+        
+        .social-icon.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(3px);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        
+        .footer-contact i {
+            color: var(--primary);
+            width: 18px;
+            text-align: center;
+            margin-top: 2px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 1200px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-            
             .balance-card {
-                min-width: 240px;
-            }
-            
-            .miners-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-column: span 6;
             }
         }
         
         @media (max-width: 992px) {
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--primary-dark);
-                flex-direction: column;
-                padding: 1.5rem;
-                gap: 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                z-index: 999;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                box-shadow: var(--shadow-lg);
-                margin: 0;
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
             }
             
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-                display: flex;
+            .loan-card {
+                grid-column: span 12;
             }
-            
-            .nav-link {
-                width: 100%;
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
+        }
+        
+        @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
             
-            .balance-container {
+            nav {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-dark);
+                box-shadow: var(--box-shadow);
+                padding: 15px;
+                transform: translateY(-150%);
+                opacity: 0;
+                z-index: 999;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            nav ul {
                 flex-direction: column;
+                gap: 12px;
                 align-items: center;
             }
             
-            .balance-card {
+            .dashboard-actions {
+                flex-direction: column;
                 width: 100%;
             }
             
-            .loan-card {
+            .balance-card {
                 grid-column: span 12;
             }
             
@@ -1201,198 +1254,167 @@
                 grid-template-columns: 1fr;
             }
             
-            .miner-detail {
+            .footer-container {
                 grid-template-columns: 1fr;
             }
         }
         
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .dashboard-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .balance-amount {
-                font-size: 1.8rem;
-            }
-            
-            .dashboard-card {
-                padding: 1rem;
-            }
-            
-            .card-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-            
-            .card-actions {
-                width: 100%;
-                justify-content: flex-start;
-            }
-            
-            .miner-card-list {
-                flex-direction: column;
-            }
-            
-            .miner-card-list .miner-image {
-                width: 100%;
-                height: 200px;
-            }
-            
-            .profitability-stats {
-                grid-template-columns: repeat(2, 1fr);
+        @media (min-width: 769px) {
+            .pc-menu-toggle {
+                display: block;
             }
         }
         
         @media (max-width: 576px) {
+            .dashboard-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            
+            .dashboard-title h1 {
+                font-size: 1.5rem;
+            }
+            
+            .dashboard-actions {
+                width: 100%;
+            }
+            
+            .dashboard-actions .btn {
+                width: 100%;
+            }
+            
+            .balance-amount {
+                font-size: 1.5rem;
+            }
+            
+            .btc-amount {
+                font-size: 0.8rem;
+            }
+            
+            .footer-container {
+                gap: 20px;
+            }
+            
             .miners-grid {
                 grid-template-columns: 1fr;
             }
             
-            .miner-specs {
+            .specs-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .profitability-display {
-                flex-direction: column;
-            }
-            
-            .profitability-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .miner-specs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* ====== SCROLLBAR STYLING ====== */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--primary-dark);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-blue);
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-cyan);
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loadingScreen" class="loading-screen">
-        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
-             alt="Hashvex Logo" 
-             class="loading-logo">
-        <p class="loading-text">Establishing secure connection...</p>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" alt="Hashvex Logo" class="loading-logo">    
+        <div class="loading-text">Establishing Secure Connection</div>
     </div>
 
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
-                     alt="Hashvex Technologies" 
-                     class="logo-img">
-                <span class="logo-text">Hashvex</span>
-            </a>
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" alt="Hashvex Logo">
+                <span class="logo-text">
+                    <span class="bitcoin-animation">₿</span>Hashvex
+                </span>
+            </div>
             
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="dashboard.html" class="nav-link active">Dashboard</a>
-                <a href="#my-miners" class="nav-link">My Miners</a>
-                <a href="#bitcoin-loan" class="nav-link">BTC Loan</a>
-                <a href="accountsetting.html" class="nav-link">Account</a>
-            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
             
-            <div class="user-controls">
-                <div class="user-menu" id="userMenu">
-                    <div class="cart-btn" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
-                    </div>
-                    
-                    <div class="user-avatar" id="userAvatar">
-                        U
-                    </div>
-                    
-                    <div class="user-dropdown">
-                        <a href="dashboard.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.9rem;">
-                            <i class="fas fa-chart-line"></i> Dashboard
-                        </a>
-                        <a href="accountsetting.html" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.9rem;">
-                            <i class="fas fa-user-cog"></i> Account Settings
-                        </a>
-                        <a href="#" id="logoutBtn" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; color: var(--text-secondary); text-decoration: none; border-radius: 8px; transition: background var(--transition-normal); font-size: 0.9rem;">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </a>
-                    </div>
+            <button class="pc-menu-toggle" id="pc-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-ellipsis-v"></i>
+                <div class="pc-menu-dropdown" id="pc-menu-dropdown">
+                    <ul>
+                        <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                        <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="accountsetting.html">Settings</a></li>
+                    </ul>
                 </div>
-                
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="auth-buttons">
+                <button class="btn btn-outline" onclick="window.location.href='logout.html'">
+                    <i class="fas fa-sign-out-alt"></i> Logout
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Balance Display -->
-    <div class="balance-display" id="balanceDisplay">
-        <div class="container">
-            <div class="balance-container">
-                <div class="balance-card">
-                    <div class="balance-label">Main Balance</div>
-                    <div class="balance-amount" id="mainBalance">$0.00</div>
-                </div>
-                <div class="balance-card income">
-                    <div class="balance-label">Income Balance</div>
-                    <div class="balance-amount" id="incomeBalance">$0.00</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Dashboard Section -->
     <section class="dashboard-section">
         <div class="container">
             <div class="dashboard-header">
-                <h1>Welcome <span id="username">User</span></h1>
-                <p>Track your miners, balances, and earnings in real-time</p>
+                <div class="dashboard-title">
+                    <h1>Welcome <span id="username">User</span></h1>
+                    <p>Your mining dashboard and account overview</p>
+                </div>
+                <div class="dashboard-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='deposit.html'">
+                        <i class="fas fa-plus-circle"></i> Deposit
+                    </button>
+                    <button class="btn btn-outline" onclick="window.location.href='withdrawal.html'">
+                        <i class="fas fa-wallet"></i> Withdraw
+                    </button>
+                </div>
             </div>
             
+            <!-- Balances Section -->
+            <div class="dashboard-grid">
+                <div class="balance-card">
+                    <div class="balance-header">
+                        <div class="balance-title">Main Balance</div>
+                        <div class="balance-icon main">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="balance-amount" id="main-balance">$0.00</div>
+                    <div class="btc-amount" id="main-balance-btc">0.000000 BTC</div>
+                    <div class="balance-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span id="main-balance-change">+0.00% (24h)</span>
+                    </div>
+                </div>
+                
+                <div class="balance-card income">
+                    <div class="balance-header">
+                        <div class="balance-title">Income Balance</div>
+                        <div class="balance-icon income">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="balance-amount" id="income-balance">$0.00</div>
+                    <div class="btc-amount" id="income-balance-btc">0.000000 BTC</div>
+                    <div class="balance-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span id="income-balance-change">+0.00% (24h)</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- My Miners Section -->
-            <section id="my-miners" class="miners-section">
-                <div class="section-title">
-                    <h2>My Miners</h2>
-                    <div class="view-toggle">
-                        <button id="ownedGridViewBtn" class="active">
-                            <i class="fas fa-th-large"></i> Grid View
-                        </button>
-                        <button id="ownedListViewBtn">
-                            <i class="fas fa-list"></i> List View
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h3 class="card-title">My Miners</h3>
+                    <div class="card-actions">
+                        <button class="card-action-btn" onclick="refreshMiners()">
+                            <i class="fas fa-sync-alt"></i> Refresh
                         </button>
                     </div>
                 </div>
                 
                 <div class="miners-container">
-                    <div id="ownedGridContainer" class="miners-grid"></div>
-                    <div id="ownedListContainer" class="miners-list hidden"></div>
-                    <div id="ownedLoading" class="loading">
+                    <div id="miners-loading" class="loading">
                         <div class="loading-spinner"></div>
                         <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">Loading your miners...</p>
                     </div>
-                    <div id="ownedEmpty" class="no-data hidden">
+                    <div id="miners-empty" class="no-data hidden">
                         <i class="fas fa-microchip" style="font-size: 2.3rem; margin-bottom: 1rem; color: var(--text-tertiary);"></i>
                         <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.4rem;">No miners found</h3>
                         <p style="color: var(--text-secondary); font-size: 0.95rem;">Purchase or rent miners to get started</p>
@@ -1400,144 +1422,147 @@
                             <i class="fas fa-shopping-cart"></i> Browse Miners
                         </button>
                     </div>
+                    <div id="miners-grid" class="miners-grid"></div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Bitcoin Loan Section -->
-            <section id="bitcoin-loan" class="miners-section">
-                <div class="dashboard-grid">
-                    <div class="dashboard-card loan-card">
-                        <div class="card-header">
-                            <h3 class="card-title">BTC Loan</h3>
-                            <div class="card-actions">
-                                <button class="btn btn-secondary btn-small" onclick="showLoanForm()">
-                                    <i class="fas fa-hand-holding-usd"></i> Borrow
-                                </button>
-                                <button class="btn btn-secondary btn-small" onclick="showRepaymentForm()">
-                                    <i class="fas fa-money-bill-wave"></i> Repay
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div id="loan-form">
-                            <div class="loan-form">
-                                <div class="form-group">
-                                    <label class="form-label">Loan Amount (USD)</label>
-                                    <input type="number" id="loan-amount" class="form-control" placeholder="Enter amount" min="100" step="100">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Duration (Months)</label>
-                                    <select id="loan-duration" class="form-control">
-                                        <option value="1">1 Month</option>
-                                        <option value="3">3 Months</option>
-                                        <option value="6">6 Months</option>
-                                        <option value="12">12 Months</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary" style="width: 100%;" onclick="requestLoan()">Request Loan</button>
-                            
-                            <div class="loan-calculator">
-                                <h4>Loan Calculator</h4>
-                                <div class="calculator-result" id="loan-calculator-result">$0.00</div>
-                                <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">
-                                    <p>Interest Rate: 9.99% per month</p>
-                                    <p>Facility Fee: 1.3% when disbursing</p>
-                                    <p>Minimum Transaction Requirement: $5,000</p>
-                                    <p>Your current loan limit: <span id="loan-limit">$0</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div id="repayment-form" style="display: none;">
-                            <div class="loan-form">
-                                <div class="form-group">
-                                    <label class="form-label">Amount to Repay (USD)</label>
-                                    <input type="number" id="repayment-amount" class="form-control" placeholder="Enter amount" min="10" step="10">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Current Loan Balance</label>
-                                    <input type="text" id="current-loan-balance" class="form-control" readonly value="$0.00">
-                                </div>
-                            </div>
-                            <button class="btn btn-primary" style="width: 100%;" onclick="repayLoan()">Repay Loan</button>
+            <!-- BTC Loan Section -->
+            <div class="dashboard-grid">
+                <div class="dashboard-card loan-card">
+                    <div class="card-header">
+                        <h3 class="card-title">BTC Loan</h3>
+                        <div class="card-actions">
+                            <button class="card-action-btn" onclick="showLoanForm()">
+                                <i class="fas fa-hand-holding-usd"></i> Borrow
+                            </button>
+                            <button class="card-action-btn" onclick="showRepaymentForm()">
+                                <i class="fas fa-money-bill-wave"></i> Repay
+                            </button>
                         </div>
                     </div>
                     
-                    <div class="dashboard-card" style="grid-column: span 6;">
-                        <div class="card-header">
-                            <h3 class="card-title">Recent Earnings</h3>
-                            <div class="card-actions">
-                                <button class="btn btn-secondary btn-small" onclick="refreshEarnings()">
-                                    <i class="fas fa-sync-alt"></i> Refresh
-                                </button>
+                    <div id="loan-form">
+                        <div class="loan-form">
+                            <div class="form-group">
+                                <label class="form-label">Loan Amount (USD)</label>
+                                <input type="number" id="loan-amount" class="form-control" placeholder="Enter amount" min="100" step="100">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Duration (Months)</label>
+                                <select id="loan-duration" class="form-control">
+                                    <option value="1">1 Month</option>
+                                    <option value="3">3 Months</option>
+                                    <option value="6">6 Months</option>
+                                    <option value="12">12 Months</option>
+                                </select>
                             </div>
                         </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="requestLoan()">Request Loan</button>
                         
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Date</th>
-                                        <th>Miner</th>
-                                        <th>Amount</th>
-                                        <th>Type</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="earnings-table">
-                                    <!-- Earnings will be loaded dynamically -->
-                                </tbody>
-                            </table>
+                        <div class="loan-calculator">
+                            <h4>Loan Calculator</h4>
+                            <div class="calculator-result" id="loan-calculator-result">$0.00</div>
+                            <div class="calculator-details">
+                                <p>Interest Rate: 9.99% per month</p>
+                                <p>Facility Fee: 1.3% when disbursing</p>
+                                <p>Minimum Transaction Requirement: $5,000</p>
+                                <p>Your current loan limit: <span id="loan-limit">$0</span></p>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div id="repayment-form" style="display: none;">
+                        <div class="loan-form">
+                            <div class="form-group">
+                                <label class="form-label">Amount to Repay (USD)</label>
+                                <input type="number" id="repayment-amount" class="form-control" placeholder="Enter amount" min="10" step="10">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Current Loan Balance</label>
+                                <input type="text" id="current-loan-balance" class="form-control" readonly value="$0.00">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="repayLoan()">Repay Loan</button>
+                    </div>
                 </div>
-            </section>
+                
+                <div class="dashboard-card" style="grid-column: span 6;">
+                    <div class="card-header">
+                        <h3 class="card-title">Recent Activity</h3>
+                        <div class="card-actions">
+                            <button class="card-action-btn" onclick="refreshActivity()">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="activity-table">
+                                <!-- Activity will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: var(--primary-dark); padding: 3rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+    <footer>
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem;">
-                <div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
-                        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" 
-                             alt="Hashvex" 
-                             style="height: 40px; width: 40px; border-radius: 10px;">
-                        <span style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--text-primary);">Hashvex</span>
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="https://www.dropbox.com/scl/fi/fp128zm3aszx5xjx65s4g/ChatGPT-Image-Dec-20-2025-08_10_15-PM.png?rlkey=cgx2ot3hzx6oe4tmc3dw1wowr&raw=1" alt="Hashvex Logo">
+                        <span class="footer-logo-text"><span class="bitcoin-animation">₿</span>Hashvex</span>
                     </div>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; font-size: 0.95rem;">Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
+                    <p>Enterprise Bitcoin mining platform serving institutional and retail investors worldwide.</p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com" class="social-icon twitter" aria-label="Twitter" target="_blank" rel="noopener">
+                           <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" class="social-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener">
+                           <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.facebook.com" class="social-icon facebook" aria-label="Facebook" target="_blank" rel="noopener">
+                           <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" class="social-icon instagram" aria-label="Instagram" target="_blank" rel="noopener">
+                           <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1.25rem; color: var(--text-primary);">Platform</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.7rem;"><a href="dashboard.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Dashboard</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="index.html#miners-for-sale" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Buy Miners</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="index.html#miners-for-rent" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">Rent Miners</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="accountsetting.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;">My Account</a></li>
+                <div class="footer-links">
+                    <h3 class="footer-title">Platform</h3>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="index.html#miners-for-sale">Buy Miners</a></li>
+                        <li><a href="index.html#miners-for-rent">Rent Miners</a></li>
+                        <li><a href="accountsetting.html">My Account</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1.25rem; color: var(--text-primary);">Contact</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
-                        <i class="fas fa-envelope" style="color: var(--accent-cyan);"></i>
-                        support@hashvex.com
-                    </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
-                        <i class="fas fa-phone" style="color: var(--accent-cyan);"></i>
-                        +1 606-363-2032
-                    </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
-                        <i class="fas fa-map-marker-alt" style="color: var(--accent-cyan);"></i>
-                        Delaware, USA
-                    </p>
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> support@hashvex.com</p>
+                    <p><i class="fas fa-phone"></i> +1 606-363-2032</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Delaware, USA</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Support</p>
                 </div>
             </div>
             
-            <div style="text-align: center; padding-top: 1.75rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-tertiary); font-size: 0.85rem;">
-                <p>&copy; <span id="currentYear"></span> Hashvex Technologies LLC. All Rights Reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Hashvex Technologies LLC. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1546,297 +1571,300 @@
     <div id="minerModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 style="font-size: 1.9rem; color: var(--text-primary);">Miner Details</h2>
+                <h2 style="font-size: 1.9rem; color: var(--dark);">Miner Details</h2>
                 <button class="close-modal">&times;</button>
             </div>
-            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-body" id="minerModalBody"></div>
         </div>
     </div>
 
     <!-- Cart Modal -->
-    <div id="cartModal" class="modal cart-modal">
-        <div class="modal-content">
+    <div id="cartModal" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
             <div class="modal-header">
-                <h2 style="font-size: 1.9rem; color: var(--text-primary);">Your Cart</h2>
+                <h2 style="font-size: 1.9rem; color: var(--dark);">Your Cart</h2>
                 <button class="close-modal">&times;</button>
             </div>
-            <div class="modal-body" id="cartBody"></div>
+            <div class="modal-body" id="cartModalBody"></div>
         </div>
     </div>
 
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
-        // ====== PRODUCTION CONFIGURATION ======
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Hide loading overlay when page is loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-overlay').classList.add('hidden');
+            }, 1000);
+            
+            // Load all dashboard data
+            loadUserData();
+            loadBalances();
+            loadUserMiners();
+            loadActivity();
+            calculateLoanLimit();
+            
+            // Initialize loan calculator
+            document.getElementById('loan-amount').addEventListener('input', updateLoanCalculator);
+            document.getElementById('loan-duration').addEventListener('change', updateLoanCalculator);
+            
+            // Check auth state
+            checkAuthState();
+        });
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            this.setAttribute('aria-expanded', mainNav.classList.contains('active'));
+        });
+        
+        // PC menu toggle functionality
+        const pcMenuToggle = document.getElementById('pc-menu-toggle');
+        const pcMenuDropdown = document.getElementById('pc-menu-dropdown');
+        
+        pcMenuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            pcMenuDropdown.classList.toggle('active');
+        });
+        
+        // Close PC menu when clicking elsewhere
+        document.addEventListener('click', function() {
+            pcMenuDropdown.classList.remove('active');
+        });
+        
+        // ====== CONFIGURATION ======
         const CONFIG = {
             API_BASE_URL: 'https://hashvex-technologies-backend.onrender.com/api',
-            REFRESH_INTERVAL: 30000
+            BTC_PRICE_API: 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd'
         };
 
-        // ====== APPLICATION STATE ======
-        const AppState = {
+        // ====== STATE MANAGEMENT ======
+        let AppState = {
             user: null,
             token: localStorage.getItem('hashvex_token'),
             balances: { main: 0, income: 0 },
             cart: [],
-            ownedMiners: { items: [], page: 1, totalPages: 1, view: 'grid' },
-            earnings: [],
-            currentLoanBalance: 0
+            miners: [],
+            currentLoanBalance: 0,
+            btcPrice: 0
         };
 
-        // ====== DOM ELEMENTS ======
-        const elements = {
-            loadingScreen: document.getElementById('loadingScreen'),
-            userMenu: document.getElementById('userMenu'),
-            balanceDisplay: document.getElementById('balanceDisplay'),
-            mainBalance: document.getElementById('mainBalance'),
-            incomeBalance: document.getElementById('incomeBalance'),
-            mobileMenuToggle: document.getElementById('mobileMenuToggle'),
-            navLinks: document.getElementById('navLinks'),
-            cartBtn: document.getElementById('cartBtn'),
-            cartCount: document.getElementById('cartCount'),
-            logoutBtn: document.getElementById('logoutBtn'),
-            currentYear: document.getElementById('currentYear'),
-            username: document.getElementById('username'),
-            ownedGridViewBtn: document.getElementById('ownedGridViewBtn'),
-            ownedListViewBtn: document.getElementById('ownedListViewBtn'),
-            ownedGridContainer: document.getElementById('ownedGridContainer'),
-            ownedListContainer: document.getElementById('ownedListContainer'),
-            ownedLoading: document.getElementById('ownedLoading'),
-            ownedEmpty: document.getElementById('ownedEmpty'),
-            earningsTable: document.getElementById('earnings-table'),
-            loanAmount: document.getElementById('loan-amount'),
-            loanDuration: document.getElementById('loan-duration'),
-            loanCalculatorResult: document.getElementById('loan-calculator-result'),
-            loanLimit: document.getElementById('loan-limit'),
-            repaymentAmount: document.getElementById('repayment-amount'),
-            currentLoanBalance: document.getElementById('current-loan-balance')
-        };
-
-        // ====== INITIALIZATION ======
-        document.addEventListener('DOMContentLoaded', async () => {
+        // ====== AUTHENTICATION ======
+        async function checkAuthState() {
             try {
-                // Set current year
-                elements.currentYear.textContent = new Date().getFullYear();
+                const token = localStorage.getItem('hashvex_token');
+                if (!token) {
+                    window.location.href = 'login.html';
+                    return;
+                }
                 
-                // Check authentication
-                await checkAuthentication();
-                
-                // Load initial data
-                await Promise.all([
-                    loadUserData(),
-                    loadBalances(),
-                    loadOwnedMiners(),
-                    loadEarnings(),
-                    loadCart(),
-                    loadLoanBalance(),
-                    checkLoanEligibility()
-                ]);
-                
-                // Setup event listeners
-                setupEventListeners();
-                
-                // Hide loading screen
-                setTimeout(() => {
-                    elements.loadingScreen.style.opacity = '0';
-                    setTimeout(() => {
-                        elements.loadingScreen.style.display = 'none';
-                    }, 300);
-                }, 500);
-                
-            } catch (error) {
-                console.error('Initialization error:', error);
-                showNotification('Failed to load dashboard. Please refresh.', 'error');
-            }
-        });
-
-        // ====== AUTHENTICATION FUNCTIONS ======
-        async function checkAuthentication() {
-            if (!AppState.token) {
-                window.location.href = 'login.html';
-                return;
-            }
-            
-            try {
                 const response = await fetch(`${CONFIG.API_BASE_URL}/auth/verify`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
                 
                 if (!response.ok) {
-                    logout();
-                } else {
-                    const data = await response.json();
-                    AppState.user = data.user;
+                    localStorage.removeItem('hashvex_token');
+                    window.location.href = 'login.html';
                 }
             } catch (error) {
-                logout();
+                console.error('Authentication check failed:', error);
+                window.location.href = 'login.html';
             }
         }
 
-        function logout() {
-            localStorage.removeItem('hashvex_token');
-            AppState.token = null;
-            AppState.user = null;
-            window.location.href = 'login.html';
-        }
-
-        // ====== USER DATA FUNCTIONS ======
+        // ====== USER DATA ======
         async function loadUserData() {
             try {
+                const token = localStorage.getItem('hashvex_token');
                 const response = await fetch(`${CONFIG.API_BASE_URL}/users/me`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
                 
                 if (response.ok) {
                     const data = await response.json();
                     AppState.user = data.user;
-                    
-                    // Update user display
-                    if (AppState.user?.name) {
-                        elements.username.textContent = AppState.user.name;
-                        const initials = AppState.user.name
-                            .split(' ')
-                            .map(n => n[0])
-                            .join('')
-                            .toUpperCase();
-                        document.getElementById('userAvatar').textContent = initials;
-                    }
+                    document.getElementById('username').textContent = AppState.user.name || AppState.user.email.split('@')[0];
                 }
             } catch (error) {
                 console.error('Error loading user data:', error);
             }
         }
 
-        // ====== BALANCE FUNCTIONS ======
+        // ====== BALANCES ======
         async function loadBalances() {
             try {
+                const token = localStorage.getItem('hashvex_token');
                 const response = await fetch(`${CONFIG.API_BASE_URL}/balances`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
                 
                 if (response.ok) {
                     const data = await response.json();
                     AppState.balances = data;
-                    updateBalanceDisplay();
+                    
+                    // Update display
+                    document.getElementById('main-balance').textContent = `$${data.main.toFixed(2)}`;
+                    document.getElementById('income-balance').textContent = `$${data.income.toFixed(2)}`;
+                    
+                    // Load BTC price for conversion
+                    await loadBTCPrice();
                 }
             } catch (error) {
                 console.error('Error loading balances:', error);
             }
         }
 
-        function updateBalanceDisplay() {
-            const formatter = new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            });
-            
-            elements.mainBalance.textContent = formatter.format(AppState.balances.main || 0);
-            elements.incomeBalance.textContent = formatter.format(AppState.balances.income || 0);
+        async function loadBTCPrice() {
+            try {
+                const response = await fetch(CONFIG.BTC_PRICE_API);
+                const data = await response.json();
+                AppState.btcPrice = data.bitcoin.usd;
+                
+                // Convert balances to BTC
+                const mainBTC = AppState.balances.main / AppState.btcPrice;
+                const incomeBTC = AppState.balances.income / AppState.btcPrice;
+                
+                document.getElementById('main-balance-btc').textContent = `${mainBTC.toFixed(6)} BTC`;
+                document.getElementById('income-balance-btc').textContent = `${incomeBTC.toFixed(6)} BTC`;
+            } catch (error) {
+                console.error('Error loading BTC price:', error);
+            }
         }
 
-        // ====== OWNED MINERS FUNCTIONS ======
-        async function loadOwnedMiners() {
+        // ====== USER MINERS ======
+        async function loadUserMiners() {
             try {
-                elements.ownedLoading.classList.remove('hidden');
-                elements.ownedEmpty.classList.add('hidden');
+                document.getElementById('miners-loading').classList.remove('hidden');
+                document.getElementById('miners-empty').classList.add('hidden');
                 
+                const token = localStorage.getItem('hashvex_token');
                 const response = await fetch(`${CONFIG.API_BASE_URL}/miners/owned`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
                 
                 if (response.ok) {
                     const data = await response.json();
-                    AppState.ownedMiners.items = data.miners || [];
-                    renderOwnedMiners();
+                    AppState.miners = data.miners || [];
+                    renderUserMiners();
                     
-                    if (AppState.ownedMiners.items.length === 0) {
-                        elements.ownedEmpty.classList.remove('hidden');
+                    if (AppState.miners.length === 0) {
+                        document.getElementById('miners-empty').classList.remove('hidden');
                     }
                 } else {
-                    throw new Error('Failed to load owned miners');
+                    throw new Error('Failed to load miners');
                 }
             } catch (error) {
-                console.error('Error loading owned miners:', error);
-                elements.ownedEmpty.classList.remove('hidden');
+                console.error('Error loading user miners:', error);
+                document.getElementById('miners-empty').classList.remove('hidden');
             } finally {
-                elements.ownedLoading.classList.add('hidden');
+                document.getElementById('miners-loading').classList.add('hidden');
             }
         }
 
-        function renderOwnedMiners() {
-            const view = AppState.ownedMiners.view;
-            const containerId = view === 'grid' ? 'ownedGridContainer' : 'ownedListContainer';
-            const otherContainerId = view === 'grid' ? 'ownedListContainer' : 'ownedGridContainer';
-            
-            const container = document.getElementById(containerId);
-            const otherContainer = document.getElementById(otherContainerId);
-            
+        function renderUserMiners() {
+            const container = document.getElementById('miners-grid');
             container.innerHTML = '';
-            otherContainer.classList.add('hidden');
-            container.classList.remove('hidden');
             
-            AppState.ownedMiners.items.forEach(miner => {
-                const minerCard = createOwnedMinerCard(miner, view);
+            AppState.miners.forEach(miner => {
+                const minerCard = createMinerCard(miner, true);
                 container.appendChild(minerCard);
             });
-            
-            updateViewToggle(view);
         }
 
-        function createOwnedMinerCard(miner, view) {
+        function createMinerCard(miner, isOwned = false) {
             const card = document.createElement('div');
-            card.className = `miner-card miner-card-${view}`;
+            card.className = 'miner-card';
+            card.dataset.id = miner.id;
+            card.dataset.type = miner.type;
             
             const isRental = miner.type === 'rental';
-            const statusClass = miner.status === 'active' ? 'active' : 'inactive';
+            const statusClass = miner.status === 'active' ? 'badge-stock' : 'badge-out';
             const statusText = miner.status === 'active' ? 'Active' : 'Inactive';
             
             card.innerHTML = `
                 <div class="miner-image">
-                    <img src="${miner.image_url || getDefaultMinerImage()}" alt="${miner.name}" loading="lazy">
+                    <img src="${miner.image_url || 'https://via.placeholder.com/400x300/1A1F2E/00A3FF?text=Bitcoin+Miner'}" alt="${miner.name}">
                     <div class="miner-badges">
-                        <div class="badge ${statusClass === 'active' ? 'badge-stock' : 'badge-out'}">${statusText}</div>
+                        <div class="badge ${statusClass}">${statusText}</div>
                         ${isRental ? '<div class="badge badge-rental">Rental</div>' : ''}
+                        ${miner.discount_percentage > 0 ? `<div class="badge badge-discount">${miner.discount_percentage}% OFF</div>` : ''}
                     </div>
                 </div>
                 <div class="miner-content">
                     <h3 class="miner-title">${miner.name}</h3>
+                    <div class="miner-price">
+                        ${isRental ? 
+                            `$${miner.monthly_price}/month` : 
+                            `$${miner.price.toLocaleString('en-US')}`}
+                        ${miner.discount_percentage > 0 ? 
+                            `<span class="original">$${(miner.price * (1 + miner.discount_percentage/100)).toLocaleString('en-US')}</span>` : ''}
+                    </div>
                     <div class="miner-specs">
                         <div class="spec-item">
                             <i class="fas fa-microchip"></i>
-                            <span>Hashrate:</span>
-                            <span style="color: var(--text-primary); font-weight: 600;">${miner.hashrate || '--'} TH/s</span>
+                            <span>Hashrate: ${miner.hashrate || '--'} TH/s</span>
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-bolt"></i>
-                            <span>Power:</span>
-                            <span style="color: var(--text-primary); font-weight: 600;">${miner.power_consumption || '--'}W</span>
+                            <span>Power: ${miner.power_consumption || '--'}W</span>
                         </div>
-                        ${isRental ? `
+                        ${isOwned ? `
                         <div class="spec-item">
                             <i class="fas fa-calendar-alt"></i>
-                            <span>Rental Ends:</span>
-                            <span style="color: var(--text-primary); font-weight: 600;">${new Date(miner.rental_end_date).toLocaleDateString()}</span>
+                            <span>${isRental ? 'Rental Ends: ' + new Date(miner.rental_end_date).toLocaleDateString() : 'Purchased: ' + new Date(miner.purchase_date).toLocaleDateString()}</span>
                         </div>
                         ` : ''}
                     </div>
                     <div class="profitability-display">
                         <div class="profit-item">
                             <div class="profit-label">Daily Income</div>
-                            <div class="profit-value">$${(miner.daily_income || 0).toFixed(2)}</div>
+                            <div class="profit-value gain">$${miner.daily_income?.toFixed(2) || '0.00'}</div>
                         </div>
                         <div class="profit-item">
                             <div class="profit-label">Total Earned</div>
-                            <div class="profit-value">$${(miner.total_earned || 0).toFixed(2)}</div>
+                            <div class="profit-value gain">$${miner.total_earned?.toFixed(2) || '0.00'}</div>
                         </div>
                     </div>
                     <div class="miner-actions">
-                        <button class="btn btn-secondary btn-small view-details" data-id="${miner.id}" data-type="owned">
+                        <button class="btn btn-secondary btn-small view-details-btn" data-id="${miner.id}">
                             <i class="fas fa-info-circle"></i> Details
                         </button>
-                        <button class="btn btn-primary btn-small" onclick="withdrawEarnings('${miner.id}')">
+                        ${isOwned ? `
+                        <button class="btn btn-primary btn-small withdraw-btn" data-id="${miner.id}">
                             <i class="fas fa-wallet"></i> Withdraw
                         </button>
+                        ` : `
+                        <button class="btn btn-primary btn-small ${miner.stock_quantity > 0 ? 'add-to-cart-btn' : ''}" 
+                                data-id="${miner.id}"
+                                ${miner.stock_quantity <= 0 ? 'disabled' : ''}>
+                            <i class="fas fa-cart-plus"></i> ${miner.stock_quantity > 0 ? 'Add to Cart' : 'Out of Stock'}
+                        </button>
+                        `}
                     </div>
                 </div>
             `;
@@ -1844,272 +1872,36 @@
             return card;
         }
 
-        function getDefaultMinerImage() {
-            return 'https://via.placeholder.com/400x300/1A1F2E/00A3FF?text=Bitcoin+Miner&font=inter';
-        }
-
-        function updateViewToggle(activeView) {
-            elements.ownedGridViewBtn.classList.toggle('active', activeView === 'grid');
-            elements.ownedListViewBtn.classList.toggle('active', activeView === 'list');
-        }
-
-        function toggleView(view) {
-            AppState.ownedMiners.view = view;
-            renderOwnedMiners();
-        }
-
-        // ====== EARNINGS FUNCTIONS ======
-        async function loadEarnings() {
+        // ====== MINER DETAILS MODAL ======
+        async function showMinerDetails(minerId) {
             try {
-                const response = await fetch(`${CONFIG.API_BASE_URL}/earnings`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
-                });
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    AppState.earnings = data.earnings || [];
-                    renderEarnings();
-                }
-            } catch (error) {
-                console.error('Error loading earnings:', error);
-            }
-        }
-
-        function renderEarnings() {
-            const tableBody = elements.earningsTable;
-            tableBody.innerHTML = '';
-            
-            AppState.earnings.slice(0, 5).forEach(earning => {
-                const row = document.createElement('tr');
-                
-                const date = new Date(earning.date).toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric'
-                });
-                
-                row.innerHTML = `
-                    <td>${date}</td>
-                    <td>${earning.miner_name || 'Unknown Miner'}</td>
-                    <td style="color: var(--success-green); font-weight: 600;">$${earning.amount.toFixed(2)}</td>
-                    <td>${earning.type === 'mining' ? 'Mining' : 'Rental'}</td>
-                `;
-                
-                tableBody.appendChild(row);
-            });
-            
-            if (AppState.earnings.length === 0) {
-                tableBody.innerHTML = `
-                    <tr>
-                        <td colspan="4" style="text-align: center; padding: 2rem; color: var(--text-tertiary);">
-                            No earnings yet
-                        </td>
-                    </tr>
-                `;
-            }
-        }
-
-        async function withdrawEarnings(minerId) {
-            try {
-                const response = await fetch(`${CONFIG.API_BASE_URL}/earnings/withdraw`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${AppState.token}`
-                    },
-                    body: JSON.stringify({ miner_id: minerId })
-                });
-                
-                if (response.ok) {
-                    showNotification('Earnings withdrawn successfully', 'success');
-                    await Promise.all([loadBalances(), loadEarnings(), loadOwnedMiners()]);
-                } else {
-                    throw new Error('Failed to withdraw earnings');
-                }
-            } catch (error) {
-                console.error('Error withdrawing earnings:', error);
-                showNotification(error.message || 'Failed to withdraw earnings', 'error');
-            }
-        }
-
-        function refreshEarnings() {
-            loadEarnings();
-            showNotification('Earnings refreshed', 'info');
-        }
-
-        // ====== LOAN FUNCTIONS ======
-        async function checkLoanEligibility() {
-            try {
-                const response = await fetch(`${CONFIG.API_BASE_URL}/loans/limit`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
-                });
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    elements.loanLimit.textContent = `$${data.limit.toFixed(2)}`;
-                    return data;
-                }
-            } catch (error) {
-                console.error('Error checking loan eligibility:', error);
-            }
-            return null;
-        }
-
-        async function loadLoanBalance() {
-            try {
-                const response = await fetch(`${CONFIG.API_BASE_URL}/loans/balance`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
-                });
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    AppState.currentLoanBalance = data.balance;
-                    elements.currentLoanBalance.value = `$${data.balance.toFixed(2)}`;
-                }
-            } catch (error) {
-                console.error('Error loading loan balance:', error);
-            }
-        }
-
-        function updateLoanCalculator() {
-            const amount = parseFloat(elements.loanAmount.value) || 0;
-            const duration = parseInt(elements.loanDuration.value) || 1;
-            
-            if (amount <= 0) {
-                elements.loanCalculatorResult.textContent = '$0.00';
-                return;
-            }
-            
-            const interestRate = 9.99; // 9.99% per month
-            const facilityFee = 1.3; // 1.3% facility fee
-            const totalInterest = amount * (interestRate / 100) * duration;
-            const totalFee = amount * (facilityFee / 100);
-            const totalRepayment = amount + totalInterest;
-            
-            elements.loanCalculatorResult.textContent = `$${totalRepayment.toFixed(2)} (Fee: $${totalFee.toFixed(2)})`;
-        }
-
-        async function requestLoan() {
-            try {
-                const amount = parseFloat(elements.loanAmount.value);
-                const duration = parseInt(elements.loanDuration.value);
-                
-                if (!amount || amount <= 0) {
-                    showNotification('Please enter a valid loan amount', 'error');
-                    return;
-                }
-                
-                // Check eligibility first
-                const eligibility = await checkLoanEligibility();
-                if (eligibility && amount > eligibility.limit) {
-                    showNotification(`Loan amount exceeds your limit of $${eligibility.limit.toFixed(2)}`, 'error');
-                    return;
-                }
-                
-                const response = await fetch(`${CONFIG.API_BASE_URL}/loans`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${AppState.token}`
-                    },
-                    body: JSON.stringify({
-                        amount,
-                        duration_months: duration
-                    })
-                });
-                
-                if (response.ok) {
-                    showNotification('Loan request submitted successfully', 'success');
-                    elements.loanAmount.value = '';
-                    updateLoanCalculator();
-                    await Promise.all([loadBalances(), loadLoanBalance(), checkLoanEligibility()]);
-                } else {
-                    const error = await response.json();
-                    throw new Error(error.message || 'Failed to request loan');
-                }
-            } catch (error) {
-                console.error('Error requesting loan:', error);
-                showNotification(error.message || 'Failed to request loan', 'error');
-            }
-        }
-
-        async function repayLoan() {
-            try {
-                const amount = parseFloat(elements.repaymentAmount.value);
-                
-                if (!amount || amount <= 0) {
-                    showNotification('Please enter a valid repayment amount', 'error');
-                    return;
-                }
-                
-                if (amount > AppState.currentLoanBalance) {
-                    showNotification(`Repayment amount exceeds your loan balance of $${AppState.currentLoanBalance.toFixed(2)}`, 'error');
-                    return;
-                }
-                
-                const response = await fetch(`${CONFIG.API_BASE_URL}/loans/repay`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${AppState.token}`
-                    },
-                    body: JSON.stringify({ amount })
-                });
-                
-                if (response.ok) {
-                    showNotification('Loan repayment successful', 'success');
-                    elements.repaymentAmount.value = '';
-                    await Promise.all([loadBalances(), loadLoanBalance()]);
-                    showLoanForm();
-                } else {
-                    const error = await response.json();
-                    throw new Error(error.message || 'Failed to repay loan');
-                }
-            } catch (error) {
-                console.error('Error repaying loan:', error);
-                showNotification(error.message || 'Failed to repay loan', 'error');
-            }
-        }
-
-        function showLoanForm() {
-            document.getElementById('loan-form').style.display = 'block';
-            document.getElementById('repayment-form').style.display = 'none';
-        }
-
-        function showRepaymentForm() {
-            document.getElementById('loan-form').style.display = 'none';
-            document.getElementById('repayment-form').style.display = 'block';
-        }
-
-        // ====== MINER DETAILS FUNCTIONS ======
-        async function showMinerDetails(minerId, type) {
-            try {
+                const token = localStorage.getItem('hashvex_token');
                 const response = await fetch(`${CONFIG.API_BASE_URL}/miners/${minerId}`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
                 
                 if (response.ok) {
                     const miner = await response.json();
-                    openMinerModal(miner, type);
-                } else {
-                    throw new Error('Failed to load miner details');
+                    openMinerModal(miner);
                 }
             } catch (error) {
-                console.error('Miner details error:', error);
+                console.error('Error loading miner details:', error);
                 showNotification('Failed to load miner details', 'error');
             }
         }
 
-        function openMinerModal(miner, type) {
+        function openMinerModal(miner) {
             const modal = document.getElementById('minerModal');
-            const body = document.getElementById('modalBody');
+            const body = document.getElementById('minerModalBody');
             
-            const isRental = type === 'rental' || miner.type === 'rental';
-            const isOwned = type === 'owned';
+            const isRental = miner.type === 'rental';
+            const isOwned = miner.owned === true;
             
-            // Create detailed specifications grid
-            const specsGrid = miner.specifications ? `
-                <div class="miner-specs-grid">
+            // Create specifications HTML
+            const specsHTML = miner.specifications ? `
+                <div class="specs-grid">
                     <div class="spec-group">
                         <h4>Basic Information</h4>
                         ${createSpecRow('Manufacturer', miner.specifications.manufacturer)}
@@ -2140,6 +1932,7 @@
                         ${createSpecRow('Hashrate', miner.specifications.hashrate)}
                         ${createSpecRow('Consumption', miner.specifications.consumption)}
                         ${createSpecRow('Efficiency', miner.specifications.efficiency)}
+                        ${createSpecRow('Profitability', miner.specifications.profitability)}
                     </div>
                     <div class="spec-group">
                         <h4>Location & Warranty</h4>
@@ -2149,13 +1942,13 @@
                         ${createSpecRow('ROI', miner.specifications.roi)}
                     </div>
                 </div>
-            ` : '';
+            ` : '<p>No specifications available.</p>';
             
-            // Create profitability chart placeholder
-            const profitabilityChart = `
+            // Create profitability HTML
+            const profitabilityHTML = `
                 <div class="profitability-chart">
                     <h4>Profitability Analysis</h4>
-                    <div style="height: 200px; background: var(--bg-tertiary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--text-tertiary); margin: 1rem 0;">
+                    <div style="height: 200px; background: var(--light); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; color: var(--gray); margin: 1rem 0;">
                         <p>Daily Income Chart (Canva Graph Integration)</p>
                     </div>
                     <div class="profitability-stats">
@@ -2178,7 +1971,7 @@
             body.innerHTML = `
                 <div class="miner-detail">
                     <div class="miner-detail-image">
-                        <img src="${miner.image_url || getDefaultMinerImage()}" alt="${miner.name}">
+                        <img src="${miner.image_url || 'https://via.placeholder.com/400x300/1A1F2E/00A3FF?text=Bitcoin+Miner'}" alt="${miner.name}">
                         <div class="detail-badges">
                             ${miner.stock_quantity > 0 ? 
                                 `<div class="badge badge-stock">In Stock (${miner.stock_quantity})</div>` : 
@@ -2190,77 +1983,89 @@
                     </div>
                     <div>
                         <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">${miner.name}</h3>
-                        <div style="font-size: 2rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 1.5rem;">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--cyan); margin-bottom: 1.5rem;">
                             ${isRental ? 
                                 `$${miner.monthly_price}/month` : 
                                 `$${miner.price?.toLocaleString('en-US') || '0.00'}`}
                             ${miner.discount_percentage > 0 ? 
-                                `<span style="font-size: 1.2rem; color: var(--text-tertiary); text-decoration: line-through; margin-right: 0.5rem;">
+                                `<span style="font-size: 1.2rem; color: var(--gray); text-decoration: line-through; margin-right: 0.5rem;">
                                     $${(miner.price * (1 + miner.discount_percentage/100)).toLocaleString('en-US')}
                                 </span>` : ''}
                         </div>
                         
                         ${isOwned ? `
-                            <div style="background: rgba(0, 211, 149, 0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(0, 211, 149, 0.2);">
-                                <h4 style="color: var(--success-green); margin-bottom: 0.5rem;">Ownership Details</h4>
+                            <div style="background: rgba(0, 211, 149, 0.1); padding: 1rem; border-radius: var(--border-radius); margin-bottom: 1.5rem; border: 1px solid rgba(0, 211, 149, 0.2);">
+                                <h4 style="color: var(--success); margin-bottom: 0.5rem;">Ownership Details</h4>
                                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
                                     <div>
-                                        <div style="font-size: 0.85rem; color: var(--text-tertiary);">Purchase Date</div>
+                                        <div style="font-size: 0.85rem; color: var(--gray);">Purchase Date</div>
                                         <div style="font-weight: 600;">${new Date(miner.purchase_date).toLocaleDateString()}</div>
                                     </div>
                                     <div>
-                                        <div style="font-size: 0.85rem; color: var(--text-tertiary);">Status</div>
-                                        <div style="font-weight: 600; color: ${miner.status === 'active' ? 'var(--success-green)' : 'var(--error-red)'}">${miner.status}</div>
+                                        <div style="font-size: 0.85rem; color: var(--gray);">Status</div>
+                                        <div style="font-weight: 600; color: ${miner.status === 'active' ? 'var(--success)' : 'var(--error)'}">${miner.status}</div>
                                     </div>
                                     <div>
-                                        <div style="font-size: 0.85rem; color: var(--text-tertiary);">Total Earned</div>
-                                        <div style="font-weight: 600; color: var(--success-green);">$${miner.total_earned?.toFixed(2) || '0.00'}</div>
+                                        <div style="font-size: 0.85rem; color: var(--gray);">Total Earned</div>
+                                        <div style="font-weight: 600; color: var(--success);">$${miner.total_earned?.toFixed(2) || '0.00'}</div>
                                     </div>
                                     <div>
-                                        <div style="font-size: 0.85rem; color: var(--text-tertiary);">Available Balance</div>
-                                        <div style="font-weight: 600; color: var(--accent-cyan);">$${miner.available_balance?.toFixed(2) || '0.00'}</div>
+                                        <div style="font-size: 0.85rem; color: var(--gray);">Available Balance</div>
+                                        <div style="font-weight: 600; color: var(--cyan);">$${miner.available_balance?.toFixed(2) || '0.00'}</div>
                                     </div>
                                 </div>
                             </div>
                         ` : ''}
                         
-                        ${profitabilityChart}
+                        ${profitabilityHTML}
                         
                         <div style="margin: 1.5rem 0;">
                             <h4>Description</h4>
-                            <p style="color: var(--text-secondary); line-height: 1.6;">${miner.description || 'No description available.'}</p>
+                            <p style="color: var(--gray); line-height: 1.6;">${miner.description || 'No description available.'}</p>
                         </div>
                         
-                        ${specsGrid}
+                        ${specsHTML}
                         
                         ${isRental ? `
-                            <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 12px; margin-top: 1.5rem; border: 1px solid rgba(138, 43, 226, 0.2);">
-                                <h4 style="color: var(--accent-purple); margin-bottom: 0.5rem;">Rental Details</h4>
+                            <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: var(--border-radius); margin-top: 1.5rem; border: 1px solid rgba(138, 43, 226, 0.2);">
+                                <h4 style="color: var(--purple); margin-bottom: 0.5rem;">Rental Details</h4>
                                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
                                     <div>
-                                        <div style="font-size: 0.85rem; color: var(--text-tertiary);">Tax Rate</div>
+                                        <div style="font-size: 0.85rem; color: var(--gray);">Tax Rate</div>
                                         <div style="font-weight: 600;">${miner.tax_rate || 0}%</div>
                                     </div>
                                     <div>
-                                        <div style="font-size: 0.85rem; color: var(--text-tertiary);">Company Fee</div>
+                                        <div style="font-size: 0.85rem; color: var(--gray);">Company Fee</div>
                                         <div style="font-weight: 600;">${miner.company_fee || 0}%</div>
                                     </div>
                                 </div>
                             </div>
                         ` : ''}
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                            <button class="btn btn-secondary" onclick="closeModal(document.getElementById('minerModal'))">
+                                <i class="fas fa-times"></i> Close
+                            </button>
+                            ${!isOwned && miner.stock_quantity > 0 ? `
+                                <button class="btn btn-primary add-to-cart-modal-btn" data-id="${miner.id}">
+                                    <i class="fas fa-cart-plus"></i> Add to Cart
+                                </button>
+                            ` : ''}
+                        </div>
                     </div>
                 </div>
             `;
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
             
-            // Close modal when clicking outside
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
+            // Add event listeners for modal buttons
+            const addToCartBtn = body.querySelector('.add-to-cart-modal-btn');
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', function() {
+                    addToCart(miner.id);
                     closeModal(modal);
-                }
-            });
+                });
+            }
         }
 
         function createSpecRow(label, value) {
@@ -2276,35 +2081,63 @@
         // ====== CART FUNCTIONS ======
         async function loadCart() {
             try {
+                const token = localStorage.getItem('hashvex_token');
                 const response = await fetch(`${CONFIG.API_BASE_URL}/cart`, {
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
                 
                 if (response.ok) {
                     const data = await response.json();
                     AppState.cart = data.items || [];
-                    updateCartDisplay();
+                    updateCartCount();
                 }
             } catch (error) {
-                console.error('Cart load error:', error);
+                console.error('Error loading cart:', error);
             }
         }
 
-        function updateCartDisplay() {
-            const totalItems = AppState.cart.reduce((sum, item) => sum + item.quantity, 0);
-            elements.cartCount.textContent = totalItems;
+        async function addToCart(minerId) {
+            try {
+                const token = localStorage.getItem('hashvex_token');
+                const response = await fetch(`${CONFIG.API_BASE_URL}/cart/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ miner_id: minerId, quantity: 1 })
+                });
+                
+                if (response.ok) {
+                    showNotification('Added to cart', 'success');
+                    await loadCart();
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Failed to add to cart');
+                }
+            } catch (error) {
+                console.error('Error adding to cart:', error);
+                showNotification(error.message || 'Failed to add to cart', 'error');
+            }
+        }
+
+        function updateCartCount() {
+            const count = AppState.cart.reduce((total, item) => total + item.quantity, 0);
+            // You can update a cart count element if you add one to the header
         }
 
         function openCartModal() {
             const modal = document.getElementById('cartModal');
-            const body = document.getElementById('cartBody');
+            const body = document.getElementById('cartModalBody');
             
             if (AppState.cart.length === 0) {
                 body.innerHTML = `
                     <div class="cart-empty">
-                        <i class="fas fa-shopping-cart" style="font-size: 2.3rem; color: var(--text-tertiary); margin-bottom: 1rem;"></i>
-                        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.4rem;">Your cart is empty</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">Add miners to get started</p>
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3 style="color: var(--dark); margin-bottom: 0.5rem; font-size: 1.4rem;">Your cart is empty</h3>
+                        <p style="color: var(--gray); font-size: 0.95rem;">Add miners to get started</p>
                     </div>
                 `;
             } else {
@@ -2315,12 +2148,12 @@
                     itemsHTML += `
                         <div class="cart-item">
                             <div class="cart-item-image">
-                                <img src="${item.image_url || getDefaultMinerImage()}" alt="${item.name}">
+                                <img src="${item.image_url || 'https://via.placeholder.com/400x300/1A1F2E/00A3FF?text=Bitcoin+Miner'}" alt="${item.name}">
                             </div>
                             <div class="cart-item-details">
                                 <div style="font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">${item.name}</div>
-                                <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.95rem;">$${item.price.toLocaleString('en-US')}</div>
-                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Quantity: ${item.quantity}</div>
+                                <div style="color: var(--cyan); font-weight: 700; font-size: 0.95rem;">$${item.price.toLocaleString('en-US')}</div>
+                                <div style="color: var(--gray); font-size: 0.85rem;">Quantity: ${item.quantity}</div>
                             </div>
                         </div>
                     `;
@@ -2332,7 +2165,7 @@
                     </div>
                     <div class="cart-total">
                         <div style="font-weight: 600;">Total</div>
-                        <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent-cyan);">$${total.toLocaleString('en-US')}</div>
+                        <div style="font-size: 1.4rem; font-weight: 800; color: var(--cyan);">$${total.toLocaleString('en-US')}</div>
                     </div>
                     <div style="display: flex; gap: 1rem;">
                         <button class="btn btn-secondary" onclick="closeModal(document.getElementById('cartModal'))">
@@ -2346,35 +2179,242 @@
             }
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
         }
 
         async function checkout() {
             try {
-                const total = AppState.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-                
-                // Check balance
-                if (AppState.balances.main < total) {
-                    showNotification('Insufficient balance. Please deposit funds.', 'error');
-                    window.location.href = 'deposit.html';
-                    return;
-                }
-                
+                const token = localStorage.getItem('hashvex_token');
                 const response = await fetch(`${CONFIG.API_BASE_URL}/cart/checkout`, {
                     method: 'POST',
-                    headers: { 'Authorization': `Bearer ${AppState.token}` }
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
                 });
                 
                 if (response.ok) {
-                    await Promise.all([loadCart(), loadBalances(), loadOwnedMiners()]);
-                    closeModal(document.getElementById('cartModal'));
                     showNotification('Purchase successful!', 'success');
+                    closeModal(document.getElementById('cartModal'));
+                    await Promise.all([loadCart(), loadBalances(), loadUserMiners()]);
                 } else {
-                    throw new Error('Checkout failed');
+                    const error = await response.json();
+                    throw new Error(error.message || 'Checkout failed');
                 }
             } catch (error) {
                 console.error('Checkout error:', error);
-                showNotification('Checkout failed', 'error');
+                showNotification(error.message || 'Checkout failed', 'error');
+            }
+        }
+
+        // ====== LOAN FUNCTIONS ======
+        async function checkLoanEligibility(showNotification = false) {
+            try {
+                const token = localStorage.getItem('hashvex_token');
+                const response = await fetch(`${CONFIG.API_BASE_URL}/loans/limit`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('loan-limit').textContent = `$${data.limit.toFixed(2)}`;
+                    return data;
+                }
+            } catch (error) {
+                console.error('Error checking loan eligibility:', error);
+            }
+            return null;
+        }
+
+        async function loadLoanBalance() {
+            try {
+                const token = localStorage.getItem('hashvex_token');
+                const response = await fetch(`${CONFIG.API_BASE_URL}/loans/balance`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    AppState.currentLoanBalance = data.balance;
+                    document.getElementById('current-loan-balance').value = `$${data.balance.toFixed(2)}`;
+                }
+            } catch (error) {
+                console.error('Error loading loan balance:', error);
+            }
+        }
+
+        function updateLoanCalculator() {
+            const amount = parseFloat(document.getElementById('loan-amount').value) || 0;
+            const duration = parseInt(document.getElementById('loan-duration').value) || 1;
+            const resultElement = document.getElementById('loan-calculator-result');
+            
+            if (amount <= 0) {
+                resultElement.textContent = '$0.00';
+                resultElement.style.color = '';
+                return;
+            }
+            
+            const interestRate = 9.99;
+            const facilityFee = 1.3;
+            const totalInterest = amount * (interestRate / 100) * duration;
+            const totalFee = amount * (facilityFee / 100);
+            const totalRepayment = amount + totalInterest;
+            
+            resultElement.textContent = `$${totalRepayment.toFixed(2)} (Fee: $${totalFee.toFixed(2)})`;
+        }
+
+        async function requestLoan() {
+            try {
+                const amount = parseFloat(document.getElementById('loan-amount').value);
+                const duration = parseInt(document.getElementById('loan-duration').value);
+                
+                if (!amount || amount <= 0) {
+                    showNotification('Please enter a valid loan amount', 'error');
+                    return;
+                }
+                
+                const token = localStorage.getItem('hashvex_token');
+                const response = await fetch(`${CONFIG.API_BASE_URL}/loans`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        amount,
+                        duration_months: duration
+                    })
+                });
+                
+                if (response.ok) {
+                    showNotification('Loan request submitted successfully', 'success');
+                    document.getElementById('loan-amount').value = '';
+                    updateLoanCalculator();
+                    await Promise.all([loadBalances(), loadLoanBalance(), checkLoanEligibility()]);
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Failed to request loan');
+                }
+            } catch (error) {
+                console.error('Error requesting loan:', error);
+                showNotification(error.message || 'Failed to request loan', 'error');
+            }
+        }
+
+        async function repayLoan() {
+            try {
+                const amount = parseFloat(document.getElementById('repayment-amount').value);
+                
+                if (!amount || amount <= 0) {
+                    showNotification('Please enter a valid repayment amount', 'error');
+                    return;
+                }
+                
+                if (amount > AppState.currentLoanBalance) {
+                    showNotification(`Repayment amount exceeds your loan balance of $${AppState.currentLoanBalance.toFixed(2)}`, 'error');
+                    return;
+                }
+                
+                const token = localStorage.getItem('hashvex_token');
+                const response = await fetch(`${CONFIG.API_BASE_URL}/loans/repay`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ amount })
+                });
+                
+                if (response.ok) {
+                    showNotification('Loan repayment successful', 'success');
+                    document.getElementById('repayment-amount').value = '';
+                    await Promise.all([loadBalances(), loadLoanBalance()]);
+                    showLoanForm();
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Failed to repay loan');
+                }
+            } catch (error) {
+                console.error('Error repaying loan:', error);
+                showNotification(error.message || 'Failed to repay loan', 'error');
+            }
+        }
+
+        function showLoanForm() {
+            document.getElementById('loan-form').style.display = 'block';
+            document.getElementById('repayment-form').style.display = 'none';
+        }
+
+        function showRepaymentForm() {
+            document.getElementById('loan-form').style.display = 'none';
+            document.getElementById('repayment-form').style.display = 'block';
+            loadLoanBalance();
+        }
+
+        function calculateLoanLimit() {
+            checkLoanEligibility(false);
+        }
+
+        // ====== ACTIVITY ======
+        async function loadActivity() {
+            try {
+                const token = localStorage.getItem('hashvex_token');
+                const response = await fetch(`${CONFIG.API_BASE_URL}/activity`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    renderActivity(data.activities || []);
+                }
+            } catch (error) {
+                console.error('Error loading activity:', error);
+            }
+        }
+
+        function renderActivity(activities) {
+            const tableBody = document.getElementById('activity-table');
+            tableBody.innerHTML = '';
+            
+            activities.slice(0, 5).forEach(activity => {
+                const row = document.createElement('tr');
+                
+                const date = new Date(activity.date).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric'
+                });
+                
+                const amountColor = activity.type === 'deposit' || activity.type === 'earning' ? 
+                    'color: var(--success);' : 'color: var(--dark);';
+                
+                const statusBadge = activity.status === 'completed' ? 
+                    '<span class="badge badge-stock">Completed</span>' :
+                    activity.status === 'pending' ? 
+                    '<span class="badge" style="background: rgba(255, 165, 0, 0.2); color: var(--warning); border: 1px solid rgba(255, 165, 0, 0.3);">Pending</span>' :
+                    '<span class="badge badge-out">Failed</span>';
+                
+                row.innerHTML = `
+                    <td>${date}</td>
+                    <td>${activity.type.charAt(0).toUpperCase() + activity.type.slice(1)}</td>
+                    <td style="${amountColor}">${activity.type === 'deposit' || activity.type === 'earning' ? '+' : '-'}$${activity.amount?.toFixed(2) || '0.00'}</td>
+                    <td>${statusBadge}</td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+            
+            if (activities.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="4" style="text-align: center; padding: 2rem; color: var(--gray);">
+                            No activity yet
+                        </td>
+                    </tr>
+                `;
             }
         }
 
@@ -2382,26 +2422,51 @@
         function closeModal(modal) {
             if (modal) {
                 modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
             }
         }
 
         function showNotification(message, type = 'info') {
-            // Remove existing notifications
-            document.querySelectorAll('.notification').forEach(n => n.remove());
-            
+            // Create notification element
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 20px;
+                border-radius: var(--border-radius);
+                color: white;
+                z-index: 4000;
+                box-shadow: var(--box-shadow-lg);
+                animation: slideInRight 0.3s ease;
+                max-width: 350px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                backdrop-filter: blur(20px);
+                border: 1px solid;
+            `;
             
-            const icons = {
-                success: 'fa-check-circle',
-                error: 'fa-exclamation-circle',
-                warning: 'fa-exclamation-triangle',
-                info: 'fa-info-circle'
-            };
+            if (type === 'success') {
+                notification.style.background = 'rgba(0, 215, 149, 0.2)';
+                notification.style.borderColor = 'rgba(0, 215, 149, 0.3)';
+            } else if (type === 'error') {
+                notification.style.background = 'rgba(255, 59, 92, 0.2)';
+                notification.style.borderColor = 'rgba(255, 59, 92, 0.3)';
+            } else if (type === 'warning') {
+                notification.style.background = 'rgba(255, 165, 0, 0.2)';
+                notification.style.borderColor = 'rgba(255, 165, 0, 0.3)';
+            } else {
+                notification.style.background = 'rgba(0, 209, 255, 0.2)';
+                notification.style.borderColor = 'rgba(0, 209, 255, 0.3)';
+            }
+            
+            const icon = type === 'success' ? 'fa-check-circle' :
+                         type === 'error' ? 'fa-exclamation-circle' :
+                         type === 'warning' ? 'fa-exclamation-triangle' : 'fa-info-circle';
             
             notification.innerHTML = `
-                <i class="fas ${icons[type] || 'fa-info-circle'}"></i>
+                <i class="fas ${icon}"></i>
                 <span>${message}</span>
             `;
             
@@ -2413,80 +2478,87 @@
             }, 5000);
         }
 
-        // ====== EVENT LISTENERS ======
-        function setupEventListeners() {
-            // Mobile menu
-            elements.mobileMenuToggle.addEventListener('click', () => {
-                elements.navLinks.classList.toggle('active');
-            });
-            
-            // Navigation
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    
-                    if (targetId.startsWith('#')) {
-                        const target = document.querySelector(targetId);
-                        if (target) {
-                            window.scrollTo({
-                                top: target.offsetTop - 100,
-                                behavior: 'smooth'
-                            });
-                        }
-                    } else {
-                        window.location.href = targetId;
-                    }
-                    
-                    // Close mobile menu
-                    elements.navLinks.classList.remove('active');
-                });
-            });
-            
-            // View toggles
-            elements.ownedGridViewBtn.addEventListener('click', () => toggleView('grid'));
-            elements.ownedListViewBtn.addEventListener('click', () => toggleView('list'));
-            
-            // Cart
-            elements.cartBtn.addEventListener('click', openCartModal);
-            
-            // Logout
-            elements.logoutBtn.addEventListener('click', logout);
-            
-            // Modal close buttons
-            document.querySelectorAll('.close-modal').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const modal = this.closest('.modal');
-                    closeModal(modal);
-                });
-            });
-            
-            // Loan calculator
-            elements.loanAmount.addEventListener('input', updateLoanCalculator);
-            elements.loanDuration.addEventListener('change', updateLoanCalculator);
-            
-            // Dynamic event delegation
-            document.addEventListener('click', async (e) => {
-                // View details
-                if (e.target.closest('.view-details')) {
-                    const btn = e.target.closest('.view-details');
-                    const minerId = btn.dataset.id;
-                    const type = btn.dataset.type;
-                    await showMinerDetails(minerId, type);
-                }
-            });
-            
-            // Close modals on escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    closeModal(document.getElementById('minerModal'));
-                    closeModal(document.getElementById('cartModal'));
-                }
-            });
+        function refreshMiners() {
+            loadUserMiners();
+            showNotification('Miners refreshed', 'info');
+        }
+
+        function refreshActivity() {
+            loadActivity();
+            showNotification('Activity refreshed', 'info');
         }
 
         // Initialize loan calculator
         updateLoanCalculator();
+        loadLoanBalance();
+
+        // Event delegation for dynamic elements
+        document.addEventListener('click', function(e) {
+            // View details button
+            if (e.target.closest('.view-details-btn')) {
+                const minerId = e.target.closest('.view-details-btn').dataset.id;
+                showMinerDetails(minerId);
+            }
+            
+            // Add to cart button
+            if (e.target.closest('.add-to-cart-btn')) {
+                const minerId = e.target.closest('.add-to-cart-btn').dataset.id;
+                addToCart(minerId);
+            }
+            
+            // Withdraw button
+            if (e.target.closest('.withdraw-btn')) {
+                const minerId = e.target.closest('.withdraw-btn').dataset.id;
+                withdrawEarnings(minerId);
+            }
+            
+            // Close modal when clicking outside
+            if (e.target.classList.contains('modal')) {
+                closeModal(e.target);
+            }
+        });
+
+        // Close modals with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal(document.getElementById('minerModal'));
+                closeModal(document.getElementById('cartModal'));
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Withdraw earnings function
+        async function withdrawEarnings(minerId) {
+            try {
+                const token = localStorage.getItem('hashvex_token');
+                const response = await fetch(`${CONFIG.API_BASE_URL}/miners/${minerId}/withdraw`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (response.ok) {
+                    showNotification('Earnings withdrawn successfully', 'success');
+                    await Promise.all([loadBalances(), loadUserMiners()]);
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Failed to withdraw earnings');
+                }
+            } catch (error) {
+                console.error('Error withdrawing earnings:', error);
+                showNotification(error.message || 'Failed to withdraw earnings', 'error');
+            }
+        }
     </script>
 </body>
 </html>
